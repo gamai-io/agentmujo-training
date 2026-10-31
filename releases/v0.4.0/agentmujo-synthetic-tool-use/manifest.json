@@ -1,0 +1,29 @@
+{
+  "schema": "agentmujo.dataset.v0",
+  "name": "agentmujo-synthetic-tool-use",
+  "version": "0.4.0",
+  "created_at": "2026-10-31T18:25:58.088829+00:00",
+  "source": "own",
+  "license": "internal (Apache-2.0 za kod; podaci po evidenciji)",
+  "input": "/tmp/agentmujo-training/datasets/canonical/function_calling_synthetic_v0.4.jsonl",
+  "data": "releases/v0.4.0/agentmujo-synthetic-tool-use/data.jsonl",
+  "input_sha256": "041865135aed657e435445e95ff32a98ec77220a5e9e5cd80ac1254b468d1d01",
+  "data_sha256": "44e42fd41253c63e621fe8f2bbeee4cae21f832904b663f731fcef0e07e61791",
+  "counts": {
+    "input": 500,
+    "kept": 500,
+    "rejected": 0,
+    "duplicates": 0,
+    "rows": 500
+  },
+  "languages": {
+    "bs": 500
+  },
+  "tasks": {
+    "function-calling": 500
+  },
+  "tiers": {
+    "SILVER": 500
+  },
+  "rejected_samples": []
+}

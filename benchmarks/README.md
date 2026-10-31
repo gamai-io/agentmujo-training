@@ -29,3 +29,12 @@
 - **Ne koristiti za trening** i ne dodavati u `datasets/canonical/`.
 - Ne unositi prave kupce/tajne; koristi `TEST-001`, `kupac A`.
 - Verzija benchmarka se mijenja samo uz novi fajl (`v0.2`), ne prepravkom postojećeg.
+
+## Rezultati (tool-selection, 2026-10-31, Aitta/LUMI AI Factory)
+
+| Model | Pass | Pass rate | Napomena |
+|---|---:|---:|---|
+| `Qwen/Qwen3.6-35B-A3B` | 25/50 | 50% | tool-selection only |
+| `openai/gpt-oss-120b` | 28/50 | 56% | tool-selection only |
+
+Rezultati su u `benchmarks/results/`; akcije nisu izvršavane (nema side effecta).
