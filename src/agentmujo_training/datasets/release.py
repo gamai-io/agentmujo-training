@@ -24,6 +24,8 @@ MESSAGE_SPECS = [
      "categories": ["reasoning"]},
     {"name": "agentmujo-function-calling", "file": "function_calling_v0.1.jsonl",
      "categories": ["function-calling", "tool-use-mcp"]},
+    {"name": "agentmujo-synthetic-tool-use", "file": "function_calling_synthetic_v0.4.jsonl",
+     "categories": ["function-calling", "tool-use-mcp"], "source": "own"},
     {"name": "agentmujo-agentic-tasks", "file": "agentic_terminal_v0.1.jsonl",
      "categories": ["agentic-tasks", "linux-terminal"]},
     {"name": "agentmujo-bosnian-knowledge", "file": "knowledge_wikipedia_bs_v0.2.jsonl",
@@ -108,6 +110,7 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
         errors.append(f"{PREFERENCE_SPEC['name']}: nema {src}")
     bench_src = repo / "benchmarks" / "agentic_eval_v0.1.jsonl"
     benchmarks: list[dict[str, Any]] = []
+    benchmark_results: list[dict[str, Any]] = []
     benchmark_rows = 0
     if bench_src.exists():
         import shutil
@@ -120,6 +123,13 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
                            "categories": ["agentic-evaluation"], "rows": benchmark_rows,
                            "sha256": _sha(bdst), "path": str(bdst), "held_out": True,
                            "license": "Apache-2.0"})
+        results_src = repo / "benchmarks" / "results"
+        if results_src.exists():
+            rdir = bdir / "results"
+            rdir.mkdir(parents=True, exist_ok=True)
+            for rp in sorted(results_src.glob("*.json")):
+                shutil.copy2(rp, rdir / rp.name)
+                benchmark_results.append({"file": rp.name, "sha256": _sha(rdir / rp.name)})
         covered.add("agentic-evaluation")
     else:
         errors.append(f"benchmark: nema {bench_src}")
@@ -178,6 +188,7 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
         "schema": "agentmujo.release.v0", "name": "AgentMujo Dataset", "version": version,
         "created_at": datetime.now(timezone.utc).isoformat(), "repository": "gamai-io/agentmujo-training",
         "datasets": datasets, "benchmarks": benchmarks, "benchmark_rows": benchmark_rows,
+        "benchmark_results": benchmark_results,
         "covered_categories": sorted(covered), "gaps": gaps,
         "total_rows": total, "duplicates_across_datasets": 0,
         "overlap_removed": removed_total, "overlap_examples": removed[:20],
@@ -198,6 +209,10 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
         lines += ["", "## Benchmark (evaluation, held-out)", "| Benchmark | Kategorija | Zadaci | SHA256 |", "|---|---|---:|---|"]
         for b in benchmarks:
             lines.append(f"| {b['name']} | {', '.join(b['categories'])} | {b['rows']} | `{b['sha256'][:16]}` |")
+    if benchmark_results:
+        lines += ["", "## Benchmark results (tool-selection)", "| Fajl | SHA256 |", "|---|---|"]
+        for br in benchmark_results:
+            lines.append(f"| `{br['file']}` | `{br['sha256'][:16]}` |")
     lines += ["", "## Licence", "- knowledge/RAG: CC BY-SA 4.0 (Wikipedia; attribution URL u metadata).",
               "- coding: Apache-2.0 (vlastiti repo kod).", "- benchmark: Apache-2.0 (held-out, nije trening).",
               "- preference/ostalo: interno/Apache-2.0 po evidenciji.",
@@ -205,4 +220,4 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
     (out / "DATASET_CARD.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     return {"ok": True, "version": version, "out_dir": str(out), "total_rows": total,
             "benchmark_rows": benchmark_rows, "covered_categories": sorted(covered), "gaps": gaps,
-            "datasets": datasets, "benchmarks": benchmarks, "errors": errors}
+            "datasets": datasets, "benchmarks": benchmarks, "benchmark_results": benchmark_results, "errors": errors}
