@@ -13,7 +13,7 @@ rezultate — jezgra AgentMujo AI agenta.
 > Status: **v0.5 live (joint-23 Q8, gate 6W-2T nad v0.4).**
 > Dataseti: 2911 uzoraka (FC 1252 + AG 541 + BC 1118 + thinking 45).
 > Trening pauziran nakon 30 joint runova (eval 1.067→0.873);
-> Svi testovi zeleni (37/37); think-profil ostaje v0.4.
+> Svi testovi zeleni (51/51); think-profil ostaje v0.4.
 
 ## Razumijevanje za 5 minuta
 
@@ -42,7 +42,7 @@ amj dataset validate --input datasets/canonical/function_calling_v0.1.jsonl
 amj dataset validate --input datasets/canonical/agentic_terminal_v0.1.jsonl
 amj benchmark run --cases benchmark/cases_v0.5.jsonl
 amj registry build           # lineage + eval tablice u docs/REGISTRY.md
-pytest -q                     # 37 testova
+pytest -q                     # 51 testova
 ```
 
 ## Struktura
