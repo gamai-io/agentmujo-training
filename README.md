@@ -22,7 +22,7 @@ rezultate — jezgra AgentMujo AI agenta.
    jezik od nule dok benchmark ne pokaže potrebu.
 2. **Thinking/non-thinking = JEDAN model.** `enable_thinking` zastavica chat
    templatea prebacuje režim; 4 deployment profila dijele iste težine.
-3. **Alati:** `configs/tools.yaml` je Single Source of Truth (14 alata:
+3. **Alati:** `configs/tools.yaml` je Single Source of Truth (14 definicija alata:
    `service_*`, `disk/memory/cpu`, `process_list`, `network_status`,
    `port_check`, `package_*`, `file_*`, `terminal` kao fallback). Model MORA preferirati
    high-level alat nad sirovom terminal komandom.
@@ -37,7 +37,7 @@ rezultate — jezgra AgentMujo AI agenta.
 uv pip install -e ".[dev]"   # ili: pip install -e .
 amj doctor                    # provjera okruženja (bez ispisa tajni)
 amj model list                # pinovane revizije baze
-amj tools validate            # 10 alata iz registryja
+amj tools validate            # 10 registrovanih alata (registry)
 amj dataset validate --input datasets/canonical/function_calling_v0.1.jsonl
 amj dataset validate --input datasets/canonical/agentic_terminal_v0.1.jsonl
 amj benchmark run --cases benchmark/cases_v0.5.jsonl
