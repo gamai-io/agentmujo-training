@@ -1,0 +1,188 @@
+{
+ "title": "MuJo tool-calling development-set results",
+ "date": "2026-11-06",
+ "status": "development results; not a held-out benchmark",
+ "evaluator": "benchmark/eval_text3.py",
+ "decoding": "greedy (do_sample=false), max_new_tokens=256",
+ "sets": {
+  "v24": 63,
+  "v25": 86,
+  "v26": 50
+ },
+ "results": [
+  {
+   "adapter": "v2+system",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 57,
+   "tool_ok": 11,
+   "args_n": 54,
+   "args_exact_ok": 9,
+   "args_casefold_ok": null,
+   "tool_ci95": [
+    0.1004,
+    0.2862
+   ]
+  },
+  {
+   "adapter": "v3",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 63,
+   "tool_ok": 29,
+   "args_n": 54,
+   "args_exact_ok": 17,
+   "args_casefold_ok": null,
+   "tool_ci95": [
+    0.3431,
+    0.5821
+   ]
+  },
+  {
+   "adapter": "v3_clean",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 63,
+   "tool_ok": 30,
+   "args_n": 54,
+   "args_exact_ok": 15,
+   "args_casefold_ok": null,
+   "tool_ci95": [
+    0.3578,
+    0.5973
+   ]
+  },
+  {
+   "adapter": "v4",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 63,
+   "tool_ok": 31,
+   "args_n": 54,
+   "args_exact_ok": 17,
+   "args_casefold_ok": null,
+   "tool_ci95": [
+    0.3727,
+    0.6124
+   ]
+  },
+  {
+   "adapter": "v5",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 63,
+   "tool_ok": 46,
+   "args_n": 54,
+   "args_exact_ok": 15,
+   "args_casefold_ok": 17,
+   "tool_ci95": [
+    0.6097,
+    0.8242
+   ]
+  },
+  {
+   "adapter": "v5e3",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 63,
+   "tool_ok": 46,
+   "args_n": 54,
+   "args_exact_ok": 24,
+   "args_casefold_ok": 25,
+   "tool_ci95": [
+    0.6097,
+    0.8242
+   ]
+  },
+  {
+   "adapter": "v6",
+   "set": "v24",
+   "n": 63,
+   "parse_ok": 60,
+   "tool_ok": 51,
+   "args_n": 54,
+   "args_exact_ok": 31,
+   "args_casefold_ok": 31,
+   "tool_ci95": [
+    0.6959,
+    0.8875
+   ]
+  },
+  {
+   "adapter": "v5e3",
+   "set": "v25",
+   "n": 86,
+   "parse_ok": 86,
+   "tool_ok": 84,
+   "args_n": 83,
+   "args_exact_ok": 77,
+   "args_casefold_ok": 77,
+   "tool_ci95": [
+    0.9191,
+    0.9936
+   ]
+  },
+  {
+   "adapter": "v6",
+   "set": "v25",
+   "n": 86,
+   "parse_ok": 84,
+   "tool_ok": 83,
+   "args_n": 83,
+   "args_exact_ok": 77,
+   "args_casefold_ok": 77,
+   "tool_ci95": [
+    0.9024,
+    0.9881
+   ]
+  },
+  {
+   "adapter": "v5e3",
+   "set": "v26",
+   "n": 50,
+   "parse_ok": 50,
+   "tool_ok": 31,
+   "args_n": 32,
+   "args_exact_ok": 12,
+   "args_casefold_ok": 12,
+   "tool_ci95": [
+    0.4815,
+    0.7414
+   ]
+  },
+  {
+   "adapter": "v6",
+   "set": "v26",
+   "n": 50,
+   "parse_ok": 47,
+   "tool_ok": 36,
+   "args_n": 32,
+   "args_exact_ok": 18,
+   "args_casefold_ok": 18,
+   "tool_ci95": [
+    0.5833,
+    0.8253
+   ]
+  }
+ ],
+ "source_summary_sha256": {
+  "mujo_v2_schema_tool.json": "bcb27c3ffe1284a3a0391ad48e2051358cb8eb8ff4f4422f875aac6ce039b256",
+  "mujo_v3_schema_tool.json": "9d003f2dad965933909fd64eea44036c06b1d6a04b11ab5ac11c32d88dbdc766",
+  "mujo_v3_clean_schema_tool.json": "9a9d98e436eb849e8569b0e79517533814e0f9f90ad7b156d166416cca345c0c",
+  "mujo_v4_schema_tool.json": "dd3c18f0b62c0e8249e2152ef89f9017922d778a148f67f37ccd5e1cd4b99ce0",
+  "mujo_v5_schema_tool.json": "6c694f9e8f773a907588a5065dd972d6f685659304602ed9ca513436990e4245",
+  "mujo_v5e3_schema_tool.json": "a7294880e904e897fcf457b43aa645340002590788920c51545b92d4d38ff311",
+  "mujo_v6_schema_tool.json": "5f16f9e2ce85d97cbc92a1e55ba4fcc5d64f743722276177c70f01481c324045",
+  "mujo_v5e3_v25.json": "509d5af3038107e1b008bd47a87cd84c9d7f28aa30f5e242e1776f483eedaf4a",
+  "mujo_v6_v25.json": "f0210367f96a059f103f4d8f435aab23145b44e43d3d2a089f61e0ea40322106",
+  "mujo_v5e3_v26.json": "ef06f01bccea1e696c1080e49d2cf7ff8a752de689bb4cd88e142b9871217b73",
+  "mujo_v6_v26.json": "72725abea7ad41482bdcff3af68b3a17ee34e4a5119e333ba980f48269a49e65"
+ },
+ "caveats": [
+  "v24/v25/v26 are development sets; v6/v7 training data share templates and contain duplicated prompts.",
+  "v26 was authored after inspecting failures and overlaps training families: not an independent holdout.",
+  "v25 is format-symmetric and not necessarily harder than v24.",
+  "No raw prompts, generations, or business identifiers are redistributed.",
+  "No execution of predicted tools; tool_ok is a matching heuristic."
+ ]
+}
