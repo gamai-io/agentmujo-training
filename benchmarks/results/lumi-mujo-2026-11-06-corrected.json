@@ -1,0 +1,82 @@
+{
+  "title": "MuJo tool-calling development evaluations: corrected adapter attribution",
+  "date": "2026-11-06",
+  "status": "preliminary-development-results",
+  "results": [
+    {
+      "adapter": "v5e3",
+      "development_set": "v24",
+      "n": 63,
+      "parse_ok": 63,
+      "tool_ok": 46,
+      "args_n": 54,
+      "args_exact_ok": 24,
+      "args_casefold_ok": 25,
+      "source_summary_sha256": "a7294880e904e897fcf457b43aa645340002590788920c51545b92d4d38ff311"
+    },
+    {
+      "adapter": "v5e3",
+      "development_set": "v25",
+      "n": 86,
+      "parse_ok": 86,
+      "tool_ok": 84,
+      "args_n": 83,
+      "args_exact_ok": 77,
+      "args_casefold_ok": 77,
+      "source_summary_sha256": "509d5af3038107e1b008bd47a87cd84c9d7f28aa30f5e242e1776f483eedaf4a"
+    },
+    {
+      "adapter": "v6",
+      "development_set": "v24",
+      "n": 63,
+      "parse_ok": 60,
+      "tool_ok": 51,
+      "args_n": 54,
+      "args_exact_ok": 31,
+      "args_casefold_ok": 31,
+      "source_summary_sha256": "5f16f9e2ce85d97cbc92a1e55ba4fcc5d64f743722276177c70f01481c324045"
+    },
+    {
+      "adapter": "v6",
+      "development_set": "v25",
+      "n": 86,
+      "parse_ok": 84,
+      "tool_ok": 83,
+      "args_n": 83,
+      "args_exact_ok": 77,
+      "args_casefold_ok": 77,
+      "source_summary_sha256": "f0210367f96a059f103f4d8f435aab23145b44e43d3d2a089f61e0ea40322106"
+    }
+  ],
+  "provenance": {
+    "source": "Four aggregate evaluation summaries reread from completed LUMI evaluation job 23524785; job exit 0:0.",
+    "source_hashes": "SHA-256 of original aggregate JSON bytes; no private prompts included."
+  },
+  "correction": "Earlier results labelled v5e3/v6 used the v5 adapter due to a stale adapter path. They must not be attributed to v5e3/v6. This report uses corrected adapter selection.",
+  "methodology": {
+    "tool_ok": "Includes heuristic multi-call and refusal scoring, not successful execution of tools.",
+    "args_exact": "String comparison of expected argument values; additional argument fields are not necessarily penalized.",
+    "args_casefold": "Lowercase and whitespace normalization only; formerly called args_sem. NOT semantic SQL equivalence.",
+    "parse_ok": "Parser acceptance, not proof that tools executed."
+  },
+  "limitations": [
+    "Small development sets; not an independent held-out benchmark.",
+    "v6 examples were constructed after inspecting v24 errors; template and exact-prompt overlap may exist. Do not infer uncontaminated generalization.",
+    "v25 is format-sensitive and is not necessarily harder than v24.",
+    "v26 overlaps development/training families and must not be advertised as an independent holdout.",
+    "Train/validation splits may share templates and duplicated examples.",
+    "v6 improves v24 tool count by 5/63 but reduces v24 parse count by 3/63 and v25 tool count by 1/86; no statistical significance claim.",
+    "No production readiness, agent-task success, or autonomous-agent parallelism claim."
+  ],
+  "privacy": {
+    "included": "Aggregate counts and source-summary hashes only.",
+    "excluded": [
+      "raw prompts and generations",
+      "customer data and business identifiers",
+      "credentials and tokens",
+      "internal hosts and paths",
+      "model weights",
+      "third-party datasets"
+    ]
+  }
+}
