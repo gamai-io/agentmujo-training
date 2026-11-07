@@ -21,7 +21,7 @@ Sve verzije AgentMujo dataset factoryja na jednom mjestu. Kanonski kod: https://
 ## v0.4.0
 
 - **synthetic-tool-use 500** (schema-validated; sql/tool-selection/argument-generation/multi-step/verification/data).
-- Eval (tool-selection, Aitta/LUMI): Qwen3.6-35B-A3B **25/50**, gpt-oss-120b **28/50**.
+- Eval (tool-selection, Aitta/LUMI, **public set - not a holdout since v0.1 was published**): Qwen3.6-35B-A3B **25/50**, gpt-oss-120b **28/50**.
 - Ostalo kao v0.3.0: safety 60, knowledge 200, coding 100, RAG 100.
 - Vidi `v0.4.0/RELEASE.json` i `benchmarks/results/`.
 
