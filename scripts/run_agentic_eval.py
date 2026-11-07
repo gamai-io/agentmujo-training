@@ -94,8 +94,15 @@ def main():
     ap.add_argument("--benchmark", default=str(ROOT / "benchmarks" / "agentic_eval_v0.1.jsonl"))
     ap.add_argument("--out", default=str(ROOT / "benchmarks" / "results" / "aitta_qwen3.6-35b-a3b_v0.1.json"))
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--allow-retired", action="store_true")
     args = ap.parse_args()
     items = [json.loads(x) for x in Path(args.benchmark).read_text(encoding="utf-8").splitlines() if x.strip()]
+    if any(it.get("withheld") for it in items) and not args.allow_retired:
+        raise SystemExit(
+            "This benchmark is RETIRED and redacted (see benchmarks/RETRACTION_v0.1.md).\n"
+            "Its items were published, so results are not a holdout measurement.\n"
+            "Use --allow-retired to run it anyway and label the output as a public-set score."
+        )
     results = []
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
         futs = [ex.submit(one, it, args.model) for it in items]

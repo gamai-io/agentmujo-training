@@ -15,8 +15,8 @@ Sve verzije AgentMujo dataset factoryja na jednom mjestu. Kanonski kod: https://
 |---|---:|---:|---:|---:|---|
 | v0.1.0 | 3.536 | 5 | 9 | — | knowledge, coding, rag-memory, safety, agentic-evaluation |
 | v0.2.0 | 3.716 | 9 | 12 | — | agentic-evaluation |
-| v0.3.0 | 3.996 | 9 | 13 | 50 (held-out) | — |
-| v0.4.0 | 4.496 | 10 | 13 | 50 (held-out) | — |
+| v0.3.0 | 3.996 | 9 | 13 | 50 (retracted) | — |
+| v0.4.0 | 4.496 | 10 | 13 | 50 (retracted) | — |
 
 ## v0.4.0
 
@@ -28,7 +28,7 @@ Sve verzije AgentMujo dataset factoryja na jednom mjestu. Kanonski kod: https://
 ## v0.3.0
 
 - safety 60, knowledge 200 (bs Wikipedia, CC BY-SA 4.0), coding 100 (Apache-2.0), RAG 100, function-calling 1.374, agentic-tasks 739, bosnian 1.178, reasoning 75, preference-dpo 170.
-- Held-out agentic benchmark 50 (10 kategorija × 5); nije trening.
+- Agentic benchmark 50 (10 kategorija × 5; v0.1 povucen 2026-11-07 jer je bio javno objavljen); nije trening.
 - Manifesti i SHA256 u `v0.3.0/`, `RELEASE.json`.
 
 ## Licence

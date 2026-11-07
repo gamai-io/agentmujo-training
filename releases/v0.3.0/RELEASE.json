@@ -408,5 +408,14 @@
   "gpu_used": false,
   "lumi_used": false,
   "notes": "Release iz kanonskih fajlova; gapovi nisu popunjeni izmišljenim podacima. agentic-evaluation je held-out benchmark, ne trening.",
-  "errors": []
+  "errors": [],
+  "benchmark_retraction": {
+    "date": "2026-11-07",
+    "benchmark": "benchmarks/agentic_eval_v0.1.jsonl",
+    "status": "retired-compromised",
+    "action": "items redacted to metadata only (withheld: true, held_out: false)",
+    "reason": "item text was public in this repository from 2026-10-31 to 2026-11-07, so it is not a holdout",
+    "notice": "benchmarks/RETRACTION_v0.1.md",
+    "supersedes": "none until an unpublished private holdout exists"
+  }
 }

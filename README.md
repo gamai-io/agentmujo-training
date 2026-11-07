@@ -1,6 +1,6 @@
 # AgentMujo Training Framework
 
-> **Dataset Factory v0.4.0** (2026-10-31): 4.496 train rows, 10 datasets, 500 synthetic tool-use, held-out eval 50, gaps 0.
+> **Dataset Factory v0.4.0** (2026-10-31): 4.496 train rows, 10 datasets, 500 synthetic tool-use, retired public eval 50 (was published; see benchmarks/RETRACTION_v0.1.md), gaps 0.
 > HF: https://huggingface.co/datasets/renatoschust/agentmujo-dataset · Canonical repo: https://github.com/gamai-io/agentmujo-training
 
 [![CI](https://github.com/gamai-io/agentmujo-training/actions/workflows/ci.yml/badge.svg)](https://github.com/gamai-io/agentmujo-training/actions)

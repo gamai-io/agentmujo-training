@@ -2,22 +2,30 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+BENCH = ROOT / "benchmarks" / "agentic_eval_v0.1.jsonl"
+FORBIDDEN = {"goal", "messages", "success_criteria", "verification"}
 
 
 def _rows():
-    return [json.loads(x) for x in (ROOT / "benchmarks" / "agentic_eval_v0.1.jsonl").read_text(encoding="utf-8").splitlines() if x.strip()]
+    return [json.loads(x) for x in BENCH.read_text(encoding="utf-8").splitlines() if x.strip()]
 
 
 def test_agentic_eval_benchmark_file():
     rows = _rows()
     assert len(rows) == 50
     assert len({r["id"] for r in rows}) == 50
-    assert {r["category"] for r in rows} == {"sql","files","web","office","security","multi-step","bosnian","data","tool-selection","verification"}
+    assert {r["category"] for r in rows} == {
+        "sql", "files", "web", "office", "security", "multi-step",
+        "bosnian", "data", "tool-selection", "verification",
+    }
     for r in rows:
         assert r["task"] == "agentic-evaluation"
-        assert r["goal"] and r["success_criteria"] and r["verification"]
         assert isinstance(r["allowed_tools"], list) and isinstance(r["expected_tools"], list)
-        assert r["metadata"]["held_out"] is True
+        assert not FORBIDDEN & set(r), f"{r['id']} still contains item text"
+        assert r["withheld"] is True
+        assert r["status"] == "retired-compromised"
+        assert r["metadata"]["held_out"] is False
+        assert r["metadata"]["public_set"] is True
         assert r["metadata"]["license"] == "Apache-2.0"
 
 
