@@ -6,6 +6,15 @@
 [![CI](https://github.com/gamai-io/agentmujo-training/actions/workflows/ci.yml/badge.svg)](https://github.com/gamai-io/agentmujo-training/actions)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
 
+## Status and evidence (English)
+
+- Development results with denominators and Wilson intervals: [`benchmarks/results/lumi-mujo-2026-11-06-devset.json`](benchmarks/results/lumi-mujo-2026-11-06-devset.json)
+- Evaluation method and exact scoring rules: [`benchmark/EVAL_METHOD.md`](benchmark/EVAL_METHOD.md)
+- Correction of an earlier adapter-attribution error: [`docs/CORRECTION-2026-11-06.md`](docs/CORRECTION-2026-11-06.md)
+- LUMI-G grounding and tool-calling benchmark: [gamai-evals/docs/LUMI_BENCHMARK_2026-11-06.md](https://github.com/gamai-io/gamai-evals/blob/main/docs/LUMI_BENCHMARK_2026-11-06.md)
+
+**What this does not prove:** the evaluation sets are development sets (63 / 86 / 50 items) whose wording overlaps training templates; the newest set is not an independent holdout. `tool_ok` is a matching heuristic, not proof that a tool executed. Argument scores are string comparisons, not semantic or SQL equivalence. No field rate, production-readiness, or safety guarantee is claimed.
+
 Reproducibilan sistem za fine-tuning **malih bosanskojezičnih modela**
 koji znaju koristiti alate, raditi višekoračne zadatke i provjeravati
 rezultate — jezgra AgentMujo AI agenta.
