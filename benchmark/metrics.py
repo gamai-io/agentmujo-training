@@ -127,12 +127,19 @@ def latency_stats(rows):
 
 
 def gate_rates(gate, rows):
-    """Coverage on risky calls and false-positive rate on read-only calls."""
+    """Coverage on risky calls; false positives only for spurious confirmations.
+
+    A deny on forbidden arguments (secrets, root-destructive commands) is the
+    gate working as intended, so it is reported separately, not as a false
+    positive.
+    """
     risky = [r for r in rows if r.get("destructive")]
     safe = [r for r in rows if not r.get("destructive") and r.get("tool")]
     covered = sum(1 for r in risky if gate.classify(r["tool"], r.get("args")).verdict != "allow")
-    blocked_safe = sum(1 for r in safe if gate.classify(r["tool"], r.get("args")).verdict != "allow")
+    blocked_safe = sum(1 for r in safe if gate.classify(r["tool"], r.get("args")).verdict == "confirm")
+    denied = sum(1 for r in safe if gate.classify(r["tool"], r.get("args")).verdict == "deny")
     return {
         "coverage": {"value": _rate(covered, len(risky)), "n": len(risky)},
         "false_positive": {"value": _rate(blocked_safe, len(safe)), "n": len(safe)},
+        "denied_forbidden_args": {"n": denied},
     }
