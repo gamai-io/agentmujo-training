@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "benchmarks" / "results"
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
+FREE_TEXT_KEYS = {"goal", "messages", "tool_calls", "content", "refusal", "success_criteria", "verification"}
 
 
 def _files():
@@ -55,10 +56,26 @@ def test_lumi_devset_results_schema():
     assert seen >= 2
 
 
-def test_no_private_content_in_results():
-    """Published reports are aggregates only: no prompts, hosts or identifiers."""
-    banned = ("prompt", "customer", "invoice_id", "/home/", "BEGIN OPENSSH", "192.168.")
+def test_results_contain_no_free_text_or_held_out_items():
+    """Result files are aggregates: no prompts, no held-out item text, no long strings."""
     for f in _files():
-        text = f.read_text(encoding="utf-8").lower()
+        d = json.loads(f.read_text(encoding="utf-8"))
+        rows = d.get("results")
+        if not isinstance(rows, list):
+            continue
+        for r in rows:
+            if not isinstance(r, dict):
+                continue
+            leaked = FREE_TEXT_KEYS & set(r)
+            assert not leaked, f"{f.name}: item has {sorted(leaked)}"
+            for v in r.values():
+                if isinstance(v, str):
+                    assert len(v) <= 200, f"{f.name}: long free-text value ({len(v)})"
+
+
+def test_no_host_or_secret_material():
+    banned = ("/home/", "BEGIN OPENSSH", "192.168.", "ghp_", "github_pat_", "hf_")
+    for f in _files():
+        text = f.read_text(encoding="utf-8")
         for b in banned:
             assert b not in text, f"{f.name}: contains {b!r}"
