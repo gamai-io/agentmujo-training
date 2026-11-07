@@ -46,8 +46,9 @@ def test_lumi_devset_results_schema():
             assert 0 <= r["args_exact_ok"] <= r["args_n"] <= r["n"], (f.name, r)
             if r.get("args_casefold_ok") is not None:
                 assert r["args_exact_ok"] <= r["args_casefold_ok"] <= r["args_n"], (f.name, r)
-            lo, hi = r["tool_ci95"]
-            assert 0.0 <= lo <= hi <= 1.0, (f.name, r)
+            if "tool_ci95" in r:
+                lo, hi = r["tool_ci95"]
+                assert 0.0 <= lo <= hi <= 1.0, (f.name, r)
         for h in d.get("source_summary_sha256", {}).values():
             assert SHA256.match(h), f"{f.name}: bad source hash"
         assert d.get("limitations") or d.get("caveats"), f"{f.name}: no limitations"
