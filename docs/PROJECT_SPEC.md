@@ -106,8 +106,8 @@ odvojen od trening skupova.
 
 ## 6. Evaluacija (AgentMujo-Bench)
 
-16 kategorija (`benchmark/cases_v0.5.jsonl`, 48 slučajeva;
-v0.1–v0.3 zamrznuti kao historija):
+16 kategorija (`benchmark/cases_v0.6.jsonl`, **49 slučajeva**: 15×3 + 4;
+v0.1–v0.5 zamrznuti kao historija; v0.5 = 48 slučajeva / 11 kategorija):
 bosnian_quality, tool_selection, argument_accuracy, tool_call_validity,
 json_validity, multi_step, terminal_accuracy, verification, safety,
 task_success (v0.1) + refusal_correctness, confirmation_behavior,
