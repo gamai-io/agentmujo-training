@@ -32,3 +32,11 @@ Ovi brojevi su tacni za javni skup; **nisu** holdout rezultat i ne smiju se tako
 - Javni skupovi koriste `benchmark/cases_v*.jsonl` i smiju sadrzavati `prompt`.
 - Nikad ne mijenjati verziju prepravkom; novi skup = novi fajl.
 - Testovi (`tests/test_agentic_eval.py`, `tests/test_holdout_privacy.py`) moraju ostati zeleni prije objave.
+
+## Holdout v0.2 (private, not distributed)
+
+`holdout_v0.2.manifest.json` objavljuje samo metapodatke: 60 stavki, 10 kategorija x 6, SHA256 i listu ID-eva. **Tekst stavki nije u repozitoriju** i nece biti objavljen. Pristup na zahtjev (security@gamai.io), bodovanje rade odrzavaoci.
+
+- Overlap sa v0.1: token Jaccard na tekst zadatka, max 0.0 (prag 0.5).
+- Overlap sa LUMI devsetovima v24/v25/v26: **nije provjeren** (LUMI u maintenance-u); mora se provjeriti prije prvog objavljivanja rezultata.
+- Rezultat se objavljuje uz verziju skupa, toleranciju i pixel budzet gdje je primjenjivo.
