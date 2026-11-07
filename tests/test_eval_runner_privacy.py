@@ -17,7 +17,7 @@ def _load():
 def test_result_rows_are_aggregate_only():
     mod = _load()
     item = {
-        "id": "amj-ev2-0001", "category": "sql", "difficulty": "easy",
+        "id": "amj-ev2-9999", "category": "sql", "difficulty": "easy",
         "expected_tools": ["sql"], "goal": "SECRET TASK TEXT",
         "messages": [{"role": "user", "content": "SECRET"}],
         "success_criteria": "SECRET", "verification": "SECRET",
@@ -26,7 +26,7 @@ def test_result_rows_are_aggregate_only():
     row = mod._row(item, ["sql"], [], [], True, 1.23, None)
     assert not FORBIDDEN & set(row), sorted(FORBIDDEN & set(row))
     assert "SECRET" not in json.dumps(row)
-    assert row["id"] == "amj-ev2-0001" and row["pass"] is True
+    assert row["id"] == "amj-ev2-9999" and row["pass"] is True
 
 
 def test_script_never_spreads_item_into_results():
