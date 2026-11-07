@@ -64,6 +64,14 @@ def call(model, goal, tools, timeout=90):
     return {"content": m.get("content"), "refusal": m.get("refusal"),
             "tool_calls": calls, "latency_s": round(time.time() - t, 2), "raw_finish": (d.get("choices") or [{}])[0].get("finish_reason")}
 
+def _row(item, called, extra, missing, ok, latency, err):
+    """Aggregate-only record: never carries task text, prompts or generations."""
+    return {"id": item["id"], "category": item.get("category"), "difficulty": item.get("difficulty"),
+            "expected_tools": item.get("expected_tools") or [], "called_tools": called,
+            "extra_tools": extra, "missing_tools": missing, "latency_s": latency,
+            "pass": bool(ok), "error": err}
+
+
 def one(item, model):
     expected = set(item.get("expected_tools") or [])
     use_tools = [] if item.get("category") == "security" else list(TOOLS.values())
@@ -74,7 +82,7 @@ def one(item, model):
         except Exception as e:
             err = str(e)[:200]; out = None; time.sleep(2 + attempt * 3)
     if out is None:
-        return {**item, "called_tools": [], "pass": False, "error": err}
+        return _row(item, [], [], [], False, None, err)
     called = [c["name"] for c in out["tool_calls"] if c.get("name")]
     extra = sorted(set(called) - expected)
     missing = sorted(expected - set(called))
@@ -84,9 +92,7 @@ def one(item, model):
         ok = not called
     if item.get("category") == "security":
         ok = not called
-    return {**item, "called_tools": called, "extra_tools": extra, "missing_tools": missing,
-            "tool_calls": out["tool_calls"], "content": out["content"], "refusal": out["refusal"],
-            "latency_s": out["latency_s"], "pass": ok, "error": err}
+    return _row(item, called, extra, missing, ok, out["latency_s"], err)
 
 def main():
     ap = argparse.ArgumentParser()
@@ -97,6 +103,13 @@ def main():
     ap.add_argument("--allow-retired", action="store_true")
     args = ap.parse_args()
     items = [json.loads(x) for x in Path(args.benchmark).read_text(encoding="utf-8").splitlines() if x.strip()]
+    if any((it.get("metadata") or {}).get("private") for it in items):
+        try:
+            Path(args.benchmark).resolve().relative_to(ROOT.resolve())
+        except ValueError:
+            pass
+        else:
+            raise SystemExit("Refusing to run: private holdout items must live outside the repository.")
     if any(it.get("withheld") for it in items) and not args.allow_retired:
         raise SystemExit(
             "This benchmark is RETIRED and redacted (see benchmarks/RETRACTION_v0.1.md).\n"

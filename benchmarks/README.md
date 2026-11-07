@@ -40,3 +40,5 @@ Ovi brojevi su tacni za javni skup; **nisu** holdout rezultat i ne smiju se tako
 - Overlap sa v0.1: token Jaccard na tekst zadatka, max 0.0 (prag 0.5).
 - Overlap sa LUMI devsetovima v24/v25/v26: **nije provjeren** (LUMI u maintenance-u); mora se provjeriti prije prvog objavljivanja rezultata.
 - Rezultat se objavljuje uz verziju skupa, toleranciju i pixel budzet gdje je primjenjivo.
+
+- `scripts/run_agentic_eval.py` upisuje **samo agregate** (ID, kategorija, alati, prolaz, latencija); tekst zadatka se nikad ne kopira u rezultat.
