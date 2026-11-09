@@ -51,5 +51,31 @@
     "recall": 1.0,
     "false_positive_rate_max": 0.01
   },
-  "pass": true
+  "pass": true,
+  "independent_seeds": {
+    "43": {
+      "dirty": 357,
+      "clean": 143,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "pass": true
+    },
+    "44": {
+      "dirty": 371,
+      "clean": 129,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "pass": true
+    }
+  },
+  "combined": {
+    "dirty": 1109,
+    "clean": 391,
+    "false_positives": 0,
+    "false_positive_ci95": [
+      0.0,
+      0.0097
+    ],
+    "within_threshold": true
+  }
 }
