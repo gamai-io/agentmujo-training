@@ -32,12 +32,13 @@ rocm-smi 2>/dev/null | head -20 || true
 srun -n1 --gres=gpu:mi250:4 --cpus-per-task=32 singularity exec -B /scratch:/scratch "$SIF" \
   python -m vllm.entrypoints.openai.api_server \
     --model "$MODEL" --host 127.0.0.1 --port "$PORT" \
+    --tokenizer-mode ${TOKENIZER_MODE:-auto} \
     --tensor-parallel-size 4 --max-model-len 8192 \
     --max-num-seqs 256 --enable-prefix-caching \
     > "$OUT/vllm_$SLURM_JOB_ID.log" 2>&1 &
 VLLM_PID=$!
 
-for i in $(seq 1 150); do
+for i in $(seq 1 ${READY_TRIES:-150}); do
   curl -sf "http://127.0.0.1:$PORT/v1/models" >/dev/null && break
   sleep 2
 done
