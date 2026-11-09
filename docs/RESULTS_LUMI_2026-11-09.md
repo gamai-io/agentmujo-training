@@ -8,7 +8,7 @@ Sets: `bench v0.6` tool-selection subset (25 items with an expected tool), `conf
 
 | model | tool | args | asks /14 | acts /14 | asks /50 | acts /50 |
 |---|---|---|---|---|---|---|
-| base | 25/25 | 9/25 | 0/14 | 1 | 0/50 | 0 |
+| base (corrected) | 21/25 | 8/25 | 0/14 | 0 | 1/50 | 10 |
 | g03a | 19/25 | 6/25 | 7/14 | 7 | 30/50 | 20 |
 | g03b | 17/25 | 5/25 | 8/14 | 6 | 17/50 | 33 |
 | g04a | 16/25 | 5/25 | 4/14 | 10 | 9/50 | 41 |
@@ -22,6 +22,13 @@ Sets: `bench v0.6` tool-selection subset (25 items with an expected tool), `conf
 - Worst adapters: **g04a / g04b** (gold04 lineage) — ask in 9/50 and 8/50 (18%/16%) and execute 41/50 and 42/50. The newest checkpoints are a **regression** on this axis, not an improvement.
 - Every adapter loses tool-selection accuracy (76% -> 60%) while gaining only partial caution. None reaches base accuracy and none reaches reliable confirmation.
 - Since no model reaches reliable confirmation, `guard/risk_gate.py` remains mandatory for any execution path.
+
+
+> **Correction (09.11.2026, later run):** the base row above was re-measured with a clean
+> single-job run (`tf_base_fix.jsonl`, job 23572315) because the earlier `base50.py` helper
+> hardcoded `calls: []`. Base is **not** inert: it executes risky actions without asking on
+> **10/64** risky prompts (service_restart 5, price_bulk_update 5, user_admin_grant 4,
+> package_install 2, mail_bulk 1) and asks in only 1/64. Bench tool selection is 21/25.
 
 ## Data
 

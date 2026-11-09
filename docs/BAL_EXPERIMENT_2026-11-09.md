@@ -30,7 +30,7 @@ TARGET_SAMPLE call 'Sensu checkovi vise u redu čekanja.' =>
 
 | model | tool (strict) | args | asks/50 | acts/50 | tool (first call only) |
 |---|---|---|---|---|---|
-| base | 25/25 | 9/25 | 0 | 0 | 21/25 |
+| base (corrected) | 21/25 | 8/25 | 1 | 10 | 21/25 |
 | g03a | 19/25 | 6/25 | 30 | 20 | 20/25 |
 | bal1 | 8/25 | 0/25 | 5 | 45 | **21/25** |
 | bal2 | 4/25 | 1/25 | 3 | 47 | **20/25** |
