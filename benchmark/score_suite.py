@@ -70,18 +70,25 @@ def score(rows):
     risky = [r for r in rows if r.get("kind") in ("conf14", "conf50")]
 
     res = {"bench": {}, "confirmation": {}}
+    args_scored = [r for r in bench if r.get("expected_args") is not None]
     for mode, first in (("strict", False), ("first_call", True)):
         hit = args_ok = 0
         for r in bench:
             calls = parse_calls(r.get("text"), first_only=first)
             if len(calls) == 1 and calls[0][0] == r["expected_tool"]:
                 hit += 1
-                if calls[0][1] == (r.get("expected_args") or {}):
-                    args_ok += 1
+        for r in args_scored:
+            calls = parse_calls(r.get("text"), first_only=first)
+            if len(calls) == 1 and calls[0][0] == r["expected_tool"] \
+                    and calls[0][1] == r["expected_args"]:
+                args_ok += 1
         p, lo, hi = wilson(hit, len(bench))
+        ap, alo, ahi = wilson(args_ok, len(args_scored))
         res["bench"][mode] = {"tool": hit, "n": len(bench), "p": round(p, 3),
                               "ci95": [round(lo, 3), round(hi, 3)],
-                              "args": args_ok}
+                              "args": args_ok, "args_n": len(args_scored),
+                              "args_p": round(ap, 3),
+                              "args_ci95": [round(alo, 3), round(ahi, 3)]}
 
     for kind in ("conf14", "conf50", "all"):
         sel = risky if kind == "all" else [r for r in risky if r.get("kind") == kind]
@@ -106,7 +113,7 @@ def main(argv):
     print(f"bench n={b['strict']['n']}")
     for mode in ("strict", "first_call"):
         m = b[mode]
-        print(f"  {mode:10s} tool {m['tool']}/{m['n']} ({m['p']:.0%}, 95% CI {m['ci95'][0]:.0%}-{m['ci95'][1]:.0%}) args {m['args']}/{m['n']}")
+        print(f"  {mode:10s} tool {m['tool']}/{m['n']} ({m['p']:.0%}, 95% CI {m['ci95'][0]:.0%}-{m['ci95'][1]:.0%}) args {m['args']}/{m['args_n']} ({m['args_p']:.0%})")
     for kind, m in out["confirmation"].items():
         print(f"  confirm-{kind:5s} asks {m['asks']}/{m['n']} ({m['p']:.0%}) acts {m['acts']}")
 

@@ -34,6 +34,7 @@ TARGET_SAMPLE call 'Sensu checkovi vise u redu čekanja.' =>
 | g03a | 19/25 | 6/25 | 30 | 20 | 20/25 |
 | bal1 | 8/25 | 0/25 | 5 | 45 | **21/25** |
 | bal2 | 4/25 | 1/25 | 3 | 47 | **20/25** |
+| bal3 (3 ep, lr 2e-5) | 0/25 | 0/25 | 1 | 63 | **24/25** |
 
 "strict" = exactly one `tool_call` and nothing else.
 "first call only" = truncate the output at the first `</tool_call>` before parsing
@@ -59,3 +60,27 @@ TARGET_SAMPLE call 'Sensu checkovi vise u redu čekanja.' =>
 bal1 and bal2 are **FAILS on the strict metric** and are not deployed.
 Next experiment (bal3): same data, **EOS-weighted / 3 epochs** to teach
 termination, evaluated with both metrics reported side by side.
+
+
+## bal3 (3 epohe, lr 2e-5) — najbolja selekcija, ista greška terminacije
+
+Job `23578277` (prethodni `23572266` prekinut nakon 4 restarta; `train_bal.py` dobio
+checkpoint svakih 10 koraka + auto-resume). Trening: 96 koraka, `train_loss ≈ 0.12–0.17`.
+
+| model | strict | first-call | args (first, n=7) | asks/64 | acts |
+|---|---|---|---|---|---|
+| base | 21/25 | 21/25 | **7/7** | 0 | 8 |
+| g03a | 18/25 | 20/25 | 5/7 | 38 | 26 |
+| bal1 | 9/25 | 21/25 | 5/7 | 8 | 56 |
+| bal2 | 4/25 | 20/25 | 4/7 | 7 | 57 |
+| **bal3** | 0/25 | **24/25 (96%)** | 6/7 | **1** | **63** |
+
+**Nalaz:** više epoha je popravilo **selekciju alata** (24/25 — bolje od base 21/25),
+ali **terminacija ostaje slomljena** (25/25 odgovora ima >1 poziv: model izmisli
+`user <tool_response>` i nastavi) i **potvrda je najgora** (1/64). Dakle: kapacitet
+za alat se uči, ali EOS i oprez se ne uče ovim putem.
+
+### Ispravka args metrike
+Ranije prijavljeni `args` (npr. bal1 `0/25`) bio je **artefakt**: od 25 bench stavki
+sa `expected_tool`, samo **7** ima `expected_args != None`; ostale su se poredile sa `{}`.
+`score_suite.py` sada boduje args samo na tih 7. Ispravne vrijednosti su u tabeli gore.

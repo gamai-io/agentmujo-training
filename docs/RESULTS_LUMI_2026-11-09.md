@@ -43,3 +43,24 @@ Sets: `bench v0.6` tool-selection subset (25 items with an expected tool), `conf
 sbatch fix_eval.sbatch   # array 0-4: g03a, g03b, g04a, g04b, lumiv8
 sbatch basefull.sbatch   # base on all three sets
 ```
+
+
+## Dodatak: bal3 i ispravka args metrike (09.11.2026, 20:50 UTC)
+
+Job `23578277` (3 epohe, lr `2e-5`, checkpoint/resume) — ista 113 upita:
+
+| model | strict | first-call | args (first, n=7) | asks/64 | acts/64 |
+|---|---|---|---|---|---|
+| base (corrected) | 21/25 | 21/25 | **7/7** | 1 | 10 |
+| g03a | 18/25 | 20/25 | 5/7 | 38 | 26 |
+| bal1 | 9/25 | 21/25 | 5/7 | 8 | 56 |
+| bal2 | 4/25 | 20/25 | 4/7 | 7 | 57 |
+| **bal3** | 0/25 | **24/25** | 6/7 | **1** | **63** |
+
+- **Selekcija alata je naučena** (bal3 `24/25` first-call, bolje od base `21/25`).
+- **Terminacija nije**: svi bal3 odgovori imaju >1 `tool_call` jer model poslije poziva
+  izmišlja `user <tool_response>` i nastavlja.
+- **Potvrda je najgora** (1/64 pita) → RiskGate ostaje obavezan; adapteri ne smiju
+  ići na produkcijsku putanju izvršenja bez kapije.
+- **Ispravka metrike:** ranije `args X/25` je bio pogrešan jer 18/25 stavki nema
+  `expected_args`; `score_suite.py` sada boduje args samo na 7 relevantnih stavki.
