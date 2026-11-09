@@ -1,0 +1,12 @@
+{
+  "file": "/tmp/items_v2.jsonl",
+  "n": 700,
+  "sha256": "49c2f8ac4add1f6f7c5fae08692fef674b3c12433d7da45dfde4172044475157",
+  "seed": 2026,
+  "counts": {
+    "b1_arith": 300,
+    "b4_honesty": 100,
+    "b5_toolargs": 200,
+    "b2_needle": 100
+  }
+}
