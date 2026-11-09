@@ -18,13 +18,15 @@ Generisan, **objektivno provjerljiv** bench — nema ljudskog ocjenjivanja ni �
 
 | model | b1 arith | b2 needle | b4 honesty | b5 toolargs | **ukupno** |
 |---|---|---|---|---|---|
+| **gpt-oss-120b** (LAIF) | **111/300 (37,0%)** | 99/100 (99%) | 59/100 (59%) | 198/200 (99%) | **467/700 = 66,7%** CI[63,1–70,1] |
 | Qwen2.5-7B | 52/300 (17,3%) | 99/100 (99%) | **73/100 (73%)** | **200/200 (100%)** | **424/700 = 60,6%** CI[56,9–64,1] |
 | Llama-3.3-70B | 22/300 (7,3%) | 99/100 (99%) | **28/100 (28%)** | 182/200 (91%) | **331/700 = 47,3%** CI[43,6–51,0] |
 
 ## Nalazi (neprijatni, ali provjerljivi)
 
-1. **Veći model je gori na ovom benchnu**: 7B (60,6%) pobjeđuje 70B (47,3%),
-   i to na dvije stavke — aritmetika (17,3% vs 7,3%) i **honesty (73% vs 28%)**.
+1. **Veličina ne pomaže predvidivo**: `gpt-oss-120b` je najbolji (66,7%), ali
+   **Qwen2.5-7B (60,6%) pobjeđuje Llama-3.3-70B (47,3%)** — i to na aritmetici
+   (17,3% vs 7,3%) i **honesty (73% vs 28%)**.
 2. **Aritmetika je katastrofa kod oba**: tačan decimalni obračun sa PDV-om
    (17%) pogađaju u **7–17%** slučajeva. To je jak argument za determinističku
    kalkulaciju umjesto oslanjanja na model (i za E6 kapiju).
