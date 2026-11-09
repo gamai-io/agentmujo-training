@@ -1,0 +1,43 @@
+{
+  "measured": "2026-11-09 (sacct -A project_465003647 -S 2026-11-09T00:00 -E now -X)",
+  "day_total": {
+    "gpu_hours": 18.47,
+    "node_hours": 2.31,
+    "percent_of_5000_gpu_h": 0.37
+  },
+  "by_job_gpu_h": {
+    "gama_bench_guard": 4.11,
+    "laif_smoke": 2.90,
+    "amj_eval2": 2.60,
+    "amj-train": 2.58,
+    "amj_eval_multi": 1.76,
+    "amj_bal1ev": 1.18,
+    "amj_bal2ev": 0.91,
+    "amj_bal3ev": 0.89,
+    "mandate-idb-model": 0.65,
+    "amj_basefix": 0.38,
+    "amj_basefull": 0.16,
+    "amj_base50": 0.15,
+    "amj-probe": 0.11,
+    "amj_bal1": 0.05,
+    "adp_probe2": 0.04
+  },
+  "unit_costs_measured": {
+    "e1_cell_7b_5k_conc256": "0.02-0.05 node-h (43.8 s wall + ~2 min vLLM load, 4 GCD)",
+    "e1_cell_70b_5k_conc256": "0.15-0.25 node-h (174 s wall + ~6 min load, 4 GCD)",
+    "eval_113_prompts_9b": "~0.10 node-h (~30 min on 1 GCD)",
+    "train_9b_1_epoch_500_samples": "~0.12 node-h (~17 min on 1 GCD)",
+    "e6_generation_cpu": "0.00 GPU-h (CPU partition 'small', 2 s)"
+  },
+  "remaining_plan_estimate_node_h": {
+    "E2_reproducibility_2_runs": 0.10,
+    "E3_adaptive_injection_400": 0.10,
+    "E4_rocm_tp2_tp4_dp2tp4": 0.20,
+    "E5_10k_async_calibrated": 0.30,
+    "E7_independent_reproduction": 0.10,
+    "bal4_training_and_eval": 0.20,
+    "total": 1.00
+  },
+  "conclusion": "Cijeli precostali plan je ~1 node-h (~8 GPU-h). Kvota od 5.000 GPU-h nije ogranicenje; ogranicenja su vrijeme i kvalitet dokaza. Ono sto stvarno trosi: ponovljeni treninzi 9B na >5k uzoraka, 70B na N=100k, i ostavljanje jobova da idle-uju.",
+  "guard_rule": "Nakon svakog bloka: sacct za taj dan; ako dnevna potrosnja > 100 GPU-h (2% kvote) -> stop i revizija prije daljeg rada."
+}
