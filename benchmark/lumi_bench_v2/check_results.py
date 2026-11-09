@@ -63,6 +63,11 @@ def main():
     checked = [r for r in ok if r["false_success"] is not None]
     bad_status = [r for r in rows if r["ok"] and int(r["status"]) != 200]
 
+    BYTEY = ("\u0120", "\u010a", "\u00d1", "\u0125")
+    bytey = [r for r in ok if any(ch in (r.get("text") or "") for ch in BYTEY)]
+    bytey_rate = (len(bytey) / len(ok)) if ok else 0.0
+    tokenizer_bad = bytey_rate > 0.01
+
     lat = [r["ms"] for r in ok]
     tt = [r["ttft_ms"] for r in ok if r.get("ttft_ms") is not None]
 
@@ -89,6 +94,8 @@ def main():
         fails.append("ok but status!=200: %d" % len(bad_status))
     if a.expect_n and len(rows) != a.expect_n:
         fails.append("count %d != expect %d" % (len(rows), a.expect_n))
+    if tokenizer_bad:
+        fails.append("tokenizer_corruption: %d/%d (%.1f%%)" % (len(bytey), len(ok), 100 * bytey_rate))
     if fs:
         fails.append("false_success: %d" % len(fs))
 
@@ -99,7 +106,9 @@ def main():
         "ms_p50": pct(lat, 50), "ms_p95": pct(lat, 95), "ms_p99": pct(lat, 99),
         "ttft_p50": pct(tt, 50), "ttft_p95": pct(tt, 95), "ttft_p99": pct(tt, 99),
         "duplicates": len(dup), "schema_bad": len(bad), "empty_ok": len(empty_ok),
-        "fails": fails, "verdict": "PASS" if not fails else "FAIL",
+        "bytey": len(bytey), "bytey_rate": round(bytey_rate, 4),
+        "fails": fails,
+        "verdict": "INVALID" if tokenizer_bad else ("PASS" if not fails else "FAIL"),
     }
     print(json.dumps(summary, indent=2, ensure_ascii=False))
 
