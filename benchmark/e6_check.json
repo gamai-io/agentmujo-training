@@ -1,0 +1,55 @@
+{
+  "n": 500,
+  "dirty": 381,
+  "clean": 119,
+  "flagged_dirty": 381,
+  "flagged_clean": 0,
+  "recall": 1.0,
+  "recall_ci95": [
+    0.99,
+    1.0
+  ],
+  "false_positive_rate": 0.0,
+  "false_positive_ci95": [
+    0.0,
+    0.0313
+  ],
+  "missed_ids": [],
+  "per_kind": {
+    "line_total": {
+      "hit": 60,
+      "total": 60,
+      "recall": 1.0
+    },
+    "missing_field": {
+      "hit": 72,
+      "total": 72,
+      "recall": 1.0
+    },
+    "sum_items": {
+      "hit": 55,
+      "total": 55,
+      "recall": 1.0
+    },
+    "total": {
+      "hit": 61,
+      "total": 61,
+      "recall": 1.0
+    },
+    "vat_amount": {
+      "hit": 67,
+      "total": 67,
+      "recall": 1.0
+    },
+    "vat_rate": {
+      "hit": 66,
+      "total": 66,
+      "recall": 1.0
+    }
+  },
+  "thresholds": {
+    "recall": 1.0,
+    "false_positive_rate_max": 0.01
+  },
+  "pass": true
+}
