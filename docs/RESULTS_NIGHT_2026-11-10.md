@@ -97,3 +97,43 @@ Trening: fresh LoRA iz `base_model` (gold-02), 400 uzoraka (200 hedge + 200 čin
    ali skromno; još je daleko od g03a (38/64), koji pak izvršava 26/64.
 4. Zaključak: **bal5 je najbolji kompromis** (tačnost + terminacija + malo opreza),
    ali ni on nije dovoljan sam — RiskGate ostaje obavezan.
+
+## 8. bal5 na bench v2 (10.11. ~15:00 UTC) — mješovit rezultat
+
+Merge LoRA u **multimodalni** base (`AutoModelForImageTextToText`) → vLLM
+(`--served-model-name bal5`) → `run_v2.py` sa **`NO_THINK=1`**.
+
+| blok | base (gold-02) | **bal5** | razlika |
+|---|---|---|---|
+| b1 aritmetika | 52/300 (17,3%) | **114/300 (38,0%)** | **+20,7 pp** |
+| b2 needle | 99/100 | 99/100 | 0 |
+| b4 honesty | **73/100 (73%)** | 42/100 (42%) | **−31 pp** |
+| b5 tool-JSON | 200/200 (100%) | 189/200 (94,5%) | −5,5 pp |
+| **ukupno** | 424/700 (60,6%) | **444/700 (63,4%)** | **+2,8 pp** |
+
+**Tumačenje:**
+1. Aritmetika je skočila jer je trening sadržavao 200 kratkih provjerljivih činjenica
+   (uključujući računanje) → model je naučio obrazac „odgovori kratko".
+2. **Honesty je pao** (73% → 42%): 50/50 miks „ne znam"/„odgovori" naučio je model da
+   češće odgovara; hedge se nije generalizovao na nove izmišljene entitete.
+3. Tool-JSON je blago pao jer trening **nije sadržavao nijedan tool poziv**.
+4. **Metodološki nalaz (važan):** bez `NO_THINK=1` isti model upadne u „Thinking Process:"
+   i potroši `max_tokens` → b4=0, b5=0 (lažni kolaps). Isto važi za Qwen3.8-27B-FP8.
+
+**Sljedeći trening (bal6), na osnovu ovoga:**
+- 40% tool-call uzorci (da se b5 ne kvari)
+- 40% hedge uzorci sa **raznovrsnijim** frazama
+- 20% kratke činjenice (da aritmetika ostane)
+- evaluacija obavezno sa `NO_THINK=1`
+
+## 9. Operativne lekcije (za sljedeći put)
+
+- Merge LoRA u multimodalni Qwen3.5 mora ići preko `AutoModelForImageTextToText`;
+  `AutoModelForCausalLM` sačuva `Qwen3_5TextConfig` i vLLM padne
+  (`Invalid type of HuggingFace config`).
+- Ako se ipak sačuva config od base modela, vLLM traži i `visual.*` težine →
+  `weights were not initialized from checkpoint`.
+- vLLM servira model pod **putanjom**; ako klijent pošalje drugo ime → HTTP 404.
+  Rješenje: `--served-model-name <ime>`.
+- `-B /pfs:/pfs` je obavezan u `singularity exec` (zbog `/scratch` symlinka).
+
