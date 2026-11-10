@@ -1,0 +1,61 @@
+{
+  "e2": "determinism_serial_2026-11-10",
+  "note": "Two back-to-back serial passes over the same 700 bench-v2 items; identical = text AND ok match. Full per-item diffs stay on LUMI (paths below).",
+  "job_tp4": 23618435,
+  "job_tp1": 23618870,
+  "artifacts_lumi": {
+    "tp4": "/project/project_465003647/gama/out/e2_determinism.json",
+    "tp1": "/project/project_465003647/gama/out/e2_determinism_tp1.json",
+    "raw_tp4": [
+      "out/v2_e2det_a_23618435.jsonl",
+      "out/v2_e2det_b_23618435.jsonl"
+    ],
+    "raw_tp1": [
+      "out/v2_e2det_a_23618870.jsonl",
+      "out/v2_e2det_b_23618870.jsonl"
+    ]
+  },
+  "runs": [
+    {
+      "tp": 4,
+      "max_num_seqs": 1,
+      "concurrency": 1,
+      "n": 700,
+      "identical": 660,
+      "differing": 40,
+      "identical_rate": 0.9429,
+      "ok_a": 424,
+      "ok_b": 424,
+      "sha256_texts_a": "57d9551a0fb9cb2a49c9711643565aadbfda30d0258f6c1da716173894c0fea6",
+      "sha256_texts_b": "aac6ac59eabc9cc4d41c943b02a4fe7a5cd0715c08a2fc2df5c040cd7a94d9f1",
+      "blocks": {
+        "b1_arith": {"n": 300, "identical": 267, "ok_a": 51, "ok_b": 52},
+        "b2_needle": {"n": 100, "identical": 100, "ok_a": 99, "ok_b": 99},
+        "b4_honesty": {"n": 100, "identical": 93, "ok_a": 74, "ok_b": 73},
+        "b5_toolargs": {"n": 200, "identical": 200, "ok_a": 200, "ok_b": 200}
+      },
+      "verdict": "NOT_BIT_IDENTICAL"
+    },
+    {
+      "tp": 1,
+      "max_num_seqs": 1,
+      "concurrency": 1,
+      "n": 700,
+      "identical": 669,
+      "differing": 31,
+      "identical_rate": 0.9557,
+      "ok_a": 436,
+      "ok_b": 436,
+      "sha256_texts_a": "51032f2839217894d5216feeae3ba8e03b83553f16a73a99b8a0f32d6406b071",
+      "sha256_texts_b": "558f85e3720614823854bfc55d3bd0730355f2307bc3edac54a7096a043cba54",
+      "blocks": {
+        "b1_arith": {"n": 300, "identical": 274, "ok_a": 52, "ok_b": 51},
+        "b2_needle": {"n": 100, "identical": 100, "ok_a": 99, "ok_b": 99},
+        "b4_honesty": {"n": 100, "identical": 95, "ok_a": 85, "ok_b": 85},
+        "b5_toolargs": {"n": 200, "identical": 200, "ok_a": 200, "ok_b": 200}
+      },
+      "verdict": "NOT_BIT_IDENTICAL"
+    }
+  ],
+  "conclusion": "vLLM on ROCm/MI250X is not bit-deterministic even with max-num-seqs=1 and concurrency 1. Short constrained outputs (needle, tool-JSON) are 100% identical; long free-form answers and arithmetic differ (b1 267-274/300, b4 93-95/100). TP=1 removes all-reduce but only reduces diffs 40->31, so tensor-parallel reduction is a contributor, not the sole cause."
+}

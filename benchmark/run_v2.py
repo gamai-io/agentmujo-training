@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import math
 import re
 import sys
@@ -114,11 +115,15 @@ def score_item(item, text):
 
 
 def call(url, model, prompt, max_tokens, timeout, retries=2):
-    body = json.dumps({
+    payload = {
         "model": model,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.0, "seed": 42, "max_tokens": max_tokens, "stream": False,
-    }).encode()
+    }
+    if os.environ.get("NO_THINK", "").strip().lower() in ("1", "true", "yes", "on"):
+        # Qwen3.x thinking models: bez ovoga CoT pojede ceo max_tokens i nema odgovora.
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
+    body = json.dumps(payload).encode()
     last = ""
     for a in range(retries + 1):
         try:

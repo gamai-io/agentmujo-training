@@ -40,6 +40,11 @@ Dva identična runa (isti model, isti 700 zadataka, temp 0, isti seed):
 - Ovo je važan nalaz: „ista postavka" ne garantuje iste izlaze; tzv. byte-identical
   reproducibilnost traži kontrolu batchinga.
 
+> **Ispravka (10.11.2026, poslije ovog izvještaja):** serijsko izvršavanje **ne rješava**
+> stvar. Sa `--max-num-seqs 1` i klijentom `--conc 1`, dva uzastopna prolaza dala su
+> 660/700 identičnih (TP=4) i 669/700 (TP=1). Kratki izlazi (needle, tool-JSON) su 100%
+> identični, aritmetika i slobodni tekst nisu. Detalji: `docs/RESULTS_E2_2026-11-10.md`.
+
 ## 3. E4 — prenosivost TP1 / TP2 / TP4
 
 | TP | ukupno | b4 |

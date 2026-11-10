@@ -71,9 +71,13 @@ We report three failures explicitly, because they shaped the conclusion.
    were byte-level garbage (`Ġ`, `Ñ`). The run is now reported as `INVALID`. Two further
    serving configurations failed differently (Pixtral processor crash; degenerate
    repetition), so the model is excluded entirely.
-3. **Two identical runs are not bit-identical.** At `temperature=0` with continuous
-   batching, b1/b2/b5 match exactly but the honesty block differs in 2/100 items
-   (79 vs 81). Claims of "byte-identical" generation would be false.
+3. **Two identical runs are not bit-identical — and serial decoding does not fix it.**
+   At `temperature=0` with continuous batching, b1/b2/b5 match exactly but the honesty
+   block differs in 2/100 items (79 vs 81). Forcing strictly serial decoding
+   (`--max-num-seqs 1`, client concurrency 1) leaves 40/700 (TP=4) and 31/700 (TP=1)
+   outputs different; short constrained outputs (needle, tool-JSON) are 100% identical,
+   arithmetic and free-form text are not. Claims of "byte-identical" generation would be
+   false.
 
 ## 4. Results
 
@@ -162,7 +166,8 @@ separate deterministic component should decide execution and verify outcomes. Mo
 
 - Deterministic artifacts regenerate bit-identically (`e7_reproduce.py`): dataset SHA-256
   `49c2f8ac…`, E6 gate `recall 1.0 / FP 0.0`, E3 guard counts `0.9015 / 0.025`.
-- Model outputs are **not** claimed to be bit-identical; `e2` documents a 2% divergence.
+- Model outputs are **not** claimed to be bit-identical; `e2` documents 40/700 (TP=4) and
+  31/700 (TP=1) differing outputs even under strictly serial decoding.
 - Artifacts: `benchmark/{gen_v2,run_v2,score_suite,e3_injection,e3_guard_v2,e6_gate,
   riskgate_validate,holdout_overlap,e7_reproduce}.py`, `docs/RESULTS_*.md`,
   `docs/SUMMARY_v1.5_2026-11-10.md`; raw runs in LUMI-O `gama-artifacts/`.

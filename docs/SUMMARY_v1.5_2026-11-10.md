@@ -20,16 +20,24 @@ Ukupno **36.550 zahtjeva, 0 grešaka, 0 lažnih uspjeha**. Dokaz: `guard_*_*.sum
 Poznata ispravka: prvobitni „1/10.000" bio je lažni pozitiv mjerila (`2026` iz `VP2026`
 kao broj kupaca) — popravljeno, sada 0/10.000.
 
-## 2. E2 — reproducibilnost: **nije bit-identična**
+## 2. E2 — reproducibilnost: **nije bit-identična ni serijski**
 
-| run | b1 | b2 | b4 | b5 | ukupno |
-|---|---|---|---|---|---|
-| e2a | 52/300 | 99/100 | **79/100** | 200/200 | 61,4% |
-| e2b | 52/300 | 99/100 | **81/100** | 200/200 | 61,7% |
+Prvo mjerenje (conc 64, 2 prolaza): `b1/b2/b5` identični, `b4` 79 vs 81 → 61,4% vs 61,7%.
 
-`b1`, `b2`, `b5` identični; `b4` se razlikuje u 2/100. vLLM sa kontinuiranim batchingom
-nije bit-determinističan ni na `temperature=0`. Za „byte-identical" tvrdnju treba
-`--max-num-seqs 1` ili fiksiran batch.
+Zatim strogi test: `--max-num-seqs 1` + klijent `--conc 1`, dva uzastopna prolaza
+(700 zadataka), poslovi `23618435` (TP=4) i `23618870` (TP=1):
+
+| TP | identičnih / 700 | stopa | b1 | b2 | b4 | b5 |
+|---|---|---|---|---|---|---|
+| 4 | 660 | 94,29% | 267/300 | 100/100 | 93/100 | 200/200 |
+| 1 | 669 | 95,57% | 274/300 | 100/100 | 95/100 | 200/200 |
+
+**Nalaz:** serijsko dekodiranje **ne** daje bit-identičan izlaz. Kratki ograničeni
+izlazi (needle, tool-JSON) jesu 100% identični; aritmetika i slobodni tekst nisu.
+TP=1 uklanja all-reduce a razlika padne samo 40 → 31, dakle krivci su i
+nedeterminističke kernel redukcije/atomics na ROCm-u, ne samo tensor-paralelizam.
+Dokaz: `docs/RESULTS_E2_2026-11-10.md`, `benchmark/e2_determinism_2026-11-10.json`,
+LUMI `out/e2_determinism{,_tp1}.json`.
 
 ## 3. E3 — adaptivni injection (203 napada + 200 kontrola)
 
@@ -121,7 +129,8 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
 - bench v2 dataset (seed 2026): sha256 **identičan** `49c2f8ac…`
 - E6 kapija: recall `1.0`, FP `0.0` — identično
 - E3 guard V2 (seed 2027): detekcija `0.9015`, FP `0.025` — identično
-- Model-generisani izlazi **svjesno izuzeti** (E2: vLLM nije bit-determinističan na temp 0)
+- Model-generisani izlazi **svjesno izuzeti** (E2: vLLM nije bit-determinističan na temp 0,
+  ni serijski — vidi §2)
 
 ## 10. Trošak
 
@@ -131,7 +140,7 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
 
 ## 11. Otvoreno / sljedeće
 
-1. bal6 (800 uzoraka, holdout-čist) — trening u toku; cilj: honesty bez gubitka tool-JSON.
-2. E7 — nezavisna reprodukcija iz čistog okruženja (1 paket, byte-identical manifest).
-3. Release v1.5 (Zenodo) — **čeka izričitu naredbu** (javna objava).
-4. Mistral tokenizer fix (`--limit-mm-per-prompt` ili tokenizer sa `fix_mistral_regex`).
+1. Release v1.5 (Zenodo) — **čeka izričitu naredbu** (javna objava).
+2. Mistral tokenizer fix (`--limit-mm-per-prompt` ili tokenizer sa `fix_mistral_regex`).
+3. Bit-determinizam: dokazano da ga nema ni serijski (E2). Ako zatreba, tražiti
+   `VLLM_USE_V1=0` / batch-invariant kernels — nije na kritičnom putu.
