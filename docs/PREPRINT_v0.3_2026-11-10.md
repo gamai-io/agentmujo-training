@@ -23,7 +23,12 @@ specific facts about non-existent entities, and supervised fine-tuning made it *
 33.0% of paraphrased attacks while blocking 35.0% of legitimate questions, and an improved
 intent guard reached 90.1% / 2.5% in-sample and 85.7% / 3.5% out-of-sample, still short of
 the 95% target; (iii) an **action-level** deterministic gate blocked **119/119** destructive
-calls without a single false block on 108 read-only calls. A template-level re-analysis shows
+calls without a single false block on 108 read-only calls, while an adversarial stress test
+shows the same gate implemented as an exact tool-name list would pass only **52.6%** of
+1,000 destructive variants. On 500 real but obscure entities the models fabricated
+71–95% of answers when the prompt demanded a number, and 13–22% when refusal was explicitly
+allowed; Qwen2.5-7B hedged 73–81% on fictional entities but 0/1000 on real obscure ones.
+A template-level re-analysis shows
 the 700 items come from only **24 prompt templates** (design effect 4.7–21.9, effective N
 32–149), and that accuracy is decided by the template rather than the item: two of three
 arithmetic templates score 0/114 and 0/79. We conclude that truthfulness in
@@ -167,6 +172,28 @@ holdout-clean. Reproduce the outcome: tool accuracy became the best of all adapt
 Logistik is 33006020000"*, *"Novex Dynamics was founded on 1 January 2014"*. Supervised
 fine-tuning teaches the *style* of hedging, not the *detection* of the unknown.
 
+### 4.3b Real, obscure entities: the refusal trigger is "looks made-up"
+
+The honesty block above uses non-existent entities. To test the opposite case we built 500
+items about **real but obscure** entities from Wikidata (sitelinks ≤ 8 for settlements, ≤ 3
+for companies/people/films, ≤ 2 for asteroids), each with a reference value and QID.
+Scoring is CORRECT / HEDGE / FABRICATE against that reference.
+
+| model | forced answer: fabricate | hedge | correct | with permission: fabricate | hedge | correct |
+|---|---|---|---|---|---|---|
+| Qwen2.5-7B | **94.8%** | 0.0% | 5.2% | **21.6%** | 77.6% | 0.8% |
+| Mistral-7B-Instruct | **74.4%** | 7.2% | 18.4% | **17.0%** | 72.8% | 10.2% |
+| Phi-3.5-mini | **71.4%** | 25.8% | 2.8% | **13.0%** | 85.8% | 1.2% |
+
+Two findings matter. First, Qwen2.5-7B hedged 73–81% of questions about *fictional*
+entities but **0/1000** about real obscure ones: the trigger for refusal is whether the
+entity sounds invented, not whether the model knows it. Second, adding the sentence "if you
+do not know, answer exactly: I do not know" cuts fabrication 3.5–5×. The "answer with the
+number only" format is itself a risk factor, which is a prompt-design result, not a model
+property. Per-category results are heterogeneous (Mistral knows 60/100 asteroid discovery
+years; Phi-3.5 hedges 84/100 people but 2/100 settlements), so the aggregate hides the
+structure.
+
 ### 4.4 Deterministic verification (E6)
 
 500 invoices (381 with a planted error, 119 clean), three seeds: **recall 1,109/1,109 =
@@ -259,7 +286,9 @@ separate deterministic component should decide execution and verify outcomes. Mo
   run with independent annotators.
 - No human evaluation; all metrics are automatic and therefore narrow.
 - Honesty items concern fictional entities: this is a lower bound on "do not invent", not
-  evidence of factual accuracy on real data.
+  evidence of factual accuracy on real data. The real-entity set (§4.3b) uses Wikidata as
+  reference, which may itself contain errors, and only its control condition has a single
+  seed.
 - The action gate's allowlist is explicit; unknown tools currently default to `allow`,
   which should become fail-closed.
 - Mistral-family models are excluded (serving defects), so the model sample is not

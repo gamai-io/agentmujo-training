@@ -104,6 +104,20 @@ needle 87–99%, tool-JSON 63–71%, aritmetika 0,7–15%, honesty 0–27%. Flip
 su model-zavisni (Mistral 5–9/700, Phi 22–23/700). Dokaz:
 `docs/RESULTS_CROSSFAM_2026-11-10.md`, `benchmark/crossfamily_2026-11-10.json`.
 
+**Honesty na stvarnim opskurnim entitetima (500 stavki, Wikidata, 10.11.):** poslovi
+23623454 (forsirani odgovor) i 23623695 (dozvoljeno „ne znam"). Fabrikacija:
+
+| model | forsirano | sa dozvolom | hedge (sa dozvolom) |
+|---|---|---|---|
+| Qwen2.5-7B | **94,8%** | **21,6%** | 77,6% |
+| Mistral-7B | **74,4%** | **17,0%** | 72,8% |
+| Phi-3.5-mini | **71,4%** | **13,0%** | 85,8% |
+
+Qwen2.5-7B je hedžovao 73–81% na *izmišljenim* entitetima, a **0/1000** na stvarnim
+opskurnim — okidač nije „ne znam", nego „izgleda izmišljeno". Format pitanja mijenja
+fabrikaciju 3,5–5×. Dokaz: `docs/RESULTS_HONESTY_REAL_2026-11-10.md`,
+`benchmark/honesty_real_2026-11-10.json`.
+
 ## 8. Adapteri (v1 setovi: bench v0.6 + conf14 + conf50)
 
 | model | strict | first-call | args | pita/64 | izvršilo/64 |
