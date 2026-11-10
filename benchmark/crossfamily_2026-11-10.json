@@ -1,0 +1,35 @@
+{
+  "experiment": "cross_family_replication_2026-11-10",
+  "bench": "v2",
+  "items": 700,
+  "seeds": [42, 43, 44],
+  "jobs": {"phi35": 23621892, "mistral": 23622412},
+  "errors": {"phi35": 0, "mistral": 0},
+  "models": {
+    "mistral-7b-instruct-v0.3": {
+      "acc": {"42": 0.3843, "43": 0.3829, "44": 0.3857},
+      "item_flips_vs_seed42": {"43": 5, "44": 9},
+      "per_block_acc": {
+        "b1_arith": {"42": 0.0067, "43": 0.01, "44": 0.01},
+        "b2_needle": {"42": 0.99, "43": 0.99, "44": 0.99},
+        "b4_honesty": {"42": 0.27, "43": 0.25, "44": 0.27},
+        "b5_toolargs": {"42": 0.705, "43": 0.705, "44": 0.705}
+      }
+    },
+    "phi-3.5-mini-instruct": {
+      "acc": {"42": 0.3771, "43": 0.3586, "44": 0.36},
+      "item_flips_vs_seed42": {"43": 23, "44": 22},
+      "per_block_acc": {
+        "b1_arith": {"42": 0.15, "43": 0.1067, "44": 0.1267},
+        "b2_needle": {"42": 0.87, "43": 0.88, "44": 0.87},
+        "b4_honesty": {"42": 0.01, "43": 0.0, "44": 0.0},
+        "b5_toolargs": {"42": 0.655, "43": 0.655, "44": 0.635}
+      }
+    }
+  },
+  "notes": [
+    "Mistral requires NO_THINK=0; enable_thinking chat_template_kwargs gives HTTP 400.",
+    "Seed-to-seed flips are model-dependent: 0.7-1.3% (Mistral) vs 3.2-3.3% (Phi-3.5).",
+    "Raw JSONL files stay on LUMI (out/v2cf_*_<jobid>.jsonl)."
+  ]
+}

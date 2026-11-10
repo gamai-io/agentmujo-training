@@ -98,6 +98,12 @@ sva aritmetika dolazi iz `b1_vat` (52/107); bal6 skok na 38% je samo `b1_vat` 48
 Honesty je po tipu entiteta „sve ili ništa" (bal6: firma 0/13, kompanija 0/14, uređaj 0/18).
 Dokaz: `docs/RESULTS_STATS_2026-11-10.md`, `benchmark/cluster_stats_2026-11-10.json`.
 
+**Cross-family (10.11., poslovi 23621892/23622412):** Mistral-7B-Instruct-v0.3
+38,4/38,3/38,6% i Phi-3.5-mini 37,7/35,9/36,0% (3 seeda, 0 grešaka). Isti profil blokova:
+needle 87–99%, tool-JSON 63–71%, aritmetika 0,7–15%, honesty 0–27%. Flipovi između seedova
+su model-zavisni (Mistral 5–9/700, Phi 22–23/700). Dokaz:
+`docs/RESULTS_CROSSFAM_2026-11-10.md`, `benchmark/crossfamily_2026-11-10.json`.
+
 ## 8. Adapteri (v1 setovi: bench v0.6 + conf14 + conf50)
 
 | model | strict | first-call | args | pita/64 | izvršilo/64 |
