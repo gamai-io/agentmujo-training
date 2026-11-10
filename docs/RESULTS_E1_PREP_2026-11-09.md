@@ -81,6 +81,19 @@ Ne objavljivati. Mistral-3.2 se **isključuje iz E1** dok se ne riješi tokenize
 - **Account limit:** `sbatch` vraća `MaxSubmitJobsPerAccount` već pri 2 aktivna joba →
   runovi moraju **serijski** (jedan po jedan), ne paralelno.
 
+## Mistral: tri pokušaja, sva tri neupotrebljiva (10.11.2026)
+
+| # | postavke | rezultat |
+|---|---|---|
+| 1 | `--tokenizer-mode auto` | **byte-salad** (`Ġ`, `Ñ`, `Ċ`) u 100% izlaza |
+| 2 | `mistral` (bez MM) | `ValueError: Failed to apply PixtralProcessor on data={'text': '[IMG]'}` |
+| 3 | `mistral` + `--limit-mm-per-prompt '{"image":0,"video":0}'` (job `23608526`) | vLLM se digao (`VLLM_READY`), `bytey 0`, ali **degenerirano ponavljanje**: `"richtigelcome }. Feed homeostasis definite definitely definitely definitely..."`, `ok 0/700` |
+
+**Zaključak:** Mistral-Small-3.1/3.2 se ne može korektno servirati ovim putem
+(nedostaje `--config-format mistral` / native Mistral chat template za Tekken).
+**Isključen iz svih tabela**; nijedan njegov FSR se ne objavljuje. Za buduće pokušaje:
+konverzija preko `mistral_common` u Mistral-native format ili `--config-format mistral`.
+
 ### Nove environment varijable (`serve_and_bench_guard.sbatch`)
 - `TOKENIZER_MODE` (default `auto`) → `--tokenizer-mode`
 - `READY_TRIES` (default `150`, tj. 300 s) → za 70B treba `450` (900 s)
