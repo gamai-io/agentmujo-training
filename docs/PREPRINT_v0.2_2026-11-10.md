@@ -171,6 +171,8 @@ separate deterministic component should decide execution and verify outcomes. Mo
 - Artifacts: `benchmark/{gen_v2,run_v2,score_suite,e3_injection,e3_guard_v2,e6_gate,
   riskgate_validate,holdout_overlap,e7_reproduce}.py`, `docs/RESULTS_*.md`,
   `docs/SUMMARY_v1.5_2026-11-10.md`; raw runs in LUMI-O `gama-artifacts/`.
+- Archived evidence pack v1.5.0: DOI `10.5281/zenodo.24118913`
+  (bundle sha256 `344948a2…1897`).
 - Private holdout (60 items) stays private; leakage is checked against every dev set
   (`holdout_overlap.py`), and one leaked item found this way was removed.
 

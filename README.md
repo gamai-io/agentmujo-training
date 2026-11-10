@@ -5,6 +5,21 @@
 
 [![CI](https://github.com/gamai-io/agentmujo-training/actions/workflows/ci.yml/badge.svg)](https://github.com/gamai-io/agentmujo-training/actions)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24118913.svg)](https://doi.org/10.5281/zenodo.24118913)
+
+## Evidence release v1.5.0 (2026-11-10)
+
+Zenodo DOI **[10.5281/zenodo.24118913](https://doi.org/10.5281/zenodo.24118913)**
+(concept `10.5281/zenodo.24118912`) · GitHub release
+[v1.5.0](https://github.com/gamai-io/agentmujo-training/releases/tag/v1.5.0).
+
+Contents: 700-item verifiable benchmark (dataset `sha256 49c2f8ac…`, regenerates
+bit-identically), scale runs (36,550 guard requests, 0 false successes), E6 invoice gate
+(100% recall, 0/391 FP), RiskGate (119/119 destructive calls blocked, 0/108 false blocks),
+E3 adaptive injection (90.1%/2.5% in-sample, 85.7%/3.5% out-of-sample — below the 95%
+target), and two negative results: honesty drops under SFT (73% → 41%), and model output is
+**not** bit-identical even with strictly serial decoding (40/700 and 31/700 differ).
+Numbers and sources: [`docs/SUMMARY_v1.5_2026-11-10.md`](docs/SUMMARY_v1.5_2026-11-10.md).
 
 ## Status and evidence (English)
 

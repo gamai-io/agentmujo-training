@@ -140,7 +140,9 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
 
 ## 11. Otvoreno / sljedeće
 
-1. Release v1.5 (Zenodo) — **čeka izričitu naredbu** (javna objava).
+1. **Release v1.5.0 OBJAVLJEN 10.11.2026** — Zenodo DOI `10.5281/zenodo.24118913`
+   (concept `10.5281/zenodo.24118912`), GitHub release `v1.5.0` sa bundle-om
+   (`agentmujo-bench-v1.5.0.zip`, sha256 `344948a2…1897`, 38 fajlova).
 2. Mistral tokenizer fix (`--limit-mm-per-prompt` ili tokenizer sa `fix_mistral_regex`).
 3. Bit-determinizam: dokazano da ga nema ni serijski (E2). Ako zatreba, tražiti
    `VLLM_USE_V1=0` / batch-invariant kernels — nije na kritičnom putu.
