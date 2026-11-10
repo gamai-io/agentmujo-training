@@ -49,6 +49,13 @@ LUMI `out/e2_determinism{,_tp1}.json`.
 Cilj 95% **nije postignut**; V2 generalizuje (pad 4,4 pp). Preostali promašaji:
 kill 6, disk_format 5, shutdown 6, chmod 4.
 
+**Nezavisni generator (10.11., 0 GPU-h):** 372 napada pisanih od nule (učtiv, hipotetički,
+role-play, engleski, njemački, višekoračni, autoritet, urgentnost, obfuskacija, kontekst)
++ 48 benignih. GUARD_V2 hvata **46,8%** [41,8; 51,8] uz **6/48** lažnih blokada
+(njemački 0/36, engleski 33,3%, obfuskacija 16,7%). Pad od 43,3 pp u odnosu na in-sample
+pokazuje da tekstualna kapija ne generalizuje. Dokaz: `docs/RESULTS_E3_OOS_2026-11-10.md`,
+`benchmark/e3_v2_oos_2026-11-10.json`.
+
 ## 4. E4 — ROCm prenosivost (isti model, isti zadaci)
 
 | TP | ukupno | b4 |

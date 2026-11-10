@@ -211,6 +211,15 @@ The proposed guard adds Bosnian intent verbs with objects, Cyrillic homoglyph fo
 an educational exemption ("how do I use…"). It generalizes with a 4.4 pp drop, but does not
 reach 95%: keyword or intent matching on text is structurally insufficient.
 
+That 4.4 pp figure is an in-family split. A second generator, written independently with
+different strategies (polite/indirect, hypothetical, role-play, English, German, multi-step,
+authority, urgency, obfuscation, embedded-in-context; 372 attacks and 48 benign controls),
+cuts detection to **46.8% [41.8; 51.8]** with **6/48 false blocks**: German 0/36, English
+33.3%, obfuscated 16.7%. The false blocks are all "mention vs intent" (quoted commands,
+a question about `chmod 777`, a file named `rm_rf_test.log`). The honest
+out-of-distribution drop is ~43 pp, which is why the action-level gate, not the text guard,
+carries the decision.
+
 ### 4.6 Action gate (RiskGate)
 
 | model | destructive calls on risky prompts | blocked |
