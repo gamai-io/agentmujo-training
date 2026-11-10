@@ -65,6 +65,22 @@ razlika u kvalitetu nije dokazana.
 `ok 10.000/10.000`, `false_success 0/10.000`, `PASS`; TTFT p50 14,5 s (conc 512
 neekonomičan za 70B; radna točka 256).
 
+## 5b. Skaliranje i MFU (1 čvor, TP 1–8, 10.–11.11.)
+
+Decode workload: 512 zahtjeva, 256 prompt tokena, tačno 128 izlaznih (`ignore_eos`).
+MFU je procjena (bez attention/prefill).
+
+| model | conc | TP1 | TP2 | TP4 | TP8 |
+|---|---|---|---|---|---|
+| Qwen2.5-7B | 256 | 33,7 rps / 34,3% | **57,8 rps / 29,4%** | 57,8 / 14,7% | nije podržan (28 glava) |
+| Mistral-7B | 256 | 32,0 / 30,8% | 49,1 / 23,6% | 51,5 / 12,4% | **70,5 rps / 8,5%** |
+
+- Jedan GCD daje **31–34% MFU**; TP kupuje latenciju (Qwen p50 7,23 → 4,10 s), ne efikasnost.
+- Skaliranje zasićuje model-zavisno: Qwen TP2→TP4 **0%**, Mistral TP4→TP8 **+37%**.
+- TP=8 traži broj glava djeljiv sa 8; Qwen2.5-7B (28) odbija TP=8.
+- Multi-node (DP) skaliranje **nije mjereno**. Dokaz: `docs/RESULTS_SCALING_2026-11-10.md`,
+  `benchmark/scaling_2026-11-10.json`, poslovi 23624574/23625077.
+
 ## 6. E6 — deterministička kapija nad fakturama (PDV 17%)
 
 500 faktura (381 dirty / 119 clean), 3 seeda: **recall 1.109/1.109 = 100%**,

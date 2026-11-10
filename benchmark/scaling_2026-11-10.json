@@ -1,0 +1,39 @@
+{
+  "experiment": "scaling_mfu_2026-11-10",
+  "hardware": "LUMI-G node, 8 GCD (4x MI250X), dev-g",
+  "workload": {"requests": 512, "prompt_tokens": 256, "max_tokens": 128, "ignore_eos": true, "temperature": 0.0},
+  "mfu_note": "MFU = 2*params*out_tokens/s / (gcds*191.5 TFLOPS); ignores attention and prefill, so it is an upper bound",
+  "jobs": {"qwen25-7b": 23624574, "mistral-7b-instruct-v0.3": 23625077},
+  "errors_total": 0,
+  "qwen25-7b": {
+    "params_b": 7.6, "attention_heads": 28, "tp8_supported": false,
+    "rows": [
+      {"tp": 1, "conc": 64, "rps": 19.2, "tok_s": 2458.0, "p50": 3.273, "p95": 3.609, "mfu": 0.1951},
+      {"tp": 2, "conc": 64, "rps": 28.7, "tok_s": 3673.5, "p50": 2.16, "p95": 2.42, "mfu": 0.1458},
+      {"tp": 4, "conc": 64, "rps": 30.61, "tok_s": 3918.3, "p50": 2.028, "p95": 2.303, "mfu": 0.0778},
+      {"tp": 1, "conc": 256, "rps": 33.71, "tok_s": 4314.8, "p50": 7.234, "p95": 7.539, "mfu": 0.3425},
+      {"tp": 2, "conc": 256, "rps": 57.78, "tok_s": 7396.2, "p50": 4.188, "p95": 4.589, "mfu": 0.2935},
+      {"tp": 4, "conc": 256, "rps": 57.76, "tok_s": 7392.9, "p50": 4.098, "p95": 4.464, "mfu": 0.1467}
+    ]
+  },
+  "mistral-7b-instruct-v0.3": {
+    "params_b": 7.2, "attention_heads": 32, "tp8_supported": true,
+    "rows": [
+      {"tp": 1, "conc": 64, "rps": 19.06, "tok_s": 2440.2, "p50": 3.298, "p95": 3.372, "mfu": 0.1835},
+      {"tp": 2, "conc": 64, "rps": 27.46, "tok_s": 3515.4, "p50": 2.27, "p95": 2.551, "mfu": 0.1322},
+      {"tp": 4, "conc": 64, "rps": 28.83, "tok_s": 3690.7, "p50": 2.165, "p95": 2.342, "mfu": 0.0694},
+      {"tp": 8, "conc": 64, "rps": 31.24, "tok_s": 3998.5, "p50": 1.973, "p95": 2.285, "mfu": 0.0376},
+      {"tp": 1, "conc": 256, "rps": 31.96, "tok_s": 4090.5, "p50": 7.764, "p95": 8.133, "mfu": 0.3076},
+      {"tp": 2, "conc": 256, "rps": 49.08, "tok_s": 6282.0, "p50": 4.874, "p95": 5.311, "mfu": 0.2362},
+      {"tp": 4, "conc": 256, "rps": 51.45, "tok_s": 6585.7, "p50": 4.577, "p95": 4.993, "mfu": 0.1238},
+      {"tp": 8, "conc": 256, "rps": 70.49, "tok_s": 9023.2, "p50": 3.142, "p95": 3.751, "mfu": 0.0848}
+    ]
+  },
+  "conclusions": [
+    "Single-GCD MFU at conc 256 is 31-34% for this decode workload.",
+    "Throughput saturates model-dependently: Qwen TP2->TP4 gives 0% gain; Mistral TP4->TP8 gives +37%.",
+    "MFU per GCD falls with TP because the same work is split across more GCDs; TP buys latency, not efficiency.",
+    "TP=8 requires attention heads divisible by 8 (Qwen2.5-7B has 28, so use TP<=7 or a 32-head model).",
+    "Multi-node (DP) scaling was NOT measured in this round."
+  ]
+}
