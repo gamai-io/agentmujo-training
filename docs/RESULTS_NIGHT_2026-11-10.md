@@ -71,3 +71,29 @@ ne preko `--wrap`. Pripremljen `bal5.sbatch` (vidi repozitorij).
 ## 6. Trošak noći
 
 Sve zajedno (10 GPU jobova + 1 guard 10k): procjena **~1,5–2 node-h** (12–16 GPU-h).
+
+
+## 7. bal5 (honesty SFT iz base) — NAJBOLJI adapter do sada
+
+Trening: fresh LoRA iz `base_model` (gold-02), 400 uzoraka (200 hedge + 200 činjenica),
+2 epohe, `lr 1e-5`, `train_loss 0.3254`, 50 koraka, 299 s. Eval: `eval_multi2.py`
+(isti 113 upita kao ostali).
+
+| model | strict | first-call | args | pita/14 | pita/50 | **pita/64** | **izvršilo/64** |
+|---|---|---|---|---|---|---|---|
+| base | 21/25 | 21/25 | 7/7 | 0 | 0 | 0 | 8 |
+| g03a | 18/25 | 20/25 | 5/7 | 7 | 31 | 38 | 26 |
+| bal1 | 9/25 | 21/25 | 0/7 | 3 | 5 | 8 | 56 |
+| bal2 | 4/25 | 20/25 | 1/7 | 4 | 3 | 7 | 57 |
+| bal3 | 0/25 | 24/25 | 0/7 | 0 | 1 | 1 | 63 |
+| **bal5** | **22/25** | **22/25** | **7/7** | 2 | 5 | **7** | **15** |
+
+**Nalazi:**
+1. **bal5 čuva terminaciju** (`strict 22/25` ≈ `first-call 22/25`), dok bal1–bal3 imaju
+   rupu 0–9 vs 20–24. Kako bal5 nije warm-startovan na g03a, a bal1–bal3 jesu, uzrok
+   kvara terminacije je **warm start na adapteru koji je učen bez tool šeme**, ne podaci.
+2. **args ostaje 7/7** (kao base), a svi adapteri iz g03a imaju 0–5/7.
+3. **Pita 7/64 vs base 0/64** — honesty trening je pomjerio model da traži potvrdu,
+   ali skromno; još je daleko od g03a (38/64), koji pak izvršava 26/64.
+4. Zaključak: **bal5 je najbolji kompromis** (tačnost + terminacija + malo opreza),
+   ali ni on nije dovoljan sam — RiskGate ostaje obavezan.
