@@ -84,6 +84,20 @@ neekonomičan za 70B; radna točka 256).
 
 \* Qwen3.8 je thinking model; `b5=0` je artefakt odsječenog `max_tokens`, ne nesposobnost.
 
+**Korekcija intervala (klasteri = šabloni, 10.11.):** 700 stavki dolazi iz **24 šablona**,
+pa Wilson intervali potcjenjuju neizvjesnost. Klaster-bootstrap (B=4.000):
+
+| model | acc | Wilson 95% | klaster 95% | deff | efektivni N |
+|---|---|---|---|---|---|
+| Qwen2.5-7B | 60,6% | [56,9; 64,1] | [50,2; 72,4] | 10,03 | 69,8 |
+| Llama-3.3-70B | 47,3% | [43,6; 51,0] | [39,3; 55,2] | 4,71 | 148,5 |
+| bal6 | 63,4% | [59,8; 66,9] | [49,1; 81,5] | 21,86 | 32,0 |
+
+Tačnost je određena šablonom: Qwen2.5-7B ima `b1_sub` **0/114** i `b1_total` **0/79**, a
+sva aritmetika dolazi iz `b1_vat` (52/107); bal6 skok na 38% je samo `b1_vat` 48,6% → 83,2%.
+Honesty je po tipu entiteta „sve ili ništa" (bal6: firma 0/13, kompanija 0/14, uređaj 0/18).
+Dokaz: `docs/RESULTS_STATS_2026-11-10.md`, `benchmark/cluster_stats_2026-11-10.json`.
+
 ## 8. Adapteri (v1 setovi: bench v0.6 + conf14 + conf50)
 
 | model | strict | first-call | args | pita/64 | izvršilo/64 |

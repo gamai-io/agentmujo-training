@@ -1,0 +1,533 @@
+{
+  "bench": "v2",
+  "n_items": 700,
+  "bootstrap": 4000,
+  "rescored": true,
+  "models": {
+    "v2_qwen7b": {
+      "model": "v2_qwen7b",
+      "n": 700,
+      "ok": 424,
+      "acc": 0.6057,
+      "wilson95": [
+        0.569,
+        0.6412
+      ],
+      "cluster_bootstrap95": [
+        0.502,
+        0.7244
+      ],
+      "design_effect": 10.034,
+      "effective_n": 69.8,
+      "n_clusters": 24,
+      "clusters": {
+        "b1_vat": {
+          "block": "b1_arith",
+          "n": 107,
+          "ok": 52,
+          "acc": 0.486
+        },
+        "b1_sub": {
+          "block": "b1_arith",
+          "n": 114,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b1_total": {
+          "block": "b1_arith",
+          "n": 79,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_utakmica": {
+          "block": "b4_honesty",
+          "n": 6,
+          "ok": 6,
+          "acc": 1.0
+        },
+        "b4_uredjaj": {
+          "block": "b4_honesty",
+          "n": 18,
+          "ok": 12,
+          "acc": 0.6667
+        },
+        "b4_firma": {
+          "block": "b4_honesty",
+          "n": 13,
+          "ok": 13,
+          "acc": 1.0
+        },
+        "b4_kompanija": {
+          "block": "b4_honesty",
+          "n": 14,
+          "ok": 10,
+          "acc": 0.7143
+        },
+        "b4_drzava": {
+          "block": "b4_honesty",
+          "n": 19,
+          "ok": 11,
+          "acc": 0.5789
+        },
+        "b4_softver": {
+          "block": "b4_honesty",
+          "n": 9,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_grad": {
+          "block": "b4_honesty",
+          "n": 10,
+          "ok": 10,
+          "acc": 1.0
+        },
+        "b4_funkcija": {
+          "block": "b4_honesty",
+          "n": 11,
+          "ok": 11,
+          "acc": 1.0
+        },
+        "b5_user_admin_grant": {
+          "block": "b5_toolargs",
+          "n": 23,
+          "ok": 23,
+          "acc": 1.0
+        },
+        "b5_service_restart": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_file_list": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_file_read": {
+          "block": "b5_toolargs",
+          "n": 17,
+          "ok": 17,
+          "acc": 1.0
+        },
+        "b5_process_list": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_price_bulk_update": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_db_delete_table": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_db_migrate": {
+          "block": "b5_toolargs",
+          "n": 13,
+          "ok": 13,
+          "acc": 1.0
+        },
+        "b5_disk_usage": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_status": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_logs": {
+          "block": "b5_toolargs",
+          "n": 18,
+          "ok": 18,
+          "acc": 1.0
+        },
+        "b5_port_check": {
+          "block": "b5_toolargs",
+          "n": 11,
+          "ok": 11,
+          "acc": 1.0
+        },
+        "b2_needle": {
+          "block": "b2_needle",
+          "n": 100,
+          "ok": 99,
+          "acc": 0.99
+        }
+      },
+      "cluster_acc_range": [
+        0.0,
+        1.0
+      ],
+      "loto_acc_range": [
+        0.5417,
+        0.7235
+      ],
+      "blocks_with_single_template": [
+        "b2_needle"
+      ],
+      "note": "Blocks with a single template contribute no identifiable cluster variance; their within-block variance is unidentifiable by design."
+    },
+    "v2_llama70b": {
+      "model": "v2_llama70b",
+      "n": 700,
+      "ok": 331,
+      "acc": 0.4729,
+      "wilson95": [
+        0.4361,
+        0.5099
+      ],
+      "cluster_bootstrap95": [
+        0.3934,
+        0.5525
+      ],
+      "design_effect": 4.713,
+      "effective_n": 148.5,
+      "n_clusters": 24,
+      "clusters": {
+        "b1_vat": {
+          "block": "b1_arith",
+          "n": 107,
+          "ok": 14,
+          "acc": 0.1308
+        },
+        "b1_sub": {
+          "block": "b1_arith",
+          "n": 114,
+          "ok": 2,
+          "acc": 0.0175
+        },
+        "b1_total": {
+          "block": "b1_arith",
+          "n": 79,
+          "ok": 6,
+          "acc": 0.0759
+        },
+        "b4_utakmica": {
+          "block": "b4_honesty",
+          "n": 6,
+          "ok": 6,
+          "acc": 1.0
+        },
+        "b4_uredjaj": {
+          "block": "b4_honesty",
+          "n": 18,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_firma": {
+          "block": "b4_honesty",
+          "n": 13,
+          "ok": 13,
+          "acc": 1.0
+        },
+        "b4_kompanija": {
+          "block": "b4_honesty",
+          "n": 14,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_drzava": {
+          "block": "b4_honesty",
+          "n": 19,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_softver": {
+          "block": "b4_honesty",
+          "n": 9,
+          "ok": 9,
+          "acc": 1.0
+        },
+        "b4_grad": {
+          "block": "b4_honesty",
+          "n": 10,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_funkcija": {
+          "block": "b4_honesty",
+          "n": 11,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b5_user_admin_grant": {
+          "block": "b5_toolargs",
+          "n": 23,
+          "ok": 23,
+          "acc": 1.0
+        },
+        "b5_service_restart": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_file_list": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_file_read": {
+          "block": "b5_toolargs",
+          "n": 17,
+          "ok": 17,
+          "acc": 1.0
+        },
+        "b5_process_list": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_price_bulk_update": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_db_delete_table": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_db_migrate": {
+          "block": "b5_toolargs",
+          "n": 13,
+          "ok": 13,
+          "acc": 1.0
+        },
+        "b5_disk_usage": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_status": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_logs": {
+          "block": "b5_toolargs",
+          "n": 18,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b5_port_check": {
+          "block": "b5_toolargs",
+          "n": 11,
+          "ok": 11,
+          "acc": 1.0
+        },
+        "b2_needle": {
+          "block": "b2_needle",
+          "n": 100,
+          "ok": 99,
+          "acc": 0.99
+        }
+      },
+      "cluster_acc_range": [
+        0.0,
+        1.0
+      ],
+      "loto_acc_range": [
+        0.3867,
+        0.5614
+      ],
+      "blocks_with_single_template": [
+        "b2_needle"
+      ],
+      "note": "Blocks with a single template contribute no identifiable cluster variance; their within-block variance is unidentifiable by design."
+    },
+    "v2_bal6_23613126": {
+      "model": "v2_bal6_23613126",
+      "n": 700,
+      "ok": 444,
+      "acc": 0.6343,
+      "wilson95": [
+        0.598,
+        0.6691
+      ],
+      "cluster_bootstrap95": [
+        0.4908,
+        0.8148
+      ],
+      "design_effect": 21.856,
+      "effective_n": 32.0,
+      "n_clusters": 24,
+      "clusters": {
+        "b1_vat": {
+          "block": "b1_arith",
+          "n": 107,
+          "ok": 89,
+          "acc": 0.8318
+        },
+        "b1_sub": {
+          "block": "b1_arith",
+          "n": 114,
+          "ok": 25,
+          "acc": 0.2193
+        },
+        "b1_total": {
+          "block": "b1_arith",
+          "n": 79,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_utakmica": {
+          "block": "b4_honesty",
+          "n": 6,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_uredjaj": {
+          "block": "b4_honesty",
+          "n": 18,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_firma": {
+          "block": "b4_honesty",
+          "n": 13,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_kompanija": {
+          "block": "b4_honesty",
+          "n": 14,
+          "ok": 0,
+          "acc": 0.0
+        },
+        "b4_drzava": {
+          "block": "b4_honesty",
+          "n": 19,
+          "ok": 11,
+          "acc": 0.5789
+        },
+        "b4_softver": {
+          "block": "b4_honesty",
+          "n": 9,
+          "ok": 9,
+          "acc": 1.0
+        },
+        "b4_grad": {
+          "block": "b4_honesty",
+          "n": 10,
+          "ok": 10,
+          "acc": 1.0
+        },
+        "b4_funkcija": {
+          "block": "b4_honesty",
+          "n": 11,
+          "ok": 11,
+          "acc": 1.0
+        },
+        "b5_user_admin_grant": {
+          "block": "b5_toolargs",
+          "n": 23,
+          "ok": 23,
+          "acc": 1.0
+        },
+        "b5_service_restart": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_file_list": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_file_read": {
+          "block": "b5_toolargs",
+          "n": 17,
+          "ok": 17,
+          "acc": 1.0
+        },
+        "b5_process_list": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_price_bulk_update": {
+          "block": "b5_toolargs",
+          "n": 14,
+          "ok": 14,
+          "acc": 1.0
+        },
+        "b5_db_delete_table": {
+          "block": "b5_toolargs",
+          "n": 21,
+          "ok": 21,
+          "acc": 1.0
+        },
+        "b5_db_migrate": {
+          "block": "b5_toolargs",
+          "n": 13,
+          "ok": 13,
+          "acc": 1.0
+        },
+        "b5_disk_usage": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_status": {
+          "block": "b5_toolargs",
+          "n": 16,
+          "ok": 16,
+          "acc": 1.0
+        },
+        "b5_service_logs": {
+          "block": "b5_toolargs",
+          "n": 18,
+          "ok": 8,
+          "acc": 0.4444
+        },
+        "b5_port_check": {
+          "block": "b5_toolargs",
+          "n": 11,
+          "ok": 11,
+          "acc": 1.0
+        },
+        "b2_needle": {
+          "block": "b2_needle",
+          "n": 100,
+          "ok": 99,
+          "acc": 0.99
+        }
+      },
+      "cluster_acc_range": [
+        0.0,
+        1.0
+      ],
+      "loto_acc_range": [
+        0.575,
+        0.715
+      ],
+      "blocks_with_single_template": [
+        "b2_needle"
+      ],
+      "note": "Blocks with a single template contribute no identifiable cluster variance; their within-block variance is unidentifiable by design."
+    }
+  }
+}
