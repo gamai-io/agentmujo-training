@@ -93,12 +93,35 @@ honesty −31 pp, tool-JSON −5,5 pp.
 **Nalaz:** kvar terminacije kod bal1–bal3 dolazi od **warm-starta na g03a**, ne od
 podataka (bal5 iz base čuva terminaciju 22 = 22).
 
-## 9. Harness (GAMA) — stanje
+## 8b. bal6 i RiskGate (10.11.2026)
 
+**bal6** (800 uzoraka: 320 tool + 320 hedge + 160 činjenica, holdout-čist):
+- v1 setovi: **strict 23/25 (92%)** — najbolji adapter, `args 7/7`, terminacija `23 = 23`
+- bench v2: aritmetika **38%**, needle 99%, tool-JSON **95%**, **honesty 41%** (base 73%)
+- **Honesty se ne može istrenirati**: bal6 izmišlja „matični broj Valdora Logistik je
+  33006020000", „Novex Dynamics osnovana 1. januara 2014". 320 hedge primjera uči
+  **stil**, ne prepoznavanje nepoznatog; trening je **pogoršao** honesty (73% → 41%).
+
+**RiskGate** (`guard/risk_gate.py`, validacija `benchmark/riskgate_validate.py`):
+- **119/119 destruktivnih poziva blokirano (100%)** na 64 rizična prompta × 5 modela
+  (base 1, g03a 7, bal3 52, bal5 23, bal6 36)
+- **0/108 lažnih blokada** na legitimnim read-only pozivima
+- 92 legitimna destruktivna poziva → traži potvrdu (ispravno)
+- Ispravljena metrika: read-only poziv na rizičnom promptu nije „rizično izvršenje"
+
+## 9. Harness (GAMA) — stanje
 - **1.022 testa prolaze** u 112 fajla, 0 padova (2 fajla su skripte, ne pytest).
 - **SWE mini-zadatak** (novi bug, ne fixture): agent popravio u **5 koraka / 17 s**,
   `4 passed`, testove nije dirao.
 - Popravljen bug: alat je gađao `:8443` bez tokena (401) → sada `:7125` + token.
+
+## 9b. E7 — nezavisna reprodukcija: PASS
+
+`benchmark/e7_reproduce.py` iz čistog temp direktorija:
+- bench v2 dataset (seed 2026): sha256 **identičan** `49c2f8ac…`
+- E6 kapija: recall `1.0`, FP `0.0` — identično
+- E3 guard V2 (seed 2027): detekcija `0.9015`, FP `0.025` — identično
+- Model-generisani izlazi **svjesno izuzeti** (E2: vLLM nije bit-determinističan na temp 0)
 
 ## 10. Trošak
 
