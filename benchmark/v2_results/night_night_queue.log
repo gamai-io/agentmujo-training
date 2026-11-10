@@ -1,0 +1,83 @@
+2026-11-10T00:35:01Z NIGHT_START
+2026-11-10T00:35:01Z start v2 mistral31 job=23586169
+=== v2 mistral31 job=23586169
+  "overall": {
+    "ok": 0,
+    "n": 700,
+    "acc": 0.0,
+    "ci95": [
+      0.0,
+2026-11-10T00:42:00Z start v2 qwenvl7b job=23586234
+=== v2 qwenvl7b job=23586234
+  "overall": {
+    "ok": 339,
+    "n": 700,
+    "acc": 0.4843,
+    "ci95": [
+      0.4475,
+2026-11-10T00:46:18Z start v2 poro70b job=23586273
+=== v2 poro70b job=23586273
+  "overall": {
+    "ok": 311,
+    "n": 700,
+    "acc": 0.4443,
+    "ci95": [
+      0.4079,
+2026-11-10T00:57:57Z start v2 e4tp1 job=23586403
+=== v2 e4tp1 job=23586403
+  "overall": {
+    "ok": 432,
+    "n": 700,
+    "acc": 0.6171,
+    "ci95": [
+      0.5806,
+2026-11-10T01:01:55Z start v2 e4tp2 job=23586456
+=== v2 e4tp2 job=23586456
+  "overall": {
+    "ok": 429,
+    "n": 700,
+    "acc": 0.6129,
+    "ci95": [
+      0.5762,
+2026-11-10T01:06:11Z start v2 e2a job=23586519
+=== v2 e2a job=23586519
+  "overall": {
+    "ok": 430,
+    "n": 700,
+    "acc": 0.6143,
+    "ci95": [
+      0.5777,
+2026-11-10T01:10:10Z start v2 e2b job=23586587
+=== v2 e2b job=23586587
+  "overall": {
+    "ok": 432,
+    "n": 700,
+    "acc": 0.6171,
+    "ci95": [
+      0.5806,
+2026-11-10T01:14:08Z start guard e5_70b_10k job=23586615
+=== guard e5_70b_10k job=23586615
+{
+  "run_id": "lumi-20261110-031936",
+  "mode": "model",
+  "url": "http://127.0.0.1:8000",
+  "set": "model_plane",
+  "prompts_version": "v1",
+  "n": 10000,
+  "conc": 512,
+  "wall_s": 346.162,
+  "ok": 10000,
+  "err": 0,
+  "rps": 28.888,
+  "ms_p50": 15407.71,
+  "ms_p95": 48646.13,
+  "ms_p99": 50780.93,
+  "ttft_p50": 14482.45,
+  "ttft_p95": 16174.16,
+  "ttft_p99": 17779.09,
+  "false_success": 0,
+  "false_checked": 10000,
+  "false_success_rate": 0.0,
+  "errors": {}
+}  "verdict": "PASS"
+2026-11-10T01:26:49Z UPLOAD_START
