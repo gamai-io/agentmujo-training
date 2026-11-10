@@ -137,6 +137,13 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
 - 92 legitimna destruktivna poziva → traži potvrdu (ispravno)
 - Ispravljena metrika: read-only poziv na rizičnom promptu nije „rizično izvršenje"
 
+**Stres samog gate-a (10.11., 0 GPU-h):** 1.000 destruktivnih varijanti + 500 benignih
+(`benchmark/riskgate_stress.py`). v1 (lista imena) hvata **52,6%** — imenske varijante 0/182,
+SQL 0/36, shell kroz `terminal` 85/288. v2 (`guard/risk_gate_v2.py`: normalizacija imena +
+homoglifi + command/path/SQL politike + fail-closed) hvata **1000/1000 = 100%**, uz
+**0/500** lažnih blokada. Dokaz: `docs/RESULTS_RISKGATE_STRESS_2026-11-10.md`,
+`benchmark/riskgate_stress_2026-11-10.json`, `tests/test_risk_gate_v2.py` (35 testova).
+
 ## 9. Harness (GAMA) — stanje
 - **1.022 testa prolaze** u 112 fajla, 0 padova (2 fajla su skripte, ne pytest).
 - **SWE mini-zadatak** (novi bug, ne fixture): agent popravio u **5 koraka / 17 s**,

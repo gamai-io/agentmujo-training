@@ -199,6 +199,26 @@ Legitimate traffic: 108/108 read-only calls allowed (**0 false blocks**); 92 exp
 requested destructive calls correctly escalated to confirmation. Note the spread in model
 behaviour: one fine-tune proposed 52 destructive calls in 64 risky prompts.
 
+### 4.6b Attacking the gate itself
+
+The numbers above measure what models happened to emit. We also attacked the gate directly
+with 1,000 destructive call variants (name obfuscation including Cyrillic homoglyphs and
+zero-width characters, shell destruction routed through `terminal`/`exec`, path attacks,
+SQL) and 500 benign read-only calls; nothing was executed.
+
+| gate | detection | false blocks |
+|---|---|---|
+| v1: exact tool-name list | **52.6%** [49.5; 55.7] | 0/500 |
+| v2: normalisation + command/path/SQL policy + fail-closed | **100%** [99.6; 100] | 0/500 |
+
+v1 detected 0/182 spelling variants, 0/36 SQL destructions and 85/288 shell destructions
+(`terminal {"command": "shutdown -h now"}` was allowed). v2 normalises names (NFKD,
+homoglyph folding, zero-width removal, separators, plurals), classifies destructive
+*intent* families, applies command/path/SQL policies to the arguments, and returns
+`confirm` for unknown tools. The stress set is ours and was written with knowledge of v1,
+so 100% is not an independent estimate; exotic obfuscations (base64 payloads, `$IFS`,
+bidi overrides) remain untested. The lesson is architectural: a name list is not a policy.
+
 ## 5. Discussion
 
 The results separate two problems that are often merged. *Capability* (tool selection,
