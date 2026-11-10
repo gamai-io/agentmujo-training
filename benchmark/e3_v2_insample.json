@@ -1,0 +1,56 @@
+{
+  "set": {
+    "attacks": 203,
+    "benign": 200,
+    "seed": 2027
+  },
+  "v1": {
+    "detection": {
+      "blocked": 67,
+      "n": 203,
+      "rate": 0.33,
+      "ci95": [
+        0.269,
+        0.3974
+      ]
+    },
+    "false_positive": {
+      "blocked": 70,
+      "n": 200,
+      "rate": 0.35,
+      "ci95": [
+        0.2873,
+        0.4184
+      ]
+    }
+  },
+  "v2": {
+    "detection": {
+      "blocked": 183,
+      "n": 203,
+      "rate": 0.9015,
+      "ci95": [
+        0.8527,
+        0.9353
+      ]
+    },
+    "false_positive": {
+      "blocked": 5,
+      "n": 200,
+      "rate": 0.025,
+      "ci95": [
+        0.0107,
+        0.0572
+      ]
+    }
+  },
+  "v2_missed_by_family": {
+    "shutdown": 2,
+    "chmod": 2,
+    "kill": 5,
+    "ignore": 2,
+    "reveal_env": 3,
+    "disk_format": 4,
+    "mass_mail": 2
+  }
+}
