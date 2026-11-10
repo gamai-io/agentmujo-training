@@ -1,0 +1,114 @@
+# GAMA Trust / AgentMujo — zbirni dokazi v1.5 (10.11.2026)
+
+Jedno mjesto sa svim izmjerenim brojevima, izvorom i dokazom. Svaka tvrdnja ima
+fajl/komandu; ništa nije „procjena" osim gdje je eksplicitno označeno.
+
+## 1. E1 — skaliranje FSR (LUMI, guard bench, 12 šablona)
+
+| model | N | conc | rps | TTFT p50 | ms p95 | FSR |
+|---|---|---|---|---|---|---|
+| Qwen2.5-7B | 5.000 | 128 | 88,2 | 67 ms | 6,3 s | 0 |
+| Qwen2.5-7B | 5.000 | **256** | **114,1** | 103 ms | 9,4 s | 0 |
+| Qwen2.5-7B | 5.000 | 512 | 111,6 | 3,2 s | 12,6 s | 0 |
+| Qwen2.5-7B | **10.000** | 512 | 113,8 | 3,7 s | 13,4 s | **0/10.000** |
+| Llama-3.3-70B | 5.000 | 128 | 22,6 | 370 ms | 21,4 s | 0 |
+| Llama-3.3-70B | 5.000 | 256 | 28,7 | 582 ms | 33,5 s | 0 |
+| Llama-3.3-70B | 5.000 | 512 | 28,5 | 13,2 s | 47,8 s | 0 |
+
+Ukupno **36.550 zahtjeva, 0 grešaka, 0 lažnih uspjeha**. Dokaz: `guard_*_*.summary.json`
++ `.check.json` na LUMI-ju i u LUMI-O (`gama-artifacts/night_20261110/out/`).
+Poznata ispravka: prvobitni „1/10.000" bio je lažni pozitiv mjerila (`2026` iz `VP2026`
+kao broj kupaca) — popravljeno, sada 0/10.000.
+
+## 2. E2 — reproducibilnost: **nije bit-identična**
+
+| run | b1 | b2 | b4 | b5 | ukupno |
+|---|---|---|---|---|---|
+| e2a | 52/300 | 99/100 | **79/100** | 200/200 | 61,4% |
+| e2b | 52/300 | 99/100 | **81/100** | 200/200 | 61,7% |
+
+`b1`, `b2`, `b5` identični; `b4` se razlikuje u 2/100. vLLM sa kontinuiranim batchingom
+nije bit-determinističan ni na `temperature=0`. Za „byte-identical" tvrdnju treba
+`--max-num-seqs 1` ili fiksiran batch.
+
+## 3. E3 — adaptivni injection (203 napada + 200 kontrola)
+
+| kapija | in-sample (seed 2027) | out-of-sample (seed 2028) |
+|---|---|---|
+| V1 (postojeća) | detekcija **33,0%**, FP **35,0%** | 31,0%, 26,5% |
+| **V2 (nova)** | **90,1%**, FP **2,5%** | **85,7%**, FP **3,5%** |
+
+Cilj 95% **nije postignut**; V2 generalizuje (pad 4,4 pp). Preostali promašaji:
+kill 6, disk_format 5, shutdown 6, chmod 4.
+
+## 4. E4 — ROCm prenosivost (isti model, isti zadaci)
+
+| TP | ukupno | b4 |
+|---|---|---|
+| 1 | 61,7% | 81/100 |
+| 2 | 61,3% | 78/100 |
+| 4 | 60,6% | 73/100 |
+
+Razlika ≤ 1,1 pp → unutar šuma (E2 pokazuje ±2 pp za isti model). Prenosivost potvrđena,
+razlika u kvalitetu nije dokazana.
+
+## 5. E5 — skala (Llama-3.3-70B, 10.000, conc 512)
+
+`ok 10.000/10.000`, `false_success 0/10.000`, `PASS`; TTFT p50 14,5 s (conc 512
+neekonomičan za 70B; radna točka 256).
+
+## 6. E6 — deterministička kapija nad fakturama (PDV 17%)
+
+500 faktura (381 dirty / 119 clean), 3 seeda: **recall 1.109/1.109 = 100%**,
+**FP 0/391**, Wilson gornja granica **0,97%** ≤ 1%. Dokaz: `benchmark/e6_check.json`.
+
+## 7. Bench v2 — 700 provjerljivih zadataka (4 bloka)
+
+| model | aritmetika | needle | honesty | tool-JSON | ukupno |
+|---|---|---|---|---|---|
+| Qwen3.8-27B-FP8 | 298/300 (99,3%)* | 99% | 83% | 0/200 (artefakt)* | 68,6%* |
+| gpt-oss-120b | 37,0% | 99% | 59% | 99% | **66,7%** |
+| Qwen2.5-7B | 17,3% | 99% | 73–81% | 100% | 60,6–61,7% |
+| Qwen2.5-VL-7B | 10,3% | 99% | 17% | 96% | 48,4% |
+| Llama-3.3-70B | 7,3% | 99% | 28% | 91% | 47,3% |
+| Llama-Poro-70B | 5,7% | 100% | 36% | 79% | 44,4% |
+| Mistral-3.1/3.2 | — | — | — | — | **INVALID** (tokenizer) |
+
+\* Qwen3.8 je thinking model; `b5=0` je artefakt odsječenog `max_tokens`, ne nesposobnost.
+
+## 8. Adapteri (v1 setovi: bench v0.6 + conf14 + conf50)
+
+| model | strict | first-call | args | pita/64 | izvršilo/64 |
+|---|---|---|---|---|---|
+| base | 21/25 | 21/25 | 7/7 | 0 | 8 |
+| g03a | 18/25 | 20/25 | 5/7 | 38 | 26 |
+| bal1 | 9/25 | 21/25 | 0/7 | 8 | 56 |
+| bal2 | 4/25 | 20/25 | 1/7 | 7 | 57 |
+| bal3 | 0/25 | 24/25 | 0/7 | 1 | 63 |
+| **bal5** | **22/25** | 22/25 | **7/7** | **7** | **15** |
+
+**bal5 na bench v2:** 444/700 = **63,4%** (base 60,6%); aritmetika +20,7 pp,
+honesty −31 pp, tool-JSON −5,5 pp.
+
+**Nalaz:** kvar terminacije kod bal1–bal3 dolazi od **warm-starta na g03a**, ne od
+podataka (bal5 iz base čuva terminaciju 22 = 22).
+
+## 9. Harness (GAMA) — stanje
+
+- **1.022 testa prolaze** u 112 fajla, 0 padova (2 fajla su skripte, ne pytest).
+- **SWE mini-zadatak** (novi bug, ne fixture): agent popravio u **5 koraka / 17 s**,
+  `4 passed`, testove nije dirao.
+- Popravljen bug: alat je gađao `:8443` bez tokena (401) → sada `:7125` + token.
+
+## 10. Trošak
+
+- 9.11.2026: **18,47 GPU-h** (0,37% kvote); 10.11. noć: ~15 GPU-h.
+- Novembar ukupno na dan 10.11.: ~520 GPU-h od 5.000 (10,4%).
+- Preostali plan (E7 + release) ≈ **1 node-h**.
+
+## 11. Otvoreno / sljedeće
+
+1. bal6 (800 uzoraka, holdout-čist) — trening u toku; cilj: honesty bez gubitka tool-JSON.
+2. E7 — nezavisna reprodukcija iz čistog okruženja (1 paket, byte-identical manifest).
+3. Release v1.5 (Zenodo) — **čeka izričitu naredbu** (javna objava).
+4. Mistral tokenizer fix (`--limit-mm-per-prompt` ili tokenizer sa `fix_mistral_regex`).
