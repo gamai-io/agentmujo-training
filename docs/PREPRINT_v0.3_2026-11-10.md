@@ -276,6 +276,16 @@ homoglyph folding, zero-width removal, separators, plurals), classifies destruct
 so 100% is not an independent estimate; exotic obfuscations (base64 payloads, `$IFS`,
 bidi overrides) remain untested. The lesson is architectural: a name list is not a policy.
 
+### 4.6c Model-side verification does not work
+
+Using 300 existing answers (282 wrong, 18 correct) we asked models to verify claims. Without
+a reference, self-verification detected **1.4%** of fabrications and a cross-family verifier
+**0%** (abstaining 52% of the time). With the reference in the prompt, Qwen detected 98.6%
+but falsely accused **44%** of correct claims (72% without a numeric-tolerance instruction),
+and Mistral **approved 177 answers while only 18 were correct**. Verification cost is
+irrelevant (~4 output tokens per item); the failure is method-level. Only a deterministic
+comparator — the evidence gate — achieves 0 false accusations on the same data.
+
 ## 5. Discussion
 
 The results separate two problems that are often merged. *Capability* (tool selection,
