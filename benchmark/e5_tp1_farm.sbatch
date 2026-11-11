@@ -32,7 +32,7 @@ echo "HOST=$(hostname) DATE=$(date -u) REPLICAS=$REPLICAS CONCS=$CONCS"
 PIDS=""
 for i in $(seq 0 $((REPLICAS-1))); do
   PORT=$((BASE_PORT+i))
-  srun --overlap -n1 --gres=gpu:mi250:1 --cpus-per-task=6 singularity exec \
+  HIP_VISIBLE_DEVICES=$i ROCR_VISIBLE_DEVICES=$i srun --overlap -n1 --cpus-per-task=6 singularity exec \
     -B /scratch:/scratch -B /project:/project -B /appl/local/laifs:/appl/local/laifs "$SIF" \
     python -m vllm.entrypoints.openai.api_server \
       --model "$MODEL" --served-model-name "$TAG" --host 127.0.0.1 --port "$PORT" \
