@@ -30,6 +30,13 @@ def prompt_ref(q, a, ref):
             "Odgovori jednom riječju: TACNO, NETACNO ili NE ZNAM.")
 
 
+def prompt_refnum(q, a, ref):
+    return (f"Pitanje: {q}\nPonuđeni odgovor: {a}\nReferentna vrijednost: {ref}\n\n"
+            "Uporedi NUMERIČKI, sa tolerancijom 2%. Formati kao 1493 i 1493.0 su isti broj; "
+            "za godine dozvoli ±1.\n"
+            "Odgovori jednom riječju: TACNO, NETACNO ili NE ZNAM.")
+
+
 def ask(url, model, prompt, timeout=120):
     payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
                "temperature": 0.0, "max_tokens": 8, "stream": False}
@@ -60,7 +67,7 @@ def main():
     ap.add_argument("--model", required=True)
     ap.add_argument("--items", required=True)
     ap.add_argument("--answers", required=True)
-    ap.add_argument("--mode", choices=["noref", "ref"], default="noref")
+    ap.add_argument("--mode", choices=["noref", "ref", "refnum"], default="noref")
     ap.add_argument("--n", type=int, default=300)
     ap.add_argument("--conc", type=int, default=32)
     ap.add_argument("--out", required=True)
@@ -85,6 +92,8 @@ def main():
             return {"id": it["id"], "verdict": "EMPTY_ANSWER", "out_tokens": 0}
         if a.mode == "ref":
             p = prompt_ref(it["prompt"], text, it["expected"])
+        elif a.mode == "refnum":
+            p = prompt_refnum(it["prompt"], text, it["expected"])
         else:
             p = prompt_noref(it["prompt"], text)
         try:
