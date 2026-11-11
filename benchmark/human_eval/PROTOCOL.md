@@ -58,15 +58,16 @@ Za ±5 pp treba ~350 po familiji — planirano kao proširenje, ne za prvu rundu
 ## 7b. Interna runda (Adi + tim) — kako se radi
 
 1. Otvori `annotate.html` direktno u browseru (dvoklik; nema servera).
-2. Upiši ime anotatora (npr. `adi`), učitaj `items_annot_pilot.jsonl` (100 stavki, fiktivni entiteti).
+2. Upiši ime anotatora (npr. `adi`), učitaj `items_annot.jsonl` (200 stavki), ili
+   `items_annot_pilot.jsonl` (100 fiktivnih) za brzu kalibraciju.
 3. Prvih 10 pregledajte zajedno (kalibracija rubrike), pa dalje **nezavisno**.
 4. Tipke: `1` HEDGE, `2` ANSWER_OK, `3` UNSUPPORTED, `4` FABRICATE, `0` preskoči.
 5. Na kraju „Preuzmi CSV" — svako pošalje svoj `annotations_<ime>.csv`.
-6. Rezultat: `python3 score_human_eval.py --items items_annot_pilot.jsonl --csv a.csv b.csv c.csv --out human_eval_pilot.json`
+6. Rezultat: `python3 score_human_eval.py --items items_annot.jsonl --csv a.csv b.csv c.csv --out human_eval_results.json`
 
-Napomena: interna runda je **pilot** (fiktivni entiteti). Pun set od 200 (100 fiktivnih + 100
-stvarnih sa referencama i odgovorima modela) dobija se kad se puste odgovori na `items_200.jsonl`;
-do tada se κ i stope računaju na pilotu i tako se i prijavljuju („internal pilot, n=100").
+Napomena: puni set `items_annot.jsonl` (200: 100 fiktivnih + 100 stvarnih, svi sa
+odgovorima modela i, gdje postoji, referencom) je **spreman** (posao 23651469). Pilot od
+100 fiktivnih ostaje za kalibraciju rubrike prije pune runde.
 
 ## 8. Šta se ne tvrdi
 
