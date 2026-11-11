@@ -21,6 +21,19 @@ target), and two negative results: honesty drops under SFT (73% → 41%), and mo
 **not** bit-identical even with strictly serial decoding (40/700 and 31/700 differ).
 Numbers and sources: [`docs/SUMMARY_v1.5_2026-11-10.md`](docs/SUMMARY_v1.5_2026-11-10.md).
 
+## Measured results (index)
+
+Full table with artifacts: [`docs/RESULTS_INDEX_2026-11-11.md`](docs/RESULTS_INDEX_2026-11-11.md).
+
+- **False success at scale:** 36,550 guard requests, 0 false successes; the guard's failure mode is text-level generalization, not throughput.
+- **Text guards do not generalize:** 90.1% detection in-sample → **46.8%** on an independently written attack set (German 0/36).
+- **Action gates do, if they are policies:** exact tool-name matching caught 52.6% of 1,000 attacks; a normalized, fail-closed gate caught **100%** with 0/500 false blocks — but encoded payloads bypass it at **19.6%** once the shell tool is allowlisted.
+- **Gates are only as good as their probes:** the same 500 invoices yield **0% → 100%** recall depending on probe depth.
+- **Honesty is prompt-bound:** 71–95% fabrication on real obscure entities when the prompt demands a number, 11–22% when refusal is allowed; models hedge 73–81% on *fictional* entities but **0/1000** on real obscure ones.
+- **Model-side verification fails:** 0–1.4% detection without evidence; with a reference, 44–72% false accusations (Qwen) or near-total approval (Mistral).
+- **Determinism:** not bit-identical even serially (660/700); `VLLM_BATCH_INVARIANT=1` gives 700/700 within a process but only ~84% across restarts; on TP=1 the cause is the attention backend (`TRITON_ATTN` fixes it), on TP=4 only batch-invariant mode holds.
+- **Quota planning:** 1.99× on 2 nodes, 3.82× on 4 at constant per-replica concurrency; single-GCD MFU 31–34%; TP=1 farms win only at high concurrency.
+
 ## Status and evidence (English)
 
 - Development results with denominators and Wilson intervals: [`benchmarks/results/lumi-mujo-2026-11-06-devset.json`](benchmarks/results/lumi-mujo-2026-11-06-devset.json)
