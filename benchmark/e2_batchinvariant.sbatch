@@ -30,6 +30,13 @@ module purge >/dev/null 2>&1 || true
 module load Local-LAIF lumi-aif-singularity-bindings
 SIF=/appl/local/laifs/containers/lumi-multitorch-latest.sif
 
+CACHE_ROOT=${VLLM_CACHE_ROOT:-/scratch/project_465003647/vllm_cache}
+TRITON_CACHE_DIR=${TRITON_CACHE_DIR:-$CACHE_ROOT/triton}
+mkdir -p "$TRITON_CACHE_DIR"
+export VLLM_CACHE_ROOT="$CACHE_ROOT" TRITON_CACHE_DIR
+export SINGULARITYENV_VLLM_CACHE_ROOT="$CACHE_ROOT"
+export SINGULARITYENV_TRITON_CACHE_DIR="$TRITON_CACHE_DIR"
+
 export VLLM_BATCH_INVARIANT="$BI"
 export SINGULARITYENV_VLLM_BATCH_INVARIANT="$BI"
 echo "HOST=$(hostname) DATE=$(date -u) TP=$TP BI=$BI CONC=$CONC MAXSEQS=$MAXSEQS"
