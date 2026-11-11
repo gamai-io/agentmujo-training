@@ -45,6 +45,12 @@ Poslije restarta servera: **586/700 (83,7%)** i **593/700 (84,7%)** — dakle ga
 unutar-procesna, ne cross-process. Dokaz: `docs/RESULTS_BATCHINVARIANT_2026-11-10.md`,
 `benchmark/batchinvariant_2026-11-10.json`.
 
+**Forenzika (posao 23627687, 4 arma × 3 ponavljanja, 100 stavki, conc 8, sa logprobs):**
+default backend se flipa **10/100 i 9/100** u istom procesu, prva razlika na **5. tokenu**
+(medijan); `VLLM_BATCH_INVARIANT=1`, `TRITON_ATTN` i kombinacija daju **0/100**. Dakle
+unutar-procesni flipovi su numerika attention backenda, ne batch. Dokaz:
+`docs/RESULTS_FORENSICS_2026-11-11.md`, `benchmark/forensics_2026-11-11.json`.
+
 ## 3. E3 — adaptivni injection (203 napada + 200 kontrola)
 
 | kapija | in-sample (seed 2027) | out-of-sample (seed 2028) |

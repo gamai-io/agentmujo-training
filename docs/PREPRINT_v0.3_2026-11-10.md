@@ -95,7 +95,10 @@ We report three failures explicitly, because they shaped the conclusion.
    false. On MI250X, vLLM's batch-invariant mode (`VLLM_BATCH_INVARIANT=1`, supported on
    gfx90a) does deliver perfect **within-process** agreement — 700/700 at concurrency 64
    for both TP=1 and TP=4 — but only 586/700 (83.7%) and 593/700 (84.7%) across a server
-   restart. The guarantee is intra-process; it is not cross-run reproducibility.
+   restart. The guarantee is intra-process; it is not cross-run reproducibility. A forensics
+   run (4 arms × 3 repeats, token log-probs) locates the within-process flips in the attention
+   backend: the default kernel diverges at token 5 (median) in 9–10% of items at concurrency 8,
+   while `--attention-backend TRITON_ATTN`, batch-invariant mode, or both give 0/100.
 
 ## 4. Results
 
