@@ -26,7 +26,8 @@ sa referentnom vrijednošću i QID-om po stavci.
 | Mistral-7B-Instruct | **74,4% / 73,6%** | 7,2% / 7,6% | 18,4% / 18,8% | **17,0%** | 72,8% | 10,2% |
 | Phi-3.5-mini | **71,4% / 70,6%** | 25,8% / 26,6% | 2,8% / 2,8% | **13,0%** | 85,8% | 1,2% |
 
-(dva seeda za A: 42 / 43; B je jedan seed, 42.)
+(A: seeda 42/43; **B: seeda 42/43/44** — Qwen 21,6 / 21,8 / 22,0%, Mistral 17,0 / 18,0 /
+17,4%, Phi 13,0 / 11,4 / 11,8%.)
 
 ## Po kategorijama (protokol A, seed 42; fabrikacija / hedge / tačno)
 

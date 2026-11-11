@@ -314,8 +314,8 @@ separate deterministic component should decide execution and verify outcomes. Mo
 - No human evaluation; all metrics are automatic and therefore narrow.
 - Honesty items concern fictional entities: this is a lower bound on "do not invent", not
   evidence of factual accuracy on real data. The real-entity set (§4.3b) uses Wikidata as
-  reference, which may itself contain errors, and only its control condition has a single
-  seed.
+  reference, which may itself contain errors; its control condition has three seeds
+  (fabrication 21.6–22.0%, 17.0–18.0%, 11.4–13.0%).
 - The action gate's allowlist is explicit; unknown tools currently default to `allow`,
   which should become fail-closed.
 - Mistral-family models are excluded (serving defects), so the model sample is not
