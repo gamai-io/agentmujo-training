@@ -38,6 +38,25 @@ TP=1 669/700 (95,57%).
    treba fiksirati i okruženje procesa (alokator/workspace/autotune), što je sljedeći
    eksperiment.
 
+## Ispravka (11.11.2026): cross-process JESTE reproducibilan sa BI
+
+Prvo mjerenje (poslovi 23626963 / 23627134) dalo je 586/700 (83,7%) i 593/700 (84,7%)
+poslije restarta. Naknadne provjere:
+
+| posao | dizajn | rezultat |
+|---|---|---|
+| 23639685 | 5 nezavisnih startova × 200 stavki, TP=1 | **svih 10 parova 200/200** |
+| 23639934 | 5 nezavisnih startova × 700 stavki, TP=1, max_tokens 256 | **svih 10 parova 700/700** |
+| 23640186 | A/B u istom procesu + C poslije restarta, 700 stavki | **700/700, sha_a = sha_b = sha_c** |
+
+Dakle prvobitnih ~16% razlike **nije reproducirano** u tri nezavisna testa (12 restarta).
+Jedina poznata razlika u okruženju: u to vrijeme je home kvota bila skoro puna
+(13/22 GiB, `~/.cache/vllm`); poslije toga je keš prebačen na `/scratch`. Uzrok ne tvrdimo —
+tvrdimo da se rezultat ne ponavlja i da ga ne koristimo kao nalaz.
+
+**Ispravljena tvrdnja:** `VLLM_BATCH_INVARIANT=1` daje bit-identičan izlaz i **kroz procese**
+na TP=1 (3 testa, 12 restarta, 700 stavki). TP=4 provjera: posao 23640342.
+
 ## Ograničenja
 
 - Jedan model (Qwen2.5-7B) i jedan concurrency (64); TP=8 nije testiran (28 glava).

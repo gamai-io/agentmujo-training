@@ -28,7 +28,7 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | Result | Number | Artifact |
 |---|---|---|
 | Serial decoding is not bit-identical | 660/700 (TP=4), 669/700 (TP=1) | `docs/RESULTS_E2_2026-11-10.md` |
-| `VLLM_BATCH_INVARIANT=1` | within process **700/700** (TP=1 and TP=4); after restart 586/700, 593/700 | `docs/RESULTS_BATCHINVARIANT_2026-11-10.md` |
+| `VLLM_BATCH_INVARIANT=1` | within process **700/700** (TP=1 and TP=4); across independent restarts **700/700** in three repeated tests (earlier 586/700 did not reproduce; see correction) | `docs/RESULTS_BATCHINVARIANT_2026-11-10.md` |
 | Flip forensics (TP=1) | default 10/100 and 9/100; `TRITON_ATTN` 0/100; `BI` 0/100; first divergence token 5 | `docs/RESULTS_FORENSICS_2026-11-11.md` |
 | Flip forensics (TP=4) | default 10/100, 12/100; `TRITON_ATTN` **16/100, 15/100**; `BI` **0/100** | same |
 | Independent reproduction (E7) | dataset `49c2f8ac…`, E6 and E3 counts identical | `benchmark/e7_reproduce.py` |

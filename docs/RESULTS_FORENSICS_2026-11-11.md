@@ -27,9 +27,10 @@ Armovi (server se restartuje između armova):
    stacku je dovoljno izabrati deterministički attention backend; BI flag nije jedini put.
 4. **Δlogprob ≈ 0,4** na mjestu prve razlike: to nije šum zadnjeg decimala, nego dovoljno
    velika numerička razlika da promijeni token.
-5. **Van procesa ostaje problem** (prethodni posao: 83,7% / 84,7% identičnih poslije
-   restarta). Dakle *unutar-procesna* determinacija = backend; *cross-process* = još
-   nešto u okruženju procesa (alokator/workspace/autotune).
+5. **Van procesa:** prvobitno 83,7% / 84,7% **nije reproducirano** — tri nezavisna testa
+   (poslovi 23639685, 23639934, 23640186) dala su **700/700** identičnih kroz restarte.
+   Detalji i ispravka: `RESULTS_BATCHINVARIANT_2026-11-10.md`. Unutar-procesna
+   determinacija = backend; cross-process sa BI = takođe stabilno u ponovljenim testovima.
 
 ## TP=4 (isti protokol, 100 stavki)
 

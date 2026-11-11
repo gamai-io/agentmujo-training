@@ -94,8 +94,11 @@ We report three failures explicitly, because they shaped the conclusion.
    arithmetic and free-form text are not. Claims of "byte-identical" generation would be
    false. On MI250X, vLLM's batch-invariant mode (`VLLM_BATCH_INVARIANT=1`, supported on
    gfx90a) does deliver perfect **within-process** agreement — 700/700 at concurrency 64
-   for both TP=1 and TP=4 — but only 586/700 (83.7%) and 593/700 (84.7%) across a server
-   restart. The guarantee is intra-process; it is not cross-run reproducibility. A forensics
+   for both TP=1 and TP=4 — and, in three repeated tests at TP=1 (five independent server
+   starts on 200 and on 700 items, plus an A/B/C run), also **across independent processes**:
+   every restart produced identical outputs. An earlier single observation of 83.7% did not
+   reproduce and coincided with a nearly-full home cache; we report it as an unresolved
+   outlier, not a property of the system. A forensics
    run (4 arms × 3 repeats, token log-probs) locates the within-process flips in the attention
    backend: the default kernel diverges at token 5 (median) in 9–10% of items at concurrency 8,
    while `--attention-backend TRITON_ATTN`, batch-invariant mode, or both give 0/100.
