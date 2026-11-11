@@ -21,6 +21,7 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | RiskGate v1 vs v2 (1,000 attacks / 500 benign) | 52.6% → **100%**, 0/500 false blocks | `docs/RESULTS_RISKGATE_STRESS_2026-11-10.md` |
 | Encoded (white-box) evasion | v2 100% only via fail-closed; with `terminal` allowlisted 45/56 (11 bypasses) | same |
 | Verifier economics (E12) | no-evidence: 1.4% (self) / 0% (cross); with reference: 98.6% but 44% false alarms; Mistral approves 177 while 18 correct | `docs/RESULTS_E12_2026-11-11.md` |
+| Attribution error (E14) | system self-heals: Qwen claims credit **75%**, Phi **87%** (94–100% correct when causal); Mistral abstains 73% | `docs/RESULTS_E14_2026-11-11.md` |
 
 ## Reproducibility / determinism
 
