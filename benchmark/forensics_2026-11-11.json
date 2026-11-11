@@ -1,22 +1,59 @@
 {
   "experiment": "roc_flip_forensics_2026-11-11",
   "model": "Qwen2.5-7B",
-  "protocol": {"items": 100, "repeats": 3, "conc": 8, "max_tokens": 64, "temperature": 0, "seed": 42,
-             "logprobs": "top-5 per token"},
+  "protocol": {
+    "items": 100,
+    "repeats": 3,
+    "conc": 8,
+    "max_tokens": 64,
+    "temperature": 0,
+    "seed": 42,
+    "logprobs": "top-5 per token"
+  },
   "job_tp1": 23627687,
   "tp1": {
-    "base": {"flips_r1_r2": 10, "flips_r1_r3": 9, "n": 100,
-             "first_divergence_median": 5, "first_divergence_max": 42,
-             "logprob_delta_mean": 0.41},
-    "bi": {"flips_r1_r2": 0, "flips_r1_r3": 0, "n": 100},
-    "triton": {"flips_r1_r2": 0, "flips_r1_r3": 0, "n": 100},
-    "bi_triton": {"flips_r1_r2": 0, "flips_r1_r3": 0, "n": 100}
+    "base": {
+      "flips_r1_r2": 10,
+      "flips_r1_r3": 9,
+      "n": 100,
+      "first_divergence_median": 5,
+      "first_divergence_max": 42,
+      "logprob_delta_mean": 0.41
+    },
+    "bi": {
+      "flips_r1_r2": 0,
+      "flips_r1_r3": 0,
+      "n": 100
+    },
+    "triton": {
+      "flips_r1_r2": 0,
+      "flips_r1_r3": 0,
+      "n": 100
+    },
+    "bi_triton": {
+      "flips_r1_r2": 0,
+      "flips_r1_r3": 0,
+      "n": 100
+    }
   },
   "conclusions": [
     "Default attention backend flips 9-10% of items within the same process at conc 8, so batching is not the only cause.",
     "First divergence is early (median token 5, max 42), consistent with prefill/attention numerics rather than late split-K boundaries.",
     "TRITON_ATTN alone eliminates within-process flips, as does VLLM_BATCH_INVARIANT=1; the two together also give 0/100.",
-    "Cross-process reproducibility remains ~84% (previous job), so the process environment still matters."
+    "Cross-process reproducibility remains ~84% (previous job), so the process environment still matters.",
+    "Default-backend flip rate is the same at TP=4 (10/100, 12/100) as at TP=1, so tensor parallelism does not add within-process flips."
   ],
-  "note": "TP=4 run (job 23627782, arms base/triton) appended when complete."
+  "note": "TP=4 run (job 23627782, arms base/triton) appended when complete.",
+  "job_tp4_default": 23627821,
+  "tp4": {
+    "base": {
+      "flips_r1_r2": 10,
+      "flips_r1_r3": 12,
+      "n": 100
+    },
+    "triton": {
+      "measured": false,
+      "note": "server did not become ready at TP=4 (Triton autotune/compile); first attempt hit the 22 GiB home quota, retry with cache on /scratch also did not start within the window"
+    }
+  }
 }

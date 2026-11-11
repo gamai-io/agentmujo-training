@@ -33,7 +33,11 @@ Armovi (server se restartuje između armova):
 
 ## Ograničenja
 
-- 100 stavki, jedan model (Qwen2.5-7B), `conc 8`; TP=4 test u toku (posao 23627782).
+- 100 stavki, jedan model (Qwen2.5-7B), `conc 8`.
+- **TP=4:** default backend ponovljen — **10/100 i 12/100** flipova, dakle TP ne dodaje
+  flipove. `TRITON_ATTN` na TP=4 **nije izmjeren**: server se nije digao u prozoru
+  (prvi pokušaj udario home kvotu 22 GiB u `~/.cache/vllm`, ponovljeni sa kešom na
+  `/scratch` nije završio autotune/compile do isteka certa).
 - „Prva divergencija" je pozicija tokena, ne ULP analiza logita.
 - Mjeri se samo tekstualni izlaz + logprobs, ne interni tenzori.
 
