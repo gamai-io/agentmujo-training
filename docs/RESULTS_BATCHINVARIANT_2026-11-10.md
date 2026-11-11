@@ -48,6 +48,8 @@ poslije restarta. Naknadne provjere:
 | 23639685 | 5 nezavisnih startova × 200 stavki, TP=1 | **svih 10 parova 200/200** |
 | 23639934 | 5 nezavisnih startova × 700 stavki, TP=1, max_tokens 256 | **svih 10 parova 700/700** |
 | 23640186 | A/B u istom procesu + C poslije restarta, 700 stavki | **700/700, sha_a = sha_b = sha_c** |
+| 23640342 | isto, TP=4 | **700/700 u procesu i kroz restart** |
+| 23640460 | 5 startova × 200, **Mistral-7B**, TP=1 | **svih 10 parova 200/200** |
 
 Dakle prvobitnih ~16% razlike **nije reproducirano** u tri nezavisna testa (12 restarta).
 Jedina poznata razlika u okruženju: u to vrijeme je home kvota bila skoro puna
