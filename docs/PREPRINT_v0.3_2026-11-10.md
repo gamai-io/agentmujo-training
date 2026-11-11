@@ -277,7 +277,11 @@ homoglyph folding, zero-width removal, separators, plurals), classifies destruct
 *intent* families, applies command/path/SQL policies to the arguments, and returns
 `confirm` for unknown tools. The stress set is ours and was written with knowledge of v1,
 so 100% is not an independent estimate; exotic obfuscations (base64 payloads, `$IFS`,
-bidi overrides) remain untested. The lesson is architectural: a name list is not a policy.
+bidi overrides) remain untested. The lesson is architectural: a name list is not a policy. An adaptive adversary makes this
+sharper: with the shell tool allowlisted, a base64 mutation bypasses the gate for all eight
+destructive seeds at the first attempt; a decode-aware policy closes that set, an octal
+variant bypasses it, adding octal moves the bypass to zero-width characters. Denylisting
+text is an arms race, not a control; the shell tool must be sandboxed or withheld.
 
 ### 4.6c Model-side verification does not work
 
@@ -288,6 +292,17 @@ but falsely accused **44%** of correct claims (72% without a numeric-tolerance i
 and Mistral **approved 177 answers while only 18 were correct**. Verification cost is
 irrelevant (~4 output tokens per item); the failure is method-level. Only a deterministic
 comparator — the evidence gate — achieves 0 false accusations on the same data.
+
+### 4.6d Attribution error: the system heals itself, the agent takes credit
+
+A third false-success channel needs no lie about the action: the action happened, the
+environment recovered on its own, and the agent reports "I fixed it". With 100 non-causal
+vignettes (watchdog, k8s controller, cache TTL, cron act *before* the agent) and 100 causal
+controls, Qwen2.5-7B claims credit in **75%** and Phi-3.5 in **87%** of non-causal cases,
+while both are 94–100% correct when the agent truly caused recovery. Mistral avoids the
+error by abstaining (73% "unclear") but then misses 70% of genuine causal cases. Neither the
+action gate (the call was allowed) nor the evidence gate (the artifact exists) covers this;
+reports need a before/after causality trace, not just an outcome.
 
 ## 5. Discussion
 
