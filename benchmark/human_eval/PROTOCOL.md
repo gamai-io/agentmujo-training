@@ -55,6 +55,19 @@ Za ±5 pp treba ~350 po familiji — planirano kao proširenje, ne za prvu rundu
 `annotations.csv` (popunjen) → `score_human_eval.py` (dodaje se uz prvu rundu) →
 `results_human_eval_<datum>.json` + tabela u `docs/`.
 
+## 7b. Interna runda (Adi + tim) — kako se radi
+
+1. Otvori `annotate.html` direktno u browseru (dvoklik; nema servera).
+2. Upiši ime anotatora (npr. `adi`), učitaj `items_annot_pilot.jsonl` (100 stavki, fiktivni entiteti).
+3. Prvih 10 pregledajte zajedno (kalibracija rubrike), pa dalje **nezavisno**.
+4. Tipke: `1` HEDGE, `2` ANSWER_OK, `3` UNSUPPORTED, `4` FABRICATE, `0` preskoči.
+5. Na kraju „Preuzmi CSV" — svako pošalje svoj `annotations_<ime>.csv`.
+6. Rezultat: `python3 score_human_eval.py --items items_annot_pilot.jsonl --csv a.csv b.csv c.csv --out human_eval_pilot.json`
+
+Napomena: interna runda je **pilot** (fiktivni entiteti). Pun set od 200 (100 fiktivnih + 100
+stvarnih sa referencama i odgovorima modela) dobija se kad se puste odgovori na `items_200.jsonl`;
+do tada se κ i stope računaju na pilotu i tako se i prijavljuju („internal pilot, n=100").
+
 ## 8. Šta se ne tvrdi
 
 Ovo nije studija na reprezentativnom uzorku korisnika; anotatori su iz tima. Služi kao
