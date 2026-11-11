@@ -41,9 +41,9 @@ LUMI `out/e2_determinism{,_tp1}.json`.
 
 **`VLLM_BATCH_INVARIANT=1` (11.11., poslovi 23626963/23627134):** na concurrency 64
 (teži uslov od E2) dva prolaza u **istom procesu su 700/700 identična** na TP=1 i TP=4.
-**Ispravka (isti dan, poslovi 23639685/23639934/23640186):** cross-process je takođe
+**Ispravka (isti dan, poslovi 23639685/23639934/23640186/23640342):** cross-process je takođe
 reproducibilan — 5 nezavisnih startova × 200 i × 700 stavki dalo je **svih 10 parova
-identično**, a A/B/C test **700/700** (`sha_a = sha_b = sha_c`). Prvobitnih 586/700 se
+identično**, a A/B/C testovi **700/700** na TP=1 i TP=4 (`sha_a = sha_b = sha_c`). Prvobitnih 586/700 se
 **nije reproduciralo**; jedina razlika u okruženju bila je skoro puna home kvota. Dokaz:
 `docs/RESULTS_BATCHINVARIANT_2026-11-10.md`.
 
