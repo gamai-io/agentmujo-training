@@ -297,7 +297,7 @@ Using 300 existing answers (282 wrong, 18 correct) we asked models to verify cla
 a reference, self-verification detected **1.4%** of fabrications and a cross-family verifier
 **0%** (abstaining 52% of the time). With the reference in the prompt, Qwen detected 98.6%
 but falsely accused **44%** of correct claims (72% without a numeric-tolerance instruction),
-and Mistral **approved 177 answers while only 18 were correct**. Verification cost is
+and Mistral **approved 177 answers while only 18 were correct**. A third verifier (Phi-3.5) with the same tolerance prompt detected 25.5% of fabrications and raised no false alarms, so verifier reliability ranges from 2.8% to 98.6% across models. Verification cost is
 irrelevant (~4 output tokens per item); the failure is method-level. Only a deterministic
 comparator — the evidence gate — achieves 0 false accusations on the same data.
 

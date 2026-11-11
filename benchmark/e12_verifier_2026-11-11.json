@@ -45,7 +45,8 @@
     "With a reference, detection jumps to 99.65% but false alarms reach 72% on correct claims, because the model reads numeric formats loosely; a deterministic comparator is required.",
     "Cost is not the obstacle (about 4 output tokens per item); validity is.",
     "With an explicit numeric-tolerance instruction, false alarms fall from 72.2% to 44.4% but remain high: the failure is method-level (language comparison) not just formatting.",
-    "Cross-family verifier with the reference still fails: Mistral approved 177 answers while only 18 were correct, so providing evidence does not fix a verifier that does not compare."
+    "Cross-family verifier with the reference still fails: Mistral approved 177 answers while only 18 were correct, so providing evidence does not fix a verifier that does not compare.",
+    "With the tolerance prompt, verifier detection spans 2.8% (Mistral), 25.5% (Phi), 98.6% (Qwen): reliability is model-specific, not a property of the method."
   ],
   "control_refnum": {
     "job": 23638090,
@@ -70,5 +71,15 @@
       "NE_ZNAM": 115,
       "NETACNO": 8
     }
+  },
+  "phi_refnum": {
+    "job": 23653523,
+    "verifier": "phi-3.5-mini-instruct",
+    "detected": 72,
+    "fabrications": 282,
+    "detection_rate": 0.2553,
+    "false_alarms": 0,
+    "correct_claims": 18,
+    "false_alarm_rate": 0.0
   }
 }
