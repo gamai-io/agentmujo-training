@@ -17,6 +17,7 @@ OUT=$BASE/out
 MODEL=${MODEL:-/scratch/project_465003647/models/qwen25-7b}
 TAG=${TAG:-qwen}
 ITEMS=${ITEMS:-$KIT/items_200.jsonl}
+ANNOT_OUT=${ANNOT_OUT:-$KIT/items_annot.jsonl}
 TP=${TP:-4}
 PORT=${PORT:-8000}
 module purge >/dev/null 2>&1 || true
@@ -52,5 +53,5 @@ srun --overlap --jobid="$SLURM_JOB_ID" -n1 --cpus-per-task=4 singularity exec \
   -B /scratch:/scratch -B /project:/project "$SIF" \
   python3 "$KIT/make_annot_full.py" --items "$ITEMS" \
     --responses "$OUT/v2annot_${TAG}_$SLURM_JOB_ID.jsonl" \
-    --out "$KIT/items_annot.jsonl"
+    --out "$ANNOT_OUT"
 echo "E15_DONE $(date -u)"
