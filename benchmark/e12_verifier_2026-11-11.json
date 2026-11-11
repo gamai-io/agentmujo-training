@@ -44,7 +44,8 @@
     "A cross-family verifier abstains 52% of the time instead of detecting; family independence does not create knowledge.",
     "With a reference, detection jumps to 99.65% but false alarms reach 72% on correct claims, because the model reads numeric formats loosely; a deterministic comparator is required.",
     "Cost is not the obstacle (about 4 output tokens per item); validity is.",
-    "With an explicit numeric-tolerance instruction, false alarms fall from 72.2% to 44.4% but remain high: the failure is method-level (language comparison) not just formatting."
+    "With an explicit numeric-tolerance instruction, false alarms fall from 72.2% to 44.4% but remain high: the failure is method-level (language comparison) not just formatting.",
+    "Cross-family verifier with the reference still fails: Mistral approved 177 answers while only 18 were correct, so providing evidence does not fix a verifier that does not compare."
   ],
   "control_refnum": {
     "job": 23638090,
@@ -54,5 +55,20 @@
     "false_alarms": 8,
     "correct_claims": 18,
     "false_alarm_rate": 0.4444
+  },
+  "cross_refnum": {
+    "job": 23638250,
+    "verifier": "mistral-7b-instruct-v0.3",
+    "detected": 8,
+    "fabrications": 282,
+    "detection_rate": 0.0284,
+    "false_alarms": 0,
+    "correct_claims": 18,
+    "false_alarm_rate": 0.0,
+    "verdicts": {
+      "TACNO": 177,
+      "NE_ZNAM": 115,
+      "NETACNO": 8
+    }
   }
 }
