@@ -207,6 +207,16 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
 - 92 legitimna destruktivna poziva → traži potvrdu (ispravno)
 - Ispravljena metrika: read-only poziv na rizičnom promptu nije „rizično izvršenje"
 
+**Adaptivni protivnik (E10, 11.11., 0 GPU-h):** 8 destruktivnih sjemenki × 8 mutatora.
+v2 fail-closed = 0% ASR; sa `terminal` allowlisted **100% na prvoj mutaciji** (base64).
+v3 (dekodiranje) 0% na tom setu, ali nezavisna familija (octal) ga zaobilazi 100%; v4 doda
+octal → bypass prelazi na zero-width. Denylist nad tekstom je trka u naoružanju, ne kontrola.
+Dokaz: `docs/RESULTS_E10_2026-11-11.md`.
+
+**Atribucija (E14, 11.11.):** Qwen **75%**, Phi **87%** prisvaja oporavak koji je sistem sam
+napravio (kauzalna kontrola: 94–100% tačno); Mistral 73% „nejasno". Dokaz:
+`docs/RESULTS_E14_2026-11-11.md`.
+
 **Stres samog gate-a (10.11., 0 GPU-h):** 1.000 destruktivnih varijanti + 500 benignih
 (`benchmark/riskgate_stress.py`). v1 (lista imena) hvata **52,6%** — imenske varijante 0/182,
 SQL 0/36, shell kroz `terminal` 85/288. v2 (`guard/risk_gate_v2.py`: normalizacija imena +
