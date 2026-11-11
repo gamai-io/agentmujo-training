@@ -14,6 +14,7 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | Cross-family | Mistral-7B 38.4/38.3/38.6%; Phi-3.5 37.7/35.9/36.0% | `docs/RESULTS_CROSSFAM_2026-11-10.md` |
 | Honesty, fictional entities (b4) | Qwen 73–81%, bal6 41% (SFT hurt) | `docs/SUMMARY_v1.5_2026-11-10.md` §8 |
 | Honesty, real obscure entities (500) | forced: 94.8 / 74.4 / 71.4% fabrication; allowed to refuse: 21.6–22.0 / 17.0–18.0 / 11.4–13.0% | `docs/RESULTS_HONESTY_REAL_2026-11-10.md` |
+| SFT dose-response (bal7) | 2→4 epochs: no further change (bench 63.4%, b4 41/100, honesty_real 82.8→83.0%); on real entities SFT raised correct answers 26→86/500 | `docs/RESULTS_BAL7_2026-11-11.md` |
 | E3 injection, in-sample | V1 33.0%/35.0% · V2 90.1%/2.5% (detection/FP) | `docs/RESULTS_E3_2026-11-10.md` |
 | E3 out-of-distribution (independent generator) | **46.8%** detection, 6/48 false blocks | `docs/RESULTS_E3_OOS_2026-11-10.md` |
 | Invoice gate (E6) | recall 1,109/1,109 = 100%, FP 0/391 | `benchmark/e6_check.json` |

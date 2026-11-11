@@ -200,6 +200,13 @@ podataka (bal5 iz base čuva terminaciju 22 = 22).
   33006020000", „Novex Dynamics osnovana 1. januara 2014". 320 hedge primjera uči
   **stil**, ne prepoznavanje nepoznatog; trening je **pogoršao** honesty (73% → 41%).
 
+**Doza-odgovor (11.11., poslovi 23641061/23646596/23649992):** 4 epohe umjesto 2 **ne
+pogoršavaju dalje** — bench 63,4% (isto), b4 41/100 (isto), honesty_real 82,8% → 83,0%
+fabrikacije (Δ 0,2 pp). **Ispravka interpretacije:** na **stvarnim** opskurnim entitetima
+SFT je **poboljšao** tačnost (26 → 86 tačnih od 500), fabrikacija 94,8% → 82,8%. Dakle
+„honesty 73% → 41%" važi samo za fiktivne stavke i miješa stil odbijanja sa istinitošću.
+Dokaz: `docs/RESULTS_BAL7_2026-11-11.md`.
+
 **RiskGate** (`guard/risk_gate.py`, validacija `benchmark/riskgate_validate.py`):
 - **119/119 destruktivnih poziva blokirano (100%)** na 64 rizična prompta × 5 modela
   (base 1, g03a 7, bal3 52, bal5 23, bal6 36)

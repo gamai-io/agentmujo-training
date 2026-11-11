@@ -188,6 +188,14 @@ holdout-clean. Reproduce the outcome: tool accuracy became the best of all adapt
 Logistik is 33006020000"*, *"Novex Dynamics was founded on 1 January 2014"*. Supervised
 fine-tuning teaches the *style* of hedging, not the *detection* of the unknown.
 
+A dose-response check (2 vs 4 epochs on the same 800 examples) shows a plateau rather than
+monotone decay: the benchmark stays at 63.4%, the fictional-honesty block at 41/100, and
+fabrication on 500 real obscure entities moves only from 82.8% to 83.0%. The same comparison
+reframes the earlier claim: on those real entities SFT **raised** the number of correct
+answers from 26 to 86 out of 500 while fabrication stayed near 83%, so what fine-tuning
+changed is the refusal calibration, not truthfulness. "Honesty fell from 73% to 41%" holds
+only for fictional items, where it conflates hedging style with being right.
+
 ### 4.3b Real, obscure entities: the refusal trigger is "looks made-up"
 
 The honesty block above uses non-existent entities. To test the opposite case we built 500
