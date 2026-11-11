@@ -35,7 +35,7 @@ echo "HOST=$(hostname) DATE=$(date -u) ARMS=$ARMS N=$N CONC=$CONC TP=$TP"
 
 serve () {
   local tag=$1 extra=${2:-}
-  env BI=0 ATTN=0
+  BI=0; ATTN=0
   case "$tag" in
     bi) BI=1 ;;
     triton) ATTN=1 ;;
