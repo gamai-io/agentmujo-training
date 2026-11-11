@@ -69,6 +69,20 @@ Napomena: puni set `items_annot.jsonl` (200: 100 fiktivnih + 100 stvarnih, svi s
 odgovorima modela i, gdje postoji, referencom) je **spreman** (posao 23651469). Pilot od
 100 fiktivnih ostaje za kalibraciju rubrike prije pune runde.
 
+## 7c. Setovi odgovora po modelima (11.11.)
+
+Istih 200 stavki (`items_200_run.jsonl`) je pušteno kroz tri modela, `temperature=0`,
+`seed=42`, `conc=32`, `max_tokens=128` (poslovi 23651469 / 23654514 / 23654547):
+
+| fajl | model |
+|---|---|
+| `items_annot.jsonl` | Qwen2.5-7B (`qwen25-7b`) — **ova se koristi za ljudsku anotaciju** |
+| `items_annot_mistral.jsonl` | Mistral-7B-Instruct-v0.3 |
+| `items_annot_phi.jsonl` | Phi-3.5-mini-instruct |
+
+Sva tri imaju 200/200 odgovora. Druga dva su artefakt za kasniju analizu (ne šalju se
+anotatorima — to bi bilo 600 sudova po osobi).
+
 ## 8. Šta se ne tvrdi
 
 Ovo nije studija na reprezentativnom uzorku korisnika; anotatori su iz tima. Služi kao
