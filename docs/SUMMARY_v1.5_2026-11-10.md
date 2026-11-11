@@ -113,6 +113,11 @@ kupuje latenciju. Dokaz: `docs/RESULTS_MULTINODE_2026-11-10.md`,
 500 faktura (381 dirty / 119 clean), 3 seeda: **recall 1.109/1.109 = 100%**,
 **FP 0/391**, Wilson gornja granica **0,97%** ≤ 1%. Dokaz: `benchmark/e6_check.json`.
 
+**Osjetljivost na probu (E13, 11.11., 0 GPU):** iste 500 fakture kroz 5 nivoa provjere daju
+**0,0% / 30,2% / 47,8% / 49,1% / 100%** recall (L0 trust → L4 full), uz **0/119** lažnih
+blokada na svakom nivou. „100% kapija" je osobina para *(kapija, nivo probe)*, ne sistema.
+Dokaz: `docs/RESULTS_E13_2026-11-11.md`, `benchmark/e13_probe_sensitivity.json`.
+
 ## 7. Bench v2 — 700 provjerljivih zadataka (4 bloka)
 
 | model | aritmetika | needle | honesty | tool-JSON | ukupno |

@@ -210,6 +210,14 @@ structure.
 100%**, **false positives 0/391**, Wilson 95% upper bound **0.97%** (≤1%). A rule engine,
 not a model, decides here.
 
+**Probe sensitivity.** The same 500 invoices produce **0% / 30.2% / 47.8% / 49.1% / 100%**
+recall as the probe weakens from "trust the printed total" (L0) through subtotal (L1),
+subtotal+VAT (L2), line items+subtotal (L3) to full recomputation (L4), with 0/119 false
+positives at every level. The published 100% is therefore a property of the
+**(gate, probe) pair**, not of the system: a deployment that only checks row counts would
+report near-zero detection on the same traffic. Any detection rate must be quoted with the
+probe depth that produced it.
+
 ### 4.5 Adaptive injection (E3)
 
 | guard | detection (in-sample) | FP | detection (out-of-sample) | FP |
