@@ -1,0 +1,87 @@
+{
+  "n": 500,
+  "dirty": 381,
+  "clean": 119,
+  "levels": {
+    "L0_trust": {
+      "recall": 0.0,
+      "recall_ci95": [
+        0.0,
+        0.01
+      ],
+      "caught": 0,
+      "dirty": 381,
+      "false_positive_rate": 0.0,
+      "false_positive_ci95": [
+        0.0,
+        0.0313
+      ],
+      "false_positives": 0,
+      "clean": 119
+    },
+    "L1_sum": {
+      "recall": 0.3018,
+      "recall_ci95": [
+        0.2579,
+        0.3497
+      ],
+      "caught": 115,
+      "dirty": 381,
+      "false_positive_rate": 0.0,
+      "false_positive_ci95": [
+        0.0,
+        0.0313
+      ],
+      "false_positives": 0,
+      "clean": 119
+    },
+    "L2_sum_vat": {
+      "recall": 0.4777,
+      "recall_ci95": [
+        0.428,
+        0.5278
+      ],
+      "caught": 182,
+      "dirty": 381,
+      "false_positive_rate": 0.0,
+      "false_positive_ci95": [
+        0.0,
+        0.0313
+      ],
+      "false_positives": 0,
+      "clean": 119
+    },
+    "L3_lines_sum": {
+      "recall": 0.4908,
+      "recall_ci95": [
+        0.441,
+        0.5409
+      ],
+      "caught": 187,
+      "dirty": 381,
+      "false_positive_rate": 0.0,
+      "false_positive_ci95": [
+        0.0,
+        0.0313
+      ],
+      "false_positives": 0,
+      "clean": 119
+    },
+    "L4_full": {
+      "recall": 1.0,
+      "recall_ci95": [
+        0.99,
+        1.0
+      ],
+      "caught": 381,
+      "dirty": 381,
+      "false_positive_rate": 0.0,
+      "false_positive_ci95": [
+        0.0,
+        0.0313
+      ],
+      "false_positives": 0,
+      "clean": 119
+    }
+  }
+}
