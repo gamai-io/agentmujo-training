@@ -7,11 +7,12 @@ završiš.
 
 ## Šta treba
 
-1. Raspakuj kit. Otvori `annotate.html` **dvoklikom** u browseru (Chrome/Firefox; ne treba
-   internet ni server).
-2. U polje **Anotator** upiši svoje ime (npr. `adi`, `renato`, `ana`) — važno je da svako
-   ima svoje ime.
-3. Klikni **„Odaberi fajl"** i učitaj `items_annot.jsonl` iz istog foldera.
+1. Raspakuj kit. Otvori **svoj** fajl dvoklikom u browseru (Chrome/Firefox; ne treba
+   internet ni server): `annotate_adi.html`, `annotate_osoba2.html` ili
+   `annotate_osoba3.html` — ime je već upisano.
+2. U polje **Anotator** ne treba ništa upisivati — ime je već postavljeno u tvom fajlu.
+3. Klikni **„Odaberi fajl"** i učitaj `items_annot_v2.jsonl` iz istog foldera (200 stavki,
+   bez ponavljanja).
 4. Prvih 10 stavki pregledajte **zajedno** (kalibracija), pa dalje svako **sam**.
 5. Za svaku stavku pritisni jednu tipku:
 
