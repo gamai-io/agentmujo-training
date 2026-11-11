@@ -60,6 +60,13 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | `benchmark/loadgen.py` | throughput/MFU load generator |
 | `benchmark/verifier_batch.py` | verifier-economics harness |
 
+## Human evaluation kit (prepared, not yet run)
+
+- `benchmark/human_eval/annotate.html` — offline annotation app (keyboard, localStorage, CSV export).
+- `benchmark/human_eval/items_annot_pilot.jsonl` — 100 fictitious items **with model answers**, ready now.
+- `benchmark/human_eval/score_human_eval.py` — Cohen/Fleiss κ, per-family rates, disagreement list.
+- `benchmark/e15_annot_responses.sbatch` — generates answers for the full 200-item kit (100 fictitious + 100 real with references) and builds `items_annot.jsonl`.
+
 ## Not yet done (honest list)
 
 - E10 adaptive adversary loop (beyond the encoded-payload family).
