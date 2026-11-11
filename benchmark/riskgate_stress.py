@@ -15,10 +15,12 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import random
 import sys
 
-sys.path.insert(0, "/tmp/gamai/agentmujo-training/src")
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(HERE), "src"))
 
 from agentmujo_training.guard.risk_gate import DESTRUCTIVE_TOOLS, RiskGate  # noqa: E402
 from agentmujo_training.guard.risk_gate_v2 import RiskGateV2  # noqa: E402
