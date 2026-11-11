@@ -1,0 +1,27 @@
+{
+  "experiment": "multi_node_dp_scaling_2026-11-10",
+  "model": "mistral-7b-instruct-v0.3",
+  "topology": "one vLLM replica per node, TP=8 (full node, 8 GCDs)",
+  "workload": {"requests": 2048, "prompt_tokens": 256, "max_tokens": 128, "ignore_eos": true},
+  "control": "total concurrency scaled with replicas (256 per replica); a fixed-total-concurrency test underestimates scaling",
+  "jobs": {"1_node": 23625077, "2_nodes": 23626081, "4_nodes": 23626364},
+  "errors_total": 0,
+  "rows": [
+    {"nodes": 1, "gcds": 8, "conc": 256, "per_replica_conc": 256, "rps": 70.49, "tok_s": 9023.2, "p50": 3.142, "p95": 3.751, "speedup": 1.0, "rps_per_gcd": 8.81, "mfu": 0.0848},
+    {"nodes": 2, "gcds": 16, "conc": 512, "per_replica_conc": 256, "rps": 140.37, "tok_s": 17967.8, "p50": 3.381, "p95": 3.761, "speedup": 1.99, "rps_per_gcd": 8.77, "mfu": 0.0844},
+    {"nodes": 4, "gcds": 32, "conc": 1024, "per_replica_conc": 256, "rps": 269.55, "tok_s": 34502.6, "p50": 3.19, "p95": 3.904, "speedup": 3.82, "rps_per_gcd": 8.42, "mfu": 0.0811}
+  ],
+  "control_rows": [
+    {"nodes": 2, "conc": 256, "per_replica_conc": 128, "rps": 93.98, "speedup_vs_1node": 1.33},
+    {"nodes": 4, "conc": 256, "per_replica_conc": 64, "rps": 114.48, "speedup_vs_1node": 1.62},
+    {"nodes": 4, "conc": 512, "per_replica_conc": 128, "rps": 186.89, "speedup_vs_1node": 2.65}
+  ],
+  "per_gcd_by_tp_single_node": {"tp1": 31.96, "tp2": 24.54, "tp4": 12.86, "tp8": 8.81},
+  "conclusions": [
+    "Data-parallel scaling is near linear (1.99x at 2 nodes, 3.82x at 4) when concurrency per replica is held constant; parallel efficiency 99.5% and 95.6%.",
+    "Cross-node networking adds no measurable per-GCD penalty.",
+    "Planning number: ~8.4 rps per GCD at TP=8 => ~30,000 requests per GCD-hour for 7B models.",
+    "Throughput per GCD is best at TP=1 (32.0 rps/GCD) and worst at TP=8 (8.8); TP=8 buys latency, not efficiency. DP with TP=1 replicas was not measured, only inferred from the intra-node sweep.",
+    "Total-concurrency-fixed tests understate scaling: 2 nodes at conc 256 gives 1.33x because each replica receives half the batch."
+  ]
+}

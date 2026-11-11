@@ -110,6 +110,13 @@ We report three failures explicitly, because they shaped the conclusion.
 Both models saturate at concurrency 256; above it throughput is flat and latency grows
 4–20×. Total: 36,550 requests, 0 errors, 0 false successes.
 
+**Multi-node.** With one vLLM replica per node (TP=8, Mistral-7B) and concurrency scaled
+per replica (256 each), throughput is 70.5 rps on 1 node, 140.4 on 2 (1.99×) and 269.6 on
+4 (3.82×, 95.6% parallel efficiency), at a stable 8.4–8.8 rps per GCD. Holding total
+concurrency fixed instead yields only 1.33× on 2 nodes, which is a client-side artefact,
+not a scaling limit. Per GCD, TP=1 is four times more efficient than TP=8 (32.0 vs 8.8
+rps/GCD), so TP=8 should be chosen for latency, not throughput.
+
 ### 4.2 Verifiable benchmark v2 (700 items)
 
 | model | arithmetic | needle | honesty | tool-JSON | overall |

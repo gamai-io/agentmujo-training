@@ -88,6 +88,20 @@ MFU je procjena (bez attention/prefill).
 - Multi-node (DP) skaliranje **nije mjereno**. Dokaz: `docs/RESULTS_SCALING_2026-11-10.md`,
   `benchmark/scaling_2026-11-10.json`, poslovi 23624574/23625077.
 
+**Multi-node (DP, 1 replica po čvoru, TP=8, Mistral-7B, poslovi 23626081/23626364):**
+
+| čvorova | GCD | rps | ubrzanje | rps/GCD | MFU |
+|---|---|---|---|---|---|
+| 1 | 8 | 70,49 | 1,00× | 8,81 | 8,48% |
+| 2 | 16 | 140,37 | **1,99×** | 8,77 | 8,44% |
+| 4 | 32 | 269,55 | **3,82×** | 8,42 | 8,11% |
+
+Concurrency se skalira po replici (256/čvor); sa fiksnim ukupnim conc 2 čvora daju samo
+1,33× (mjerna greška, ne limit). Efikasnost 95,6% na 4 čvora; ~8,4 rps/GCD ≈ **30.000
+zahtjeva po GCD-satu**. Po GCD-u je TP=1 najbolji (32,0 rps) a TP=8 najgori (8,8) — TP=8
+kupuje latenciju. Dokaz: `docs/RESULTS_MULTINODE_2026-11-10.md`,
+`benchmark/multinode_2026-11-10.json`.
+
 ## 6. E6 — deterministička kapija nad fakturama (PDV 17%)
 
 500 faktura (381 dirty / 119 clean), 3 seeda: **recall 1.109/1.109 = 100%**,
