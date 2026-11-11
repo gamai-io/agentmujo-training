@@ -12,10 +12,9 @@ maksimalnu Jaccard sličnost token-skupa prema **svim** dev/eval promptovima koj
 | `bal6_data.jsonl` | 800 | **0,500** | **0** | čist |
 | svi ostali (bench/conf/v2) | ~2000 | ≤ 0,43 | 0 | čist |
 
-**Nađeni duplikat:** holdout `amj-ev2-0051` = „Koji je glavni grad Bosne i Hercegovine?"
-pojavljuje se **identično** u bal5 trening setu (u listi „kratkih činjenica" koju sam
-dodao u bal5). Posljedica: bal5 rezultati na tom jednom zadatku nisu validni kao
-generalizacija (1/60 = 1,7% holdouta).
+**Nađeni duplikat:** holdout `amj-ev2-****` (sadržaj redigovan) pojavljuje se **identično**
+u bal5 trening setu (u listi „kratkih činjenica" koja je dodata u bal5). Posljedica: bal5
+rezultati na tom jednom zadatku nisu validni kao generalizacija (1/60 = 1,7% holdouta).
 
 ## Šta je urađeno
 
