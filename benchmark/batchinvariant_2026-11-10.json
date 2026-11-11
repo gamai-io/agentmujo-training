@@ -1,0 +1,24 @@
+{
+  "experiment": "vllm_batch_invariant_mi250x_2026-11-11",
+  "model": "Qwen2.5-7B",
+  "bench": "v2 (700 items)",
+  "settings": {"temperature": 0.0, "seed": 42, "concurrency": 64, "max_num_seqs": 256,
+               "max_tokens": 256, "vllm_batch_invariant": 1},
+  "jobs": {"tp1": 23626963, "tp4": 23627134},
+  "tp1": {"same_process": {"n": 700, "identical": 700, "rate": 1.0},
+          "cross_process": {"n": 700, "identical": 586, "rate": 0.8371},
+          "sha_a": "83741835c8ba6191b642f390c8a49f7ab4451c43df94a2dc19890cce2f16f0a6",
+          "sha_c": "cc64f981a811735f39e634cbc4783ceb6ef09e837a1f11dcde62a050cd3f584c"},
+  "tp4": {"same_process": {"n": 700, "identical": 700, "rate": 1.0},
+          "cross_process": {"n": 700, "identical": 593, "rate": 0.8471},
+          "sha_a": "077edd05b34416accaace34e878d66b3175eebb3e15aeed3a192d5e6bb75ce95",
+          "sha_c": "eed53213c884a0c9167225803126edcb976afc67289bfdb5b9e00ce8ec42a259"},
+  "baseline_without_flag": {"tp1_serial_conc1": 0.9557, "tp4_serial_conc1": 0.9429,
+                            "note": "E2 jobs 23618870 / 23618435"},
+  "conclusions": [
+    "Batch invariance gives perfect within-process determinism on MI250X (700/700 at concurrency 64, TP=1 and TP=4).",
+    "It does not extend across process restarts: 83.7% (TP=1) and 84.7% (TP=4) identical.",
+    "Tensor parallelism does not break the within-process guarantee on this model.",
+    "Recommendation: enable the flag for within-session comparisons; for cross-run reproducibility the process environment must also be fixed."
+  ]
+}

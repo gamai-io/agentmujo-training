@@ -39,6 +39,12 @@ nedeterminističke kernel redukcije/atomics na ROCm-u, ne samo tensor-paraleliza
 Dokaz: `docs/RESULTS_E2_2026-11-10.md`, `benchmark/e2_determinism_2026-11-10.json`,
 LUMI `out/e2_determinism{,_tp1}.json`.
 
+**`VLLM_BATCH_INVARIANT=1` (11.11., poslovi 23626963/23627134):** na concurrency 64
+(teži uslov od E2) dva prolaza u **istom procesu su 700/700 identična** na TP=1 i TP=4.
+Poslije restarta servera: **586/700 (83,7%)** i **593/700 (84,7%)** — dakle garancija je
+unutar-procesna, ne cross-process. Dokaz: `docs/RESULTS_BATCHINVARIANT_2026-11-10.md`,
+`benchmark/batchinvariant_2026-11-10.json`.
+
 ## 3. E3 — adaptivni injection (203 napada + 200 kontrola)
 
 | kapija | in-sample (seed 2027) | out-of-sample (seed 2028) |

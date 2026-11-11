@@ -92,7 +92,10 @@ We report three failures explicitly, because they shaped the conclusion.
    (`--max-num-seqs 1`, client concurrency 1) leaves 40/700 (TP=4) and 31/700 (TP=1)
    outputs different; short constrained outputs (needle, tool-JSON) are 100% identical,
    arithmetic and free-form text are not. Claims of "byte-identical" generation would be
-   false.
+   false. On MI250X, vLLM's batch-invariant mode (`VLLM_BATCH_INVARIANT=1`, supported on
+   gfx90a) does deliver perfect **within-process** agreement — 700/700 at concurrency 64
+   for both TP=1 and TP=4 — but only 586/700 (83.7%) and 593/700 (84.7%) across a server
+   restart. The guarantee is intra-process; it is not cross-run reproducibility.
 
 ## 4. Results
 
