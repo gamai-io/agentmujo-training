@@ -47,7 +47,9 @@ Tipke: <kbd>1</kbd> HEDGE · <kbd>2</kbd> ANSWER_OK · <kbd>3</kbd> UNSUPPORTED 
 
 <script>
 let items=[], idx=0, marks={};
+const FIXED_ANNOTATOR = "";
 const $=id=>document.getElementById(id);
+function actor(){ return FIXED_ANNOTATOR || ($('who').value||'anon'); }
 
 function key(e){
   const m={'1':'HEDGE','2':'ANSWER_OK','3':'ANSWER_UNSUPPORTED','4':'FABRICATE','0':'SKIP'};
@@ -64,7 +66,8 @@ $('file').onchange=async ev=>{
 };
 
 function load(){
-  const key='gama_hev_'+($('who').value||'anon');
+  if(FIXED_ANNOTATOR){ const inp=$('who'); inp.value=FIXED_ANNOTATOR; inp.readOnly=true; inp.style.background='#eee'; }
+  const key='gama_hev_'+actor();
   marks=JSON.parse(localStorage.getItem(key)||'{}');
   idx=0; render();
 }
@@ -89,10 +92,10 @@ function mark(v){
   if(idx===items.length-1 && Object.keys(marks).length===items.length) alert('Gotovo! Preuzmi CSV.');
 }
 function back(){ idx=Math.max(0,idx-1); render(); }
-function save(){ localStorage.setItem('gama_hev_'+($('who').value||'anon'), JSON.stringify(marks)); }
+function save(){ localStorage.setItem('gama_hev_'+actor(), JSON.stringify(marks)); }
 
 function exportCsv(){
-  const who=($('who').value||'anon').replace(/[^a-z0-9_-]/gi,'_');
+  const who=actor().replace(/[^a-z0-9_-]/gi,'_');
   const rows=[['item_id','annotator','verdict']];
   items.forEach(it=>{ if(marks[it.id]&&marks[it.id]!=='SKIP') rows.push([it.id,who,marks[it.id]]); });
   const csv=rows.map(r=>r.join(',')).join('\n');

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="bs">
+<head>
+<meta charset="utf-8">
+<title>GAMA human eval — anotacija</title>
+<style>
+ body{font-family:system-ui,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;color:#111}
+ .card{border:1px solid #ddd;border-radius:8px;padding:16px;margin:12px 0}
+ .prompt{font-size:1.1rem;font-weight:600;margin-bottom:8px}
+ .ref,.resp{background:#f6f6f6;padding:10px;border-radius:6px;white-space:pre-wrap;font-size:.95rem;max-height:220px;overflow:auto}
+ .row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+ button{padding:10px 14px;border-radius:6px;border:1px solid #bbb;background:#fff;cursor:pointer;font-size:.95rem}
+ button.primary{background:#111;color:#fff;border-color:#111}
+ .muted{color:#666;font-size:.9rem}
+ kbd{background:#eee;border:1px solid #ccc;border-radius:4px;padding:1px 5px;font-size:.85rem}
+</style>
+</head>
+<body>
+<h2>GAMA human eval — anotacija</h2>
+<p class="muted">Učitaj <code>items_annot.jsonl</code>. Ocjenjuj <b>odgovor modela</b> prema rubrici.
+Tipke: <kbd>1</kbd> HEDGE · <kbd>2</kbd> ANSWER_OK · <kbd>3</kbd> UNSUPPORTED · <kbd>4</kbd> FABRICATE · <kbd>0</kbd> preskoči · <kbd>←</kbd> nazad.</p>
+
+<div class="card">
+  <label>Anotator: <input id="who" placeholder="npr. adi" style="padding:6px"></label>
+  <input id="file" type="file" accept=".jsonl,.json" style="margin-left:12px">
+</div>
+
+<div class="card" id="panel" style="display:none">
+  <div class="muted" id="meta"></div>
+  <div class="prompt" id="prompt"></div>
+  <div id="refwrap" style="display:none"><div class="muted">Referenca</div><div class="ref" id="ref"></div></div>
+  <div id="respwrap" style="display:none"><div class="muted">Odgovor modela</div><div class="resp" id="resp"></div></div>
+  <div class="row">
+    <button onclick="mark('HEDGE')">1 · HEDGE</button>
+    <button onclick="mark('ANSWER_OK')">2 · ANSWER_OK</button>
+    <button onclick="mark('ANSWER_UNSUPPORTED')">3 · UNSUPPORTED</button>
+    <button onclick="mark('FABRICATE')">4 · FABRICATE</button>
+    <button onclick="mark('SKIP')">0 · preskoči</button>
+    <button onclick="back()">← nazad</button>
+  </div>
+</div>
+
+<div class="card">
+  <button class="primary" onclick="exportCsv()">Preuzmi CSV</button>
+  <span class="muted" id="prog"></span>
+</div>
+
+<script>
+let items=[], idx=0, marks={};
+const FIXED_ANNOTATOR = "osoba2";
+const $=id=>document.getElementById(id);
+function actor(){ return FIXED_ANNOTATOR || ($('who').value||'anon'); }
+
+function key(e){
+  const m={'1':'HEDGE','2':'ANSWER_OK','3':'ANSWER_UNSUPPORTED','4':'FABRICATE','0':'SKIP'};
+  if(m[e.key]) mark(m[e.key]);
+  if(e.key==='ArrowLeft') back();
+}
+document.addEventListener('keydown',key);
+
+$('file').onchange=async ev=>{
+  const f=ev.target.files[0]; if(!f) return;
+  const txt=await f.text();
+  items=txt.split('\n').filter(x=>x.trim()).map(x=>JSON.parse(x));
+  load(); $('panel').style.display='block';
+};
+
+function load(){
+  if(FIXED_ANNOTATOR){ const inp=$('who'); inp.value=FIXED_ANNOTATOR; inp.readOnly=true; inp.style.background='#eee'; }
+  const key='gama_hev_'+actor();
+  marks=JSON.parse(localStorage.getItem(key)||'{}');
+  idx=0; render();
+}
+$('who').onchange=load;
+
+function render(){
+  if(!items.length) return;
+  const it=items[idx];
+  $('meta').textContent=`${idx+1}/${items.length} · id=${it.id} · family=${it.family||'?'} · kind=${it.kind||''}`;
+  $('prompt').textContent=it.prompt||'';
+  const ref=(it.reference||'').trim();
+  $('refwrap').style.display=ref?'block':'none'; $('ref').textContent=ref;
+  const resp=(it.response||'').trim();
+  $('respwrap').style.display=resp?'block':'none'; $('resp').textContent=resp;
+  const done=Object.keys(marks).length;
+  $('prog').textContent=`označeno ${done}/${items.length}`;
+}
+
+function mark(v){
+  const it=items[idx]; if(!it) return;
+  marks[it.id]=v; save(); idx=Math.min(idx+1,items.length-1); render();
+  if(idx===items.length-1 && Object.keys(marks).length===items.length) alert('Gotovo! Preuzmi CSV.');
+}
+function back(){ idx=Math.max(0,idx-1); render(); }
+function save(){ localStorage.setItem('gama_hev_'+actor(), JSON.stringify(marks)); }
+
+function exportCsv(){
+  const who=actor().replace(/[^a-z0-9_-]/gi,'_');
+  const rows=[['item_id','annotator','verdict']];
+  items.forEach(it=>{ if(marks[it.id]&&marks[it.id]!=='SKIP') rows.push([it.id,who,marks[it.id]]); });
+  const csv=rows.map(r=>r.join(',')).join('\n');
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
+  a.download=`annotations_${who}.csv`; a.click();
+}
+</script>
+</body>
+</html>
