@@ -2,23 +2,57 @@
   "experiment": "verifier_economics_2026-11-11",
   "job": 23637987,
   "n_verified": 300,
-  "truth_counts_in_300": {"FABRICATE": 282, "CORRECT": 18},
+  "truth_counts_in_300": {
+    "FABRICATE": 282,
+    "CORRECT": 18
+  },
   "answers_source": "honesty_real protocol A seed 42, Qwen2.5-7B (job 23623454)",
   "arms": {
-    "self_noref": {"detected": 4, "fabrications": 282, "detection_rate": 0.0142,
-                   "abstained": 2, "abstain_rate": 0.0071, "false_alarms": 0,
-                   "false_alarm_rate": 0.0, "tokens_per_item": 4.01},
-    "self_ref": {"detected": 281, "fabrications": 282, "detection_rate": 0.9965,
-                 "abstained": 0, "abstain_rate": 0.0, "false_alarms": 13,
-                 "false_alarm_rate": 0.7222, "tokens_per_item": 4.0},
-    "cross_noref": {"detected": 0, "fabrications": 282, "detection_rate": 0.0,
-                    "abstained": 147, "abstain_rate": 0.5213, "false_alarms": 0,
-                    "false_alarm_rate": 0.0, "tokens_per_item": 4.57}
+    "self_noref": {
+      "detected": 4,
+      "fabrications": 282,
+      "detection_rate": 0.0142,
+      "abstained": 2,
+      "abstain_rate": 0.0071,
+      "false_alarms": 0,
+      "false_alarm_rate": 0.0,
+      "tokens_per_item": 4.01
+    },
+    "self_ref": {
+      "detected": 281,
+      "fabrications": 282,
+      "detection_rate": 0.9965,
+      "abstained": 0,
+      "abstain_rate": 0.0,
+      "false_alarms": 13,
+      "false_alarm_rate": 0.7222,
+      "tokens_per_item": 4.0
+    },
+    "cross_noref": {
+      "detected": 0,
+      "fabrications": 282,
+      "detection_rate": 0.0,
+      "abstained": 147,
+      "abstain_rate": 0.5213,
+      "false_alarms": 0,
+      "false_alarm_rate": 0.0,
+      "tokens_per_item": 4.57
+    }
   },
   "conclusions": [
     "Model-only verification without evidence is useless: 1.4% (self) and 0% (cross-family) detection of fabrications.",
     "A cross-family verifier abstains 52% of the time instead of detecting; family independence does not create knowledge.",
     "With a reference, detection jumps to 99.65% but false alarms reach 72% on correct claims, because the model reads numeric formats loosely; a deterministic comparator is required.",
-    "Cost is not the obstacle (about 4 output tokens per item); validity is."
-  ]
+    "Cost is not the obstacle (about 4 output tokens per item); validity is.",
+    "With an explicit numeric-tolerance instruction, false alarms fall from 72.2% to 44.4% but remain high: the failure is method-level (language comparison) not just formatting."
+  ],
+  "control_refnum": {
+    "job": 23638090,
+    "detected": 278,
+    "fabrications": 282,
+    "detection_rate": 0.9858,
+    "false_alarms": 8,
+    "correct_claims": 18,
+    "false_alarm_rate": 0.4444
+  }
 }

@@ -20,6 +20,8 @@ N=${N:-300}
 CONC=${CONC:-32}
 TP=${TP:-4}
 PORT=${PORT:-8000}
+MODEL_PATH=${MODEL_PATH:-/scratch/project_465003647/models/qwen25-7b}
+MODEL_TAG=${MODEL_TAG:-qwen}
 module purge >/dev/null 2>&1 || true
 module load Local-LAIF lumi-aif-singularity-bindings
 SIF=/appl/local/laifs/containers/lumi-multitorch-latest.sif
@@ -28,7 +30,7 @@ echo "HOST=$(hostname) DATE=$(date -u)"
 srun -n1 --gres=gpu:mi250:"$TP" --cpus-per-task=32 singularity exec \
   -B /scratch:/scratch -B /project:/project -B /appl/local/laifs:/appl/local/laifs "$SIF" \
   python -m vllm.entrypoints.openai.api_server \
-    --model /scratch/project_465003647/models/qwen25-7b --served-model-name qwen \
+    --model "$MODEL_PATH" --served-model-name "$MODEL_TAG" \
     --host 127.0.0.1 --port "$PORT" --tensor-parallel-size "$TP" --max-model-len 8192 \
     --max-num-seqs 256 --gpu-memory-utilization 0.90 --trust-remote-code \
     > "$OUT/vllm_e12b_$SLURM_JOB_ID.log" 2>&1 &
@@ -39,9 +41,9 @@ echo "READY $(date -u)"
 
 srun --overlap --jobid="$SLURM_JOB_ID" -n1 --cpus-per-task=16 singularity exec \
   -B /scratch:/scratch -B /project:/project "$SIF" \
-  python3 "$KIT/verifier_batch.py" --url "http://127.0.0.1:$PORT" --model qwen \
+  python3 "$KIT/verifier_batch.py" --url "http://127.0.0.1:$PORT" --model "$MODEL_TAG" \
     --items "$ITEMS" --answers "$ANSWERS" --mode refnum --n "$N" --conc "$CONC" \
-    --out "$OUT/v12_refnum_$SLURM_JOB_ID.jsonl"
+    --out "$OUT/v12_refnum_${MODEL_TAG}_$SLURM_JOB_ID.jsonl"
 
 cat > "$OUT/e12b_cmp_$SLURM_JOB_ID.py" <<'PY'
 import json, os, sys
@@ -52,7 +54,7 @@ items = {x["id"]: x for x in (json.loads(l) for l in open(os.path.join(OUT, ".."
 ans = {x["id"]: (x.get("text") or "").strip()
        for x in (json.loads(l) for l in open(os.path.join(OUT, "v2hr_qwen_s42_23623454.jsonl"), encoding="utf-8") if l.strip())}
 truth = {i: classify(items[i], ans[i]) for i in items if i in ans}
-v = {r["id"]: r for r in (json.loads(l) for l in open(os.path.join(OUT, f"v12_refnum_{JOB}.jsonl"), encoding="utf-8") if l.strip())}
+v = {r["id"]: r for r in (json.loads(l) for l in open(os.path.join(OUT, f"v12_refnum_{sys.argv[3]}_{JOB}.jsonl"), encoding="utf-8") if l.strip())}
 fab = [i for i in truth if truth[i] == "FABRICATE" and i in v]
 cor = [i for i in truth if truth[i] == "CORRECT" and i in v]
 det = sum(1 for i in fab if v[i]["verdict"] == "NETACNO")
@@ -66,5 +68,5 @@ print(json.dumps(res, indent=2))
 PY
 srun --overlap --jobid="$SLURM_JOB_ID" -n1 --cpus-per-task=4 singularity exec \
   -B /scratch:/scratch -B /project:/project "$SIF" \
-  python3 "$OUT/e12b_cmp_$SLURM_JOB_ID.py" "$OUT" "$SLURM_JOB_ID"
+  python3 "$OUT/e12b_cmp_$SLURM_JOB_ID.py" "$OUT" "$SLURM_JOB_ID" "$MODEL_TAG"
 echo "E12B_DONE $(date -u)"
