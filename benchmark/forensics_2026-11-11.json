@@ -41,7 +41,9 @@
     "First divergence is early (median token 5, max 42), consistent with prefill/attention numerics rather than late split-K boundaries.",
     "TRITON_ATTN alone eliminates within-process flips, as does VLLM_BATCH_INVARIANT=1; the two together also give 0/100.",
     "Cross-process reproducibility remains ~84% (previous job), so the process environment still matters.",
-    "Default-backend flip rate is the same at TP=4 (10/100, 12/100) as at TP=1, so tensor parallelism does not add within-process flips."
+    "At TP=4, TRITON_ATTN does NOT fix within-process flips (16/100, 15/100, first divergence token 9), so the TP=1 backend fix does not transfer across tensor parallelism; the all-reduce path reintroduces nondeterminism.",
+    "Default-backend flip rate is similar at TP=1 (9-10/100) and TP=4 (10-12/100).",
+    "BI holds at TP=4 (0/100, 0/100), so batch-invariant mode is the only switch that survives tensor parallelism; TRITON_ATTN alone does not."
   ],
   "note": "TP=4 run (job 23627782, arms base/triton) appended when complete.",
   "job_tp4_default": 23627821,
@@ -52,8 +54,19 @@
       "n": 100
     },
     "triton": {
-      "measured": false,
-      "note": "server did not become ready at TP=4 (Triton autotune/compile); first attempt hit the 22 GiB home quota, retry with cache on /scratch also did not start within the window"
+      "flips_r1_r2": 16,
+      "flips_r1_r3": 15,
+      "n": 100,
+      "first_divergence_median": 9,
+      "first_divergence_max": 60,
+      "logprob_delta_mean": 0.21
+    },
+    "bi": {
+      "flips_r1_r2": 0,
+      "flips_r1_r3": 0,
+      "n": 100
     }
-  }
+  },
+  "job_tp4_triton": 23637250,
+  "job_tp4_bi": 23637371
 }

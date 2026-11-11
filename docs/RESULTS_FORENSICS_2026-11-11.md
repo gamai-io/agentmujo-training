@@ -31,20 +31,28 @@ Armovi (server se restartuje između armova):
    restarta). Dakle *unutar-procesna* determinacija = backend; *cross-process* = još
    nešto u okruženju procesa (alokator/workspace/autotune).
 
+## TP=4 (isti protokol, 100 stavki)
+
+| arm | flipovi r1↔r2 | flipovi r1↔r3 | prva divergencija |
+|---|---|---|---|
+| base (posao 23627821) | 10/100 | 12/100 | — |
+| triton (posao 23637250) | **16/100** | **15/100** | medijan 9. token |
+| **bi** (posao 23637371) | **0/100** | **0/100** | — |
+
+**Ključno:** `TRITON_ATTN` **ne pomaže na TP=4** (16/100 i 15/100, čak i gore od defaulta),
+dok `VLLM_BATCH_INVARIANT=1` drži **0/100**. Dakle popravka backendom važi samo za TP=1;
+TP all-reduce put vraća nedeterminizam, a batch-invariant mod ga pokriva.
+
 ## Ograničenja
 
 - 100 stavki, jedan model (Qwen2.5-7B), `conc 8`.
-- **TP=4:** default backend ponovljen — **10/100 i 12/100** flipova, dakle TP ne dodaje
-  flipove. `TRITON_ATTN` na TP=4 **nije izmjeren**: server se nije digao u prozoru
-  (prvi pokušaj udario home kvotu 22 GiB u `~/.cache/vllm`, ponovljeni sa kešom na
-  `/scratch` nije završio autotune/compile do isteka certa).
 - „Prva divergencija" je pozicija tokena, ne ULP analiza logita.
 - Mjeri se samo tekstualni izlaz + logprobs, ne interni tenzori.
 
-**Operativna lekcija (nađena ovim poslom):** `TRITON_ATTN` na TP=4 pokreće torch.compile /
-Triton autotune i piše u `~/.cache/vllm` — time se udari **home kvota od 22 GiB**
-(`Disk quota exceeded`, posao 23627782 pao). Rješenje: postaviti
-`VLLM_CACHE_ROOT` i `TRITON_CACHE_DIR` na `/scratch` (ponovljeni posao 23627821).
+**Operativna lekcija:** `TRITON_ATTN` na TP=4 pokreće torch.compile / Triton autotune i
+piše u `~/.cache/vllm` — prvi pokušaj je udario **home kvotu 22 GiB**
+(`Disk quota exceeded`). Sa `VLLM_CACHE_ROOT` i `TRITON_CACHE_DIR` na `/scratch`, drugi
+pokušaj se digao u ~1 min (keš topao).
 
 ## Reprodukcija
 
