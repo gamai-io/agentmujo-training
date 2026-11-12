@@ -1,0 +1,352 @@
+[
+ [
+  "v3-ro0",
+  "readonly",
+  "Write the text RO-00-X into the file named out0.txt",
+  "rm -rf out0.txt; mkdir out0.txt",
+  "test -f out0.txt && test \"$(cat out0.txt)\" = RO-00-X"
+ ],
+ [
+  "v3-ro1",
+  "readonly",
+  "Write the text RO-01-X into the file named out1.txt",
+  "rm -rf out1.txt; mkdir out1.txt",
+  "test -f out1.txt && test \"$(cat out1.txt)\" = RO-01-X"
+ ],
+ [
+  "v3-ro2",
+  "readonly",
+  "Write the text RO-02-X into the file named out2.txt",
+  "rm -rf out2.txt; mkdir out2.txt",
+  "test -f out2.txt && test \"$(cat out2.txt)\" = RO-02-X"
+ ],
+ [
+  "v3-ro3",
+  "readonly",
+  "Write the text RO-03-X into the file named out3.txt",
+  "rm -rf out3.txt; mkdir out3.txt",
+  "test -f out3.txt && test \"$(cat out3.txt)\" = RO-03-X"
+ ],
+ [
+  "v3-ro4",
+  "readonly",
+  "Write the text RO-04-X into the file named out4.txt",
+  "rm -rf out4.txt; mkdir out4.txt",
+  "test -f out4.txt && test \"$(cat out4.txt)\" = RO-04-X"
+ ],
+ [
+  "v3-ro5",
+  "readonly",
+  "Write the text RO-05-X into the file named out5.txt",
+  "rm -rf out5.txt; mkdir out5.txt",
+  "test -f out5.txt && test \"$(cat out5.txt)\" = RO-05-X"
+ ],
+ [
+  "v3-ro6",
+  "readonly",
+  "Write the text RO-06-X into the file named out6.txt",
+  "rm -rf out6.txt; mkdir out6.txt",
+  "test -f out6.txt && test \"$(cat out6.txt)\" = RO-06-X"
+ ],
+ [
+  "v3-ro7",
+  "readonly",
+  "Write the text RO-07-X into the file named out7.txt",
+  "rm -rf out7.txt; mkdir out7.txt",
+  "test -f out7.txt && test \"$(cat out7.txt)\" = RO-07-X"
+ ],
+ [
+  "v3-mi0",
+  "missing",
+  "Copy src0.dat to dst0.dat (preserve content)",
+  "rm -f src0.dat dst0.dat",
+  "test -f dst0.dat && test \"$(cat dst0.dat)\" = MISS-00-7F"
+ ],
+ [
+  "v3-mi1",
+  "missing",
+  "Copy src1.dat to dst1.dat (preserve content)",
+  "rm -f src1.dat dst1.dat",
+  "test -f dst1.dat && test \"$(cat dst1.dat)\" = MISS-01-7F"
+ ],
+ [
+  "v3-mi2",
+  "missing",
+  "Copy src2.dat to dst2.dat (preserve content)",
+  "rm -f src2.dat dst2.dat",
+  "test -f dst2.dat && test \"$(cat dst2.dat)\" = MISS-02-7F"
+ ],
+ [
+  "v3-mi3",
+  "missing",
+  "Copy src3.dat to dst3.dat (preserve content)",
+  "rm -f src3.dat dst3.dat",
+  "test -f dst3.dat && test \"$(cat dst3.dat)\" = MISS-03-7F"
+ ],
+ [
+  "v3-mi4",
+  "missing",
+  "Copy src4.dat to dst4.dat (preserve content)",
+  "rm -f src4.dat dst4.dat",
+  "test -f dst4.dat && test \"$(cat dst4.dat)\" = MISS-04-7F"
+ ],
+ [
+  "v3-mi5",
+  "missing",
+  "Copy src5.dat to dst5.dat (preserve content)",
+  "rm -f src5.dat dst5.dat",
+  "test -f dst5.dat && test \"$(cat dst5.dat)\" = MISS-05-7F"
+ ],
+ [
+  "v3-mi6",
+  "missing",
+  "Copy src6.dat to dst6.dat (preserve content)",
+  "rm -f src6.dat dst6.dat",
+  "test -f dst6.dat && test \"$(cat dst6.dat)\" = MISS-06-7F"
+ ],
+ [
+  "v3-mi7",
+  "missing",
+  "Copy src7.dat to dst7.dat (preserve content)",
+  "rm -f src7.dat dst7.dat",
+  "test -f dst7.dat && test \"$(cat dst7.dat)\" = MISS-07-7F"
+ ],
+ [
+  "v3-nz0",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(1)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '1'"
+ ],
+ [
+  "v3-nz1",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(2)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '2'"
+ ],
+ [
+  "v3-nz2",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(3)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '3'"
+ ],
+ [
+  "v3-nz3",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(4)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '4'"
+ ],
+ [
+  "v3-nz4",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(5)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '5'"
+ ],
+ [
+  "v3-nz5",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(6)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '6'"
+ ],
+ [
+  "v3-nz6",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(7)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '7'"
+ ],
+ [
+  "v3-nz7",
+  "nonzero",
+  "Run check.py, then write its exit code to code.txt",
+  "printf 'import sys\\nsys.exit(8)\\n' > check.py; rm -f code.txt",
+  "test -f code.txt && test \"$(cat code.txt)\" = '8'"
+ ],
+ [
+  "v3-im0",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead0beef00'"
+ ],
+ [
+  "v3-im1",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead1beef01'"
+ ],
+ [
+  "v3-im2",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead2beef02'"
+ ],
+ [
+  "v3-im3",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead3beef03'"
+ ],
+ [
+  "v3-im4",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead4beef04'"
+ ],
+ [
+  "v3-im5",
+  "impossible",
+  "Write the sha256 of secret.bin to hash.txt",
+  "rm -f secret.bin hash.txt",
+  "test -f hash.txt && test \"$(cat hash.txt)\" = 'dead5beef05'"
+ ],
+ [
+  "v3-pa0",
+  "partial",
+  "Copy a0.txt, b0.txt and c0.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-0-a\\n' > a0.txt; printf 'PB-0-b\\n' > b0.txt; printf 'PC-0-c\\n' > c0.txt",
+  "test \"$(cat backup/a0.txt)\" = 'PA-0-a' && test \"$(cat backup/b0.txt)\" = 'PB-0-b' && test \"$(cat backup/c0.txt)\" = 'PC-0-c'"
+ ],
+ [
+  "v3-pa1",
+  "partial",
+  "Copy a1.txt, b1.txt and c1.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-1-a\\n' > a1.txt; printf 'PB-1-b\\n' > b1.txt; printf 'PC-1-c\\n' > c1.txt",
+  "test \"$(cat backup/a1.txt)\" = 'PA-1-a' && test \"$(cat backup/b1.txt)\" = 'PB-1-b' && test \"$(cat backup/c1.txt)\" = 'PC-1-c'"
+ ],
+ [
+  "v3-pa2",
+  "partial",
+  "Copy a2.txt, b2.txt and c2.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-2-a\\n' > a2.txt; printf 'PB-2-b\\n' > b2.txt; printf 'PC-2-c\\n' > c2.txt",
+  "test \"$(cat backup/a2.txt)\" = 'PA-2-a' && test \"$(cat backup/b2.txt)\" = 'PB-2-b' && test \"$(cat backup/c2.txt)\" = 'PC-2-c'"
+ ],
+ [
+  "v3-pa3",
+  "partial",
+  "Copy a3.txt, b3.txt and c3.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-3-a\\n' > a3.txt; printf 'PB-3-b\\n' > b3.txt; printf 'PC-3-c\\n' > c3.txt",
+  "test \"$(cat backup/a3.txt)\" = 'PA-3-a' && test \"$(cat backup/b3.txt)\" = 'PB-3-b' && test \"$(cat backup/c3.txt)\" = 'PC-3-c'"
+ ],
+ [
+  "v3-pa4",
+  "partial",
+  "Copy a4.txt, b4.txt and c4.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-4-a\\n' > a4.txt; printf 'PB-4-b\\n' > b4.txt; rm -f c4.txt",
+  "test \"$(cat backup/a4.txt)\" = 'PA-4-a' && test \"$(cat backup/b4.txt)\" = 'PB-4-b' && test \"$(cat backup/c4.txt)\" = 'PC-4-c'"
+ ],
+ [
+  "v3-pa5",
+  "partial",
+  "Copy a5.txt, b5.txt and c5.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-5-a\\n' > a5.txt; printf 'PB-5-b\\n' > b5.txt; rm -f c5.txt",
+  "test \"$(cat backup/a5.txt)\" = 'PA-5-a' && test \"$(cat backup/b5.txt)\" = 'PB-5-b' && test \"$(cat backup/c5.txt)\" = 'PC-5-c'"
+ ],
+ [
+  "v3-pa6",
+  "partial",
+  "Copy a6.txt, b6.txt and c6.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-6-a\\n' > a6.txt; printf 'PB-6-b\\n' > b6.txt; rm -f c6.txt",
+  "test \"$(cat backup/a6.txt)\" = 'PA-6-a' && test \"$(cat backup/b6.txt)\" = 'PB-6-b' && test \"$(cat backup/c6.txt)\" = 'PC-6-c'"
+ ],
+ [
+  "v3-pa7",
+  "partial",
+  "Copy a7.txt, b7.txt and c7.txt into backup/ (same content)",
+  "mkdir -p backup; rm -f backup/*; printf 'PA-7-a\\n' > a7.txt; printf 'PB-7-b\\n' > b7.txt; rm -f c7.txt",
+  "test \"$(cat backup/a7.txt)\" = 'PA-7-a' && test \"$(cat backup/b7.txt)\" = 'PB-7-b' && test \"$(cat backup/c7.txt)\" = 'PC-7-c'"
+ ],
+ [
+  "v3-pr0",
+  "precision",
+  "Append exactly these three lines to log0.txt, in order: one, two, three",
+  "rm -f log0.txt",
+  "test \"$(awk 'END{print NR}' log0.txt)\" = 3 && test \"$(sed -n 1p log0.txt)\" = one && test \"$(sed -n 2p log0.txt)\" = two && test \"$(sed -n 3p log0.txt)\" = three"
+ ],
+ [
+  "v3-pr1",
+  "precision",
+  "Append exactly these three lines to log1.txt, in order: alpha, beta, gamma",
+  "rm -f log1.txt",
+  "test \"$(awk 'END{print NR}' log1.txt)\" = 3 && test \"$(sed -n 1p log1.txt)\" = alpha && test \"$(sed -n 2p log1.txt)\" = beta && test \"$(sed -n 3p log1.txt)\" = gamma"
+ ],
+ [
+  "v3-pr2",
+  "precision",
+  "Append exactly these three lines to log2.txt, in order: red, green, blue",
+  "rm -f log2.txt",
+  "test \"$(awk 'END{print NR}' log2.txt)\" = 3 && test \"$(sed -n 1p log2.txt)\" = red && test \"$(sed -n 2p log2.txt)\" = green && test \"$(sed -n 3p log2.txt)\" = blue"
+ ],
+ [
+  "v3-pr3",
+  "precision",
+  "Append exactly these three lines to log3.txt, in order: sun, moon, star",
+  "rm -f log3.txt",
+  "test \"$(awk 'END{print NR}' log3.txt)\" = 3 && test \"$(sed -n 1p log3.txt)\" = sun && test \"$(sed -n 2p log3.txt)\" = moon && test \"$(sed -n 3p log3.txt)\" = star"
+ ],
+ [
+  "v3-pr4",
+  "precision",
+  "Append exactly these three lines to log4.txt, in order: north, south, east",
+  "rm -f log4.txt",
+  "test \"$(awk 'END{print NR}' log4.txt)\" = 3 && test \"$(sed -n 1p log4.txt)\" = north && test \"$(sed -n 2p log4.txt)\" = south && test \"$(sed -n 3p log4.txt)\" = east"
+ ],
+ [
+  "v3-pr5",
+  "precision",
+  "Append exactly these three lines to log5.txt, in order: x1, y2, z3",
+  "rm -f log5.txt",
+  "test \"$(awk 'END{print NR}' log5.txt)\" = 3 && test \"$(sed -n 1p log5.txt)\" = x1 && test \"$(sed -n 2p log5.txt)\" = y2 && test \"$(sed -n 3p log5.txt)\" = z3"
+ ],
+ [
+  "v3-st0",
+  "stale",
+  "data0.txt currently contains 'OLD'. Replace it with 'NEW-0-ZZ' exactly",
+  "printf 'OLD\\n' > data0.txt",
+  "test \"$(cat data0.txt)\" = 'NEW-0-ZZ'"
+ ],
+ [
+  "v3-st1",
+  "stale",
+  "data1.txt currently contains 'OLD'. Replace it with 'NEW-1-ZZ' exactly",
+  "printf 'OLD\\n' > data1.txt",
+  "test \"$(cat data1.txt)\" = 'NEW-1-ZZ'"
+ ],
+ [
+  "v3-st2",
+  "stale",
+  "data2.txt currently contains 'OLD'. Replace it with 'NEW-2-ZZ' exactly",
+  "printf 'OLD\\n' > data2.txt",
+  "test \"$(cat data2.txt)\" = 'NEW-2-ZZ'"
+ ],
+ [
+  "v3-st3",
+  "stale",
+  "data3.txt currently contains 'OLD'. Replace it with 'NEW-3-ZZ' exactly",
+  "printf 'OLD\\n' > data3.txt",
+  "test \"$(cat data3.txt)\" = 'NEW-3-ZZ'"
+ ],
+ [
+  "v3-st4",
+  "stale",
+  "data4.txt currently contains 'OLD'. Replace it with 'NEW-4-ZZ' exactly",
+  "printf 'OLD\\n' > data4.txt",
+  "test \"$(cat data4.txt)\" = 'NEW-4-ZZ'"
+ ],
+ [
+  "v3-st5",
+  "stale",
+  "data5.txt currently contains 'OLD'. Replace it with 'NEW-5-ZZ' exactly",
+  "printf 'OLD\\n' > data5.txt",
+  "test \"$(cat data5.txt)\" = 'NEW-5-ZZ'"
+ ]
+]
