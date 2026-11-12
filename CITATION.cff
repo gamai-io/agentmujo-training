@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 title: AgentMujo Training Framework
-version: 1.8.1
+version: 1.9.0
 date-released: 2026-11-12
-doi: 10.5281/zenodo.24161031
+doi: 10.5281/zenodo.24178790
 license: Apache-2.0
 repository-code: https://github.com/gamai-io/agentmujo-training
 keywords:

@@ -5,12 +5,12 @@
 
 [![CI](https://github.com/gamai-io/agentmujo-training/actions/workflows/ci.yml/badge.svg)](https://github.com/gamai-io/agentmujo-training/actions)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24161031.svg)](https://doi.org/10.5281/zenodo.24161031)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24178790.svg)](https://doi.org/10.5281/zenodo.24178790)
 
-## Evidence release v1.8.1 (2026-11-12)
+## Evidence release v1.9.0 (2026-11-12)
 
-Zenodo DOI **[10.5281/zenodo.24161031](https://doi.org/10.5281/zenodo.24161031)**
-(concept `10.5281/zenodo.24118912`) · GitHub release v1.8.1.
+Zenodo DOI **[10.5281/zenodo.24178790](https://doi.org/10.5281/zenodo.24178790)**
+(concept `10.5281/zenodo.24118912`) · GitHub release v1.9.0.
 
 Contents: 700-item verifiable benchmark (dataset `sha256 49c2f8ac…`, regenerates
 bit-identically), scale runs (36,550 guard requests, 0 false successes), E6 invoice gate
