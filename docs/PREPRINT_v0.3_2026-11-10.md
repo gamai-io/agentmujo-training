@@ -312,6 +312,21 @@ error by abstaining (73% "unclear") but then misses 70% of genuine causal cases.
 action gate (the call was allowed) nor the evidence gate (the artifact exists) covers this;
 reports need a before/after causality trace, not just an outcome.
 
+### 4.7 Human evaluation (κ)
+
+Three annotators (adi, osoba2, osoba3) each scored all **200 unique items** (100 fictitious,
+100 real with references) without AI tools; every item has three labels. Raw agreement is
+**Fleiss κ = 0.48** (moderate; pairwise Cohen κ 0.39, 0.38, 0.67), with 19/200 items
+disagreeing. The label distribution exposes a rubric ambiguity rather than a judgment
+disagreement: on *fictitious* items, where the protocol reserved HEDGE for a correct
+refusal, annotators marked ANSWER_OK in 90/100, 85/100 and 90/100 cases. A **post-hoc**
+mapping of ANSWER_OK to HEDGE on fictitious items gives **Fleiss κ = 0.886** (pairwise
+0.858, 0.874, 0.928). We report the raw κ as the pre-specified result and the corrected κ
+only as a sensitivity analysis; it was not pre-registered, so it cannot be cited as the
+human-evaluation result without a calibration pass. FABRICATE labels are rare (1/600 raw,
+0/600 on real items), consistent with the model answers being mostly hedged; the rubric,
+not the model, is the main source of variance.
+
 ## 5. Discussion
 
 The results separate two problems that are often merged. *Capability* (tool selection,
@@ -338,8 +353,8 @@ separate deterministic component should decide execution and verify outcomes. Mo
 - Artifacts: `benchmark/{gen_v2,run_v2,score_suite,e3_injection,e3_guard_v2,e6_gate,
   riskgate_validate,holdout_overlap,e7_reproduce}.py`, `docs/RESULTS_*.md`,
   `docs/SUMMARY_v1.5_2026-11-10.md`; raw runs in LUMI-O `gama-artifacts/`.
-- Archived evidence pack v1.5.0: DOI `10.5281/zenodo.24118913`
-  (bundle sha256 `344948a2…1897`).
+- Evidence pack v1.8.1: DOI `10.5281/zenodo.24161031` (concept `24118912`);
+  archived v1.5.0: DOI `10.5281/zenodo.24118913`.
 - Private holdout (60 items) stays private; leakage is checked against every dev set
   (`holdout_overlap.py`), and one leaked item found this way was removed.
 
@@ -348,9 +363,9 @@ separate deterministic component should decide execution and verify outcomes. Mo
 - 12 prompt templates at N=10,000 (≈833 repetitions); it is not 10,000 distinct tasks.
 - Bench v2 has 24 templates: effective N is 32–149 depending on the model, so the
   confidence intervals are wide and the per-template results (§4.2b) are the honest unit.
-- Human evaluation is prepared as a 200-item kit with a κ protocol but has not yet been
-  run with independent annotators.
-- No human evaluation; all metrics are automatic and therefore narrow.
+- Human evaluation was run with three annotators on all 200 items: raw Fleiss κ = 0.48;
+  a post-hoc fictitious-ANSWER_OK→HEDGE mapping gives κ = 0.886. The latter is a sensitivity
+  analysis, not a pre-registered result; a calibration pass is needed before citing it.
 - Honesty items concern fictional entities: this is a lower bound on "do not invent", not
   evidence of factual accuracy on real data. The real-entity set (§4.3b) uses Wikidata as
   reference, which may itself contain errors; its control condition has three seeds

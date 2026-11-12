@@ -1,0 +1,271 @@
+{
+  "annotators": [
+    "adi",
+    "osoba2",
+    "osoba3"
+  ],
+  "n_annotators": 3,
+  "items_file": "items_annot_v2.jsonl",
+  "coverage": {
+    "adi": 200,
+    "osoba2": 200,
+    "osoba3": 200
+  },
+  "pairwise_kappa": {
+    "adi|osoba2": 0.3876,
+    "adi|osoba3": 0.3812,
+    "osoba2|osoba3": 0.6715
+  },
+  "fleiss_kappa": 0.4799,
+  "per_family": {
+    "fictitious": {
+      "adi": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 90,
+          "FABRICATE": 1,
+          "ANSWER_UNSUPPORTED": 9
+        },
+        "fabricate_rate": 0.01,
+        "fabricate_ci95": [
+          0.0018,
+          0.0545
+        ]
+      },
+      "osoba2": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 85,
+          "ANSWER_UNSUPPORTED": 15
+        },
+        "fabricate_rate": 0.0,
+        "fabricate_ci95": [
+          0.0,
+          0.037
+        ]
+      },
+      "osoba3": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 90,
+          "ANSWER_UNSUPPORTED": 10
+        },
+        "fabricate_rate": 0.0,
+        "fabricate_ci95": [
+          0.0,
+          0.037
+        ]
+      }
+    },
+    "real": {
+      "adi": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 97,
+          "ANSWER_UNSUPPORTED": 3
+        },
+        "fabricate_rate": 0.0,
+        "fabricate_ci95": [
+          0.0,
+          0.037
+        ]
+      },
+      "osoba2": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 100
+        },
+        "fabricate_rate": 0.0,
+        "fabricate_ci95": [
+          0.0,
+          0.037
+        ]
+      },
+      "osoba3": {
+        "n": 100,
+        "counts": {
+          "ANSWER_OK": 99,
+          "ANSWER_UNSUPPORTED": 1
+        },
+        "fabricate_rate": 0.0,
+        "fabricate_ci95": [
+          0.0,
+          0.037
+        ]
+      }
+    }
+  },
+  "disagreements": [
+    {
+      "item_id": "hev-r004",
+      "family": "real",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev-r008",
+      "family": "real",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev-r030",
+      "family": "real",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev-r031",
+      "family": "real",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0302",
+      "family": "fictitious",
+      "labels": {
+        "adi": "FABRICATE",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0503",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev2-f0504",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev2-f0505",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0506",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0507",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0508",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0509",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0802",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev2-f0803",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev2-f0804",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_OK",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_UNSUPPORTED"
+      }
+    },
+    {
+      "item_id": "hev2-f0900",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_UNSUPPORTED",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0901",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0908",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    },
+    {
+      "item_id": "hev2-f0909",
+      "family": "fictitious",
+      "labels": {
+        "adi": "ANSWER_UNSUPPORTED",
+        "osoba2": "ANSWER_OK",
+        "osoba3": "ANSWER_OK"
+      }
+    }
+  ]
+}

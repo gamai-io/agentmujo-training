@@ -1,6 +1,6 @@
 # Results index — what has been measured (updated 2026-11-11)
 
-Evidence pack v1.6.0: DOI `10.5281/zenodo.24144929` (concept `10.5281/zenodo.24118912`).
+Evidence pack v1.8.1: DOI `10.5281/zenodo.24161031` (concept `10.5281/zenodo.24118912`).
 
 One page, every number with its artifact. Machine: LUMI-G (AMD MI250X, project 465003647).
 Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
@@ -78,17 +78,18 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | `benchmark/loadgen.py` | throughput/MFU load generator |
 | `benchmark/verifier_batch.py` | verifier-economics harness |
 
-## Human evaluation kit v2 (prepared, not yet run)
+## Human evaluation v2 (run 2026-11-12)
 
 - `benchmark/human_eval/annotate_adi.html`, `annotate_osoba2.html`, `annotate_osoba3.html` — offline apps (keyboard, localStorage, CSV export).
 - `benchmark/human_eval/items_annot_v2.jsonl` — 200 **unique** items (100 fictional: 10 entities x 10 paraphrases; 100 real Wikipedia-bs topics with references), all with Qwen2.5-7B answers; md5 `6ca160b05bb7c6fac430cdbc38133c7b`.
 - `benchmark/human_eval/score_human_eval.py` — Cohen/Fleiss κ, per-family rates, Wilson CI, disagreement list.
 - `benchmark/e15_annot_responses.sbatch` — generates answers for additional models (`ANNOT_OUT`) without overwriting the Qwen set.
-- Status: three annotators (Adi, osoba2, osoba3) have the kit; the 3 returned CSVs have **not** arrived yet.
+- **Result:** 3 annotators × 200 items, full coverage; raw **Fleiss κ = 0.48** (pairwise 0.39/0.38/0.67), 19 disagreements.
+- Post-hoc sensitivity: mapping fictitious ANSWER_OK→HEDGE gives **κ = 0.886** (not pre-registered; needs calibration before citing). FABRICATE 1/600 raw, 0/600 on real items.
+- Artifacts: `annotations_adi.csv`, `annotations_osoba2.csv`, `annotations_osoba3.csv`, `human_eval_results.json` (run 2026-11-12).
 
 ## Not yet done (honest list)
 
-- Human evaluation (kit v2 prepared; waiting for 3 annotator CSVs).
 - arXiv submission (no account; needs login + cs.SE endorsement).
 - Fast Lane application: 30.01–01.02.2027, after the current allocation expires (29.01.2027).
 - Cross-process batch-invariance on Mistral via the full v2 suite (partial: TP=1/TP=4 restart tests pass).
