@@ -37,6 +37,7 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | MI250X full atlas: batch match vs B=1 | default 0.81-0.85; `BI=1` **1.0000** (B=2/8/32, TP1/TP4) | same |
 | MI250X full atlas: BI is not TP-invariant | TP1 vs TP4 **39/48 = 81.25%** | same |
 | MI250X full atlas: TRITON_ATTN at TP1 | **48/48 identical to default**; does not remove variation | same |
+| False-success v3: Llama-3.3-70B and local Qwen2.5-7B at n=50 | Llama **5/50 base (10%) -> 1/50 evidence (2%)**; Qwen2.5-7B **2/50 (4%) -> 0/50** | `docs/RESULTS_E_F_V3_2026-11-12.md` |
 | False-success v3 Apertus-70B at n=50 | **18/50 base (36%, CI 24.1-49.9)** vs **10/50 evidence (20%, CI 11.2-33.0)**; missing 8->2, impossible 6->6 | `docs/RESULTS_E_F_V3_2026-11-12.md` |
 | False-success v3 (n=50; DeepSeek/Qwen3.8/gpt-oss) | DeepSeek **1/50 base, 1/50 evidence**; Qwen3.8 0/43, 0/19; gpt-oss **5/50 base**, 0/17 evidence (429s) | `docs/RESULTS_E_F_V3_2026-11-12.md` |
 | False-success v2 (E-F v2, 5 modela, n=11/arm) | **Apertus-70B 4/11 base vs 1/11 evidence**; Qwen-72B 2/11; Qwen3.8 1/11; DeepSeek 0/11; gpt-oss 0/9 | `docs/RESULTS_E_F_V2_2026-11-12.md` |
