@@ -67,6 +67,26 @@ ispravljena je prije v3 (`awk END{print NR}`).
 - **Strict politika je najjača:** Apertus 36%→4%, Llama 10%→0%; zabrana izmišljanja ulaza
   je efikasnija od pukog traženja verifikacije.
 
+
+### Identični limiti (8 koraka / 400 tokena) — konfiguraciona zavisnost
+
+Svi modeli osim Apertus/Llama u glavnoj tabeli već su rađeni sa 8/400. Ponovljeni Apertus i
+Llama sa istim limitima:
+
+| Model (n=50) | base | evidence |
+|---|---|---|
+| Apertus-70B | **22/50 = 44,0%** (CI 31,2–57,7) | *u toku* |
+| Llama-3.3-70B | **11/50 = 22,0%** | **14/50 = 28,0%** |
+| Qwen2.5-7B (local) | 2/50 = 4,0% | 0/50 |
+| DeepSeek | 1/50 = 2,0% | 1/50 = 2,0% |
+| Qwen3.8-27B | 0/43 | 0/19 |
+| gpt-oss-120b | 5/50 = 10,0% | 0/17 |
+
+**Ključno:** sa 6/250 Apertus je bio 36% / Llama 10% (evidence 2%), a sa 8/400 Apertus je
+**44%** i Llama **22%** (evidence **28%**). Stopa i efekat politike **zavise od budžeta
+koraka/tokena**; tvrdnja da evidence-contract pomaže nije robusna na duži budžet. Ovo je
+ograničenje za svaku buduću tvrdnju i zahteva fiksiranje budžeta u pre-registraciji.
+
 ## Ograničenja
 - n=50 za četiri modela (Apertus base i evidence; DeepSeek; Qwen3.8; gpt-oss).
 - Groq 429 smanjuje efektivni n; nema ponovljenih seedova.
