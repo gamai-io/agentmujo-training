@@ -1,0 +1,32 @@
+This software collection is provided and supported by the LUMI AI Factory.
+Run `module help Local-LAIF` for more information about support.
+Not all software may be compatible with software in other stacks,
+so mix at your own risk. 
+HOST=nid005001 DATE=Wed Nov 11 21:10:03 UTC 2026 TP=1 MODEL=/scratch/project_465003647/models/qwen25-7b
+
+
+========================================== ROCm System Management Interface ==========================================
+==================================================== Concise Info ====================================================
+Device  Node  IDs              Temp    Power  Partitions          SCLK    MCLK     Fan  Perf    PwrCap  VRAM%  GPU%  
+[3m              (DID,     GUID)  (Edge)  (Avg)  (Mem, Compute, ID)                                                     [0m
+READY_DEF Wed Nov 11 21:11:32 UTC 2026
+WARNING: While bind mounting '/scratch:/scratch': destination is already in the mount point list
+WARNING: While bind mounting '/project:/project': destination is already in the mount point list
+{"tag": "def", "batch": 1, "reps": 3, "model": "qwen", "max_tokens": 128, "requests": 48, "prompts_with_variation": 4}
+WARNING: While bind mounting '/scratch:/scratch': destination is already in the mount point list
+WARNING: While bind mounting '/project:/project': destination is already in the mount point list
+{"tag": "def", "batch": 8, "reps": 3, "model": "qwen", "max_tokens": 128, "requests": 48, "prompts_with_variation": 3, "ref_exact_match_rate": 0.8125, "ref_compared_requests": 48}
+READY_BI Wed Nov 11 21:13:47 UTC 2026
+(EngineCore pid=80470) /opt/venv/lib/python3.12/site-packages/torch/_dynamo/variables/functions.py:2202: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function at 'batch_invariant.py:141'. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS=+dynamo for a DEBUG stack trace.
+(EngineCore pid=80470)   File "/opt/venv/lib/python3.12/site-packages/vllm/model_executor/layers/batch_invariant.py", line 141, in matmul_persistent
+WARNING: While bind mounting '/scratch:/scratch': destination is already in the mount point list
+WARNING: While bind mounting '/project:/project': destination is already in the mount point list
+{"tag": "bi", "batch": 1, "reps": 3, "model": "qwen", "max_tokens": 128, "requests": 48, "prompts_with_variation": 0}
+WARNING: While bind mounting '/scratch:/scratch': destination is already in the mount point list
+WARNING: While bind mounting '/project:/project': destination is already in the mount point list
+{"tag": "bi", "batch": 8, "reps": 3, "model": "qwen", "max_tokens": 128, "requests": 48, "prompts_with_variation": 0, "ref_exact_match_rate": 1.0, "ref_compared_requests": 48}
+E_A_SMOKE_DONE Wed Nov 11 21:15:21 UTC 2026
+cb68b54632349da49689a78dcfdcc5b875ee91b8c325318a2966b627aabe99d3  /project/project_465003647/gama/out/eA_bi_b1_23658572.jsonl
+2ec602e428aea187d47b8d6fad1539daa66acf6b97dec40b9b03b6558be365c9  /project/project_465003647/gama/out/eA_bi_b8_23658572.jsonl
+d63faf035827be4e795787841bbecdfc1208652b4c69d940ee2b8f7186e168f6  /project/project_465003647/gama/out/eA_def_b1_23658572.jsonl
+2cdbdba7897217663c7e60245a69f3cb9d3ec56e9ab1812dfe6715a4bb6ffb20  /project/project_465003647/gama/out/eA_def_b8_23658572.jsonl

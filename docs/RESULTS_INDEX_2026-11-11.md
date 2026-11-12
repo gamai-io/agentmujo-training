@@ -1,5 +1,7 @@
 # Results index — what has been measured (updated 2026-11-11)
 
+Evidence pack v1.6.0: DOI `10.5281/zenodo.24144929` (concept `10.5281/zenodo.24118912`).
+
 One page, every number with its artifact. Machine: LUMI-G (AMD MI250X, project 465003647).
 Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 
@@ -31,6 +33,21 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 |---|---|---|
 | Serial decoding is not bit-identical | 660/700 (TP=4), 669/700 (TP=1) | `docs/RESULTS_E2_2026-11-10.md` |
 | `VLLM_BATCH_INVARIANT=1` | within process **700/700** (TP=1 and TP=4); across independent restarts **700/700** in repeated tests (Qwen and Mistral, TP=1 and TP=4) (earlier 586/700 did not reproduce; see correction) | `docs/RESULTS_BATCHINVARIANT_2026-11-10.md` |
+| MI250X full atlas: run-to-run nondeterminism at B=1 | **3/16** prompts (TP1 and TP4); `BI=1` **0/16** | `docs/RESULTS_E_A_FULL_2026-11-11.md` |
+| MI250X full atlas: batch match vs B=1 | default 0.81-0.85; `BI=1` **1.0000** (B=2/8/32, TP1/TP4) | same |
+| MI250X full atlas: BI is not TP-invariant | TP1 vs TP4 **39/48 = 81.25%** | same |
+| MI250X full atlas: TRITON_ATTN at TP1 | **48/48 identical to default**; does not remove variation | same |
+| False-success pilot (E-F, Qwen2.5-7B) | **0/20** false success (floor); 2 DONE both true successes; Mistral rollouts invalid (no JSON tool calls) | `docs/RESULTS_E_F_PILOT_2026-11-12.md` |
+| MI250X TP=8 RCCL sweep (E-D) | baseline and 4 ORDER=0 configs all **48/48** across restart; `LAUNCH_ORDER_IMPLICIT=1` fails to start | `docs/RESULTS_E_D_RCCL_2026-11-11.md` |
+| MI250X TP=8 intermittency (E-E) | **15/15** restarts 48/48; combined with 23661013: **1/16** mismatches (~6.25%, Wilson 1.1-28.3%) | `docs/RESULTS_E_E_INTERMITTENCY_2026-11-12.md` |
+| MI250X TP=8 (single node, Mistral): BI not cross-process invariant | BI restart **36/48 = 75%** (TP1/TP4 were 48/48) | `docs/RESULTS_E_C_TP8_2026-11-11.md` |
+| MI250X TP=8: TP-invariance absent | default TP4 vs TP8 39/48; BI TP4 vs TP8 **36/48 = 75%** | same |
+| MI250X TP=8: throughput signal | default 1,898 vs TP4 1,418 tok/s (+34%); BI 756 (no gain) | same |
+| MI250X restart: `BI=1` across process restarts | **48/48** (TP1 and TP4); default TP1 42/48 = 87.5% | `docs/RESULTS_E_A_RESTART_2026-11-11.md` |
+| MI250X cross-node (2 nodes, same TP4 replica) | default 44/48 (B=1), 41/48 (B=8); `BI=1` **48/48 both** | `docs/RESULTS_E_B_CROSSNODE_2026-11-11.md` |
+| MI250X full atlas: Mistral replication | default B=1 **4/16**; BI 0/16; batch match default 0.69-0.83, BI 1.0000; BI cross-TP **36/48 = 75%** | `docs/RESULTS_E_A_MISTRAL_2026-11-11.md` |
+| MI250X pilot: default greedy nondeterministic even at client B=1 | **4/16 prompts** differ across 3 sequential runs (25%, Wilson 7.3-52.4%); `BI=1` 0/16 and 48/48 vs B=8 | `docs/RESULTS_E_A_PILOT_2026-11-11.md` |
+| MI250X pilot: batch effect (default) | 39/48 = **81.25%** exact match B=8 vs B=1 | same |
 | Flip forensics (TP=1) | default 10/100 and 9/100; `TRITON_ATTN` 0/100; `BI` 0/100; first divergence token 5 | `docs/RESULTS_FORENSICS_2026-11-11.md` |
 | Flip forensics (TP=4) | default 10/100, 12/100; `TRITON_ATTN` **16/100, 15/100**; `BI` **0/100** | same |
 | Independent reproduction (E7) | dataset `49c2f8ac…`, E6 and E3 counts identical | `benchmark/e7_reproduce.py` |
@@ -61,17 +78,17 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 | `benchmark/loadgen.py` | throughput/MFU load generator |
 | `benchmark/verifier_batch.py` | verifier-economics harness |
 
-## Human evaluation kit (prepared, not yet run)
+## Human evaluation kit v2 (prepared, not yet run)
 
-- `benchmark/human_eval/annotate.html` — offline annotation app (keyboard, localStorage, CSV export).
-- `benchmark/human_eval/items_annot_pilot.jsonl` — 100 fictitious items **with model answers**, ready now.
-- `benchmark/human_eval/score_human_eval.py` — Cohen/Fleiss κ, per-family rates, disagreement list.
-- `benchmark/e15_annot_responses.sbatch` — generates answers for the full 200-item kit (100 fictitious + 100 real with references) and builds `items_annot.jsonl`.
+- `benchmark/human_eval/annotate_adi.html`, `annotate_osoba2.html`, `annotate_osoba3.html` — offline apps (keyboard, localStorage, CSV export).
+- `benchmark/human_eval/items_annot_v2.jsonl` — 200 **unique** items (100 fictional: 10 entities x 10 paraphrases; 100 real Wikipedia-bs topics with references), all with Qwen2.5-7B answers; md5 `6ca160b05bb7c6fac430cdbc38133c7b`.
+- `benchmark/human_eval/score_human_eval.py` — Cohen/Fleiss κ, per-family rates, Wilson CI, disagreement list.
+- `benchmark/e15_annot_responses.sbatch` — generates answers for additional models (`ANNOT_OUT`) without overwriting the Qwen set.
+- Status: three annotators (Adi, osoba2, osoba3) have the kit; the 3 returned CSVs have **not** arrived yet.
 
 ## Not yet done (honest list)
 
-- E10 adaptive adversary loop (beyond the encoded-payload family).
-- E14 attribution error (self-healing environments).
-- Human evaluation (kit prepared in `benchmark/human_eval/`, not run).
-- arXiv submission (no account; needs login).
+- Human evaluation (kit v2 prepared; waiting for 3 annotator CSVs).
+- arXiv submission (no account; needs login + cs.SE endorsement).
 - Fast Lane application: 30.01–01.02.2027, after the current allocation expires (29.01.2027).
+- Cross-process batch-invariance on Mistral via the full v2 suite (partial: TP=1/TP=4 restart tests pass).

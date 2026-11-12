@@ -1,0 +1,155 @@
+{
+  "tag": "triton_tp1",
+  "batch": 1,
+  "reps": 3,
+  "model": "qwen",
+  "max_tokens": 128,
+  "requests": 48,
+  "prompts_with_variation": 3,
+  "per_prompt": {
+    "arith1": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "27e928d476f169e6f5f86891c9661b54bfbb1860d960f67ee10123c23b77dc88",
+        "27e928d476f169e6f5f86891c9661b54bfbb1860d960f67ee10123c23b77dc88",
+        "27e928d476f169e6f5f86891c9661b54bfbb1860d960f67ee10123c23b77dc88"
+      ]
+    },
+    "arith2": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "a4ecdd704d258aa841bb3f9a1e3b0cafc59bd88810e542f8e7a0519809d78fe7",
+        "a4ecdd704d258aa841bb3f9a1e3b0cafc59bd88810e542f8e7a0519809d78fe7",
+        "a4ecdd704d258aa841bb3f9a1e3b0cafc59bd88810e542f8e7a0519809d78fe7"
+      ]
+    },
+    "arith3": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+        "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+        "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569"
+      ]
+    },
+    "arith4": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+        "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+      ]
+    },
+    "free1": {
+      "n": 3,
+      "unique": 2,
+      "hashes": [
+        "3831ae0bbb92d59d79e51afc73c54fc9846d3b0fc03fdfc2b813ca779a341376",
+        "45cf8d5a34368c2043bdfc6ec85e8f4ec46f6ad2be6e7da321a6c575068ef312",
+        "45cf8d5a34368c2043bdfc6ec85e8f4ec46f6ad2be6e7da321a6c575068ef312"
+      ]
+    },
+    "free2": {
+      "n": 3,
+      "unique": 2,
+      "hashes": [
+        "53d2886a019d91f5bd8337d796e99913c1c74af265d8e79461323c4f20d411ce",
+        "84b160bc4650afacea79d4a0916e4238d7e99248676831eb5f6e16f806f6fb31",
+        "84b160bc4650afacea79d4a0916e4238d7e99248676831eb5f6e16f806f6fb31"
+      ]
+    },
+    "free3": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "38f72b5342c393e2286621fbed75472815cce040a120819681ce071e21b606c9",
+        "38f72b5342c393e2286621fbed75472815cce040a120819681ce071e21b606c9",
+        "38f72b5342c393e2286621fbed75472815cce040a120819681ce071e21b606c9"
+      ]
+    },
+    "free4": {
+      "n": 3,
+      "unique": 2,
+      "hashes": [
+        "65de3bbef741410d3c4c22945e0ad4e9e94fd29ef46c0ea3c4e90450e4f0eb76",
+        "a7455fa7ea41cc04348aa09cbae937a168e3e8c497f74408f1b211ad1a9f96bf",
+        "a7455fa7ea41cc04348aa09cbae937a168e3e8c497f74408f1b211ad1a9f96bf"
+      ]
+    },
+    "json1": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "af037b2584a0d731ca0aa4175f2d5f7dbbe1fce2f111e25e5497b14b5ab4c1e3",
+        "af037b2584a0d731ca0aa4175f2d5f7dbbe1fce2f111e25e5497b14b5ab4c1e3",
+        "af037b2584a0d731ca0aa4175f2d5f7dbbe1fce2f111e25e5497b14b5ab4c1e3"
+      ]
+    },
+    "json2": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "1c55009e962e5aef302f3db04ceac26f5a51198b78602cb427fba53751025e2d",
+        "1c55009e962e5aef302f3db04ceac26f5a51198b78602cb427fba53751025e2d",
+        "1c55009e962e5aef302f3db04ceac26f5a51198b78602cb427fba53751025e2d"
+      ]
+    },
+    "json3": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "de040632c750a386ce5a7b08e8b9d8074a81b440e19c393816379b1e7058d12d",
+        "de040632c750a386ce5a7b08e8b9d8074a81b440e19c393816379b1e7058d12d",
+        "de040632c750a386ce5a7b08e8b9d8074a81b440e19c393816379b1e7058d12d"
+      ]
+    },
+    "json4": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "ac417101b635dd49823012d134203965a2dd45d63adfbd53de0d29c154d3c60d",
+        "ac417101b635dd49823012d134203965a2dd45d63adfbd53de0d29c154d3c60d",
+        "ac417101b635dd49823012d134203965a2dd45d63adfbd53de0d29c154d3c60d"
+      ]
+    },
+    "needle1": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "2515f092ad3829a2cb5a7810c93a4813dc14c51631e3c156fb10d8c9b3ed5963",
+        "2515f092ad3829a2cb5a7810c93a4813dc14c51631e3c156fb10d8c9b3ed5963",
+        "2515f092ad3829a2cb5a7810c93a4813dc14c51631e3c156fb10d8c9b3ed5963"
+      ]
+    },
+    "needle2": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "6f4b6612125fb3a0daecd2799dfd6c9c299424fd920f9b308110a2c1fbd8f443",
+        "6f4b6612125fb3a0daecd2799dfd6c9c299424fd920f9b308110a2c1fbd8f443",
+        "6f4b6612125fb3a0daecd2799dfd6c9c299424fd920f9b308110a2c1fbd8f443"
+      ]
+    },
+    "needle3": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "547394b68e6f9fa4cf7818acaf32c754e8f807d666e641dcf6c449d88bae8301",
+        "547394b68e6f9fa4cf7818acaf32c754e8f807d666e641dcf6c449d88bae8301",
+        "547394b68e6f9fa4cf7818acaf32c754e8f807d666e641dcf6c449d88bae8301"
+      ]
+    },
+    "needle4": {
+      "n": 3,
+      "unique": 1,
+      "hashes": [
+        "607db7fc483c004bb44b8ae625c3e8011a365216cdaed6489a63ae8a6cb5d401",
+        "607db7fc483c004bb44b8ae625c3e8011a365216cdaed6489a63ae8a6cb5d401",
+        "607db7fc483c004bb44b8ae625c3e8011a365216cdaed6489a63ae8a6cb5d401"
+      ]
+    }
+  }
+}

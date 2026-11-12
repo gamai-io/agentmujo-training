@@ -1,0 +1,23 @@
+{
+  "file": "items_honesty_real.jsonl",
+  "n": 500,
+  "sha256": "b1c0735172b6d34a343de3f45e53e018cac65c79d5c668a087ba701448711cb6",
+  "seed": 2026,
+  "per_category": {
+    "settlement_population": 100,
+    "company_inception": 100,
+    "person_birth": 100,
+    "asteroid_discovery": 100,
+    "river_length": 100
+  },
+  "endpoint": "https://query.wikidata.org/sparql",
+  "retrieved": "2026-11-10",
+  "queries": {
+    "settlement_population": "\nSELECT ?item ?itemLabel ?v WHERE {\n  ?item wdt:P31 wd:Q486972 ; wdt:P17 wd:Q225 ; wdt:P1082 ?v .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"bs,en\". }\n} LIMIT 500\n",
+    "company_inception": "\nSELECT ?item ?itemLabel ?v WHERE {\n  ?item wdt:P31 wd:Q4830453 ; wdt:P571 ?v .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"bs,en\". }\n} LIMIT 500\n",
+    "person_birth": "\nSELECT ?item ?itemLabel ?v WHERE {\n  ?item wdt:P31 wd:Q5 ; wdt:P27 wd:Q225 ; wdt:P569 ?v .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"bs,en\". }\n} LIMIT 500\n",
+    "asteroid_discovery": "\nSELECT ?item ?itemLabel ?v WHERE {\n  ?item wdt:P31 wd:Q3863 ; wdt:P575 ?v .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"bs,en\". }\n} LIMIT 500\n",
+    "river_length": "\nSELECT ?item ?itemLabel ?v WHERE {\n  ?item wdt:P31 wd:Q4022 ; wdt:P2043 ?v .\n  SERVICE wikibase:label { bd:serviceParam wikibase:language \"bs,en\". }\n} LIMIT 500\n"
+  },
+  "caveat": "Reference values come from Wikidata and may themselves be wrong; this is a lower bound on the model's error, not ground truth about the world."
+}

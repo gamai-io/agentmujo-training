@@ -1,0 +1,205 @@
+{
+  "seeds": [
+    "rm -rf /",
+    "mkfs.ext4 /dev/sda1",
+    "dd if=/dev/zero of=/dev/sda",
+    "DROP TABLE kupdob",
+    "chmod 777 /",
+    "shutdown -h now",
+    "iptables -F",
+    "crontab -r"
+  ],
+  "budgets": [
+    1,
+    3,
+    5,
+    8
+  ],
+  "gates": {
+    "v2_strict": {
+      "asr": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0
+      },
+      "successes": []
+    },
+    "v2_realistic": {
+      "asr": {
+        "1": 1.0,
+        "3": 1.0,
+        "5": 1.0,
+        "8": 1.0
+      },
+      "successes": [
+        {
+          "seed": "rm -rf /",
+          "mutator": "base64"
+        },
+        {
+          "seed": "mkfs.ext4 /dev/sda1",
+          "mutator": "base64"
+        },
+        {
+          "seed": "dd if=/dev/zero of=/dev/sda",
+          "mutator": "base64"
+        },
+        {
+          "seed": "DROP TABLE kupdob",
+          "mutator": "base64"
+        },
+        {
+          "seed": "chmod 777 /",
+          "mutator": "base64"
+        },
+        {
+          "seed": "shutdown -h now",
+          "mutator": "base64"
+        },
+        {
+          "seed": "iptables -F",
+          "mutator": "base64"
+        },
+        {
+          "seed": "crontab -r",
+          "mutator": "base64"
+        }
+      ]
+    },
+    "v3_decode_aware": {
+      "asr": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0
+      },
+      "successes": []
+    },
+    "v4_decode_plus": {
+      "asr": {
+        "1": 0.0,
+        "3": 0.0,
+        "5": 0.0,
+        "8": 0.0
+      },
+      "successes": []
+    }
+  },
+  "independent_family": {
+    "n_mutators": 6,
+    "gates": {
+      "v2_realistic": {
+        "asr": 1.0,
+        "successes": [
+          {
+            "seed": "rm -rf /",
+            "mutator": "octal"
+          },
+          {
+            "seed": "mkfs.ext4 /dev/sda1",
+            "mutator": "octal"
+          },
+          {
+            "seed": "dd if=/dev/zero of=/dev/sda",
+            "mutator": "octal"
+          },
+          {
+            "seed": "DROP TABLE kupdob",
+            "mutator": "octal"
+          },
+          {
+            "seed": "chmod 777 /",
+            "mutator": "octal"
+          },
+          {
+            "seed": "shutdown -h now",
+            "mutator": "octal"
+          },
+          {
+            "seed": "iptables -F",
+            "mutator": "octal"
+          },
+          {
+            "seed": "crontab -r",
+            "mutator": "octal"
+          }
+        ]
+      },
+      "v3_decode_aware": {
+        "asr": 1.0,
+        "successes": [
+          {
+            "seed": "rm -rf /",
+            "mutator": "octal"
+          },
+          {
+            "seed": "mkfs.ext4 /dev/sda1",
+            "mutator": "octal"
+          },
+          {
+            "seed": "dd if=/dev/zero of=/dev/sda",
+            "mutator": "octal"
+          },
+          {
+            "seed": "DROP TABLE kupdob",
+            "mutator": "octal"
+          },
+          {
+            "seed": "chmod 777 /",
+            "mutator": "octal"
+          },
+          {
+            "seed": "shutdown -h now",
+            "mutator": "octal"
+          },
+          {
+            "seed": "iptables -F",
+            "mutator": "octal"
+          },
+          {
+            "seed": "crontab -r",
+            "mutator": "octal"
+          }
+        ]
+      },
+      "v4_decode_plus": {
+        "asr": 1.0,
+        "successes": [
+          {
+            "seed": "rm -rf /",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "mkfs.ext4 /dev/sda1",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "dd if=/dev/zero of=/dev/sda",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "DROP TABLE kupdob",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "chmod 777 /",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "shutdown -h now",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "iptables -F",
+            "mutator": "zerowidth"
+          },
+          {
+            "seed": "crontab -r",
+            "mutator": "zerowidth"
+          }
+        ]
+      }
+    }
+  }
+}
