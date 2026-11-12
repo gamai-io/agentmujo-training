@@ -13,7 +13,8 @@ list/read/write/run s whitelistom, max 8 koraka; probe poslije rollouta.
 | **DeepSeek-chat** | **1/50 = 2,0%** | 0,35–10,5% | **1/50 = 2,0%** | 0,35–10,5% |
 | **Qwen3.8-27B** (Groq) | **0/43 = 0%** | 0–8,2% | **0/19 = 0%** | 0–16,8% |
 | **gpt-oss-120b** (Groq) | **5/50 = 10,0%** | 4,4–21,4% | 0/17 = 0% | 0–18,4% |
-| Apertus-70B (Aitta) — *v2, n=11* | 4/11 = 36,4% | 15,2–64,6% | 1/11 = 9,1% | 1,6–37,7% |
+| **Apertus-70B** (LUMI Aitta) | **18/50 = 36,0%** | 24,1–49,9% | **10/50 = 20,0%** | 11,2–33,0% |
+| Apertus-70B — *v2, n=11 (referenca)* | 4/11 = 36,4% | 15,2–64,6% | 1/11 = 9,1% | 1,6–37,7% |
 
 Napomena: Groq je vraćao **429 Too Many Requests** (Qwen 7+31, gpt-oss 0+33); ti rollouts su
 isključeni iz stopa. Zato su evidence armovi Qwen/gpt-oss manji (19 i 17 validnih).
@@ -38,14 +39,14 @@ ispravljena je prije v3 (`awk END{print NR}`).
 - **Na n=50, false-success je rijedak za DeepSeek (2%) i Qwen3.8 (0/43), ali ne nula**
   (DeepSeek 1/50 u oba arma).
 - **gpt-oss-120b base 10% (5/50)**: četiri slučaja su tvrdnja bez ikakve radnje (prazan sandbox).
-- **Evidence contract nije pokazao konzistentnu korist** na n=50: DeepSeek 1→1, gpt-oss 5→0
-  ali uz 33/50 429 (ne može se zaključiti), Qwen 0→0.
-- **Apertus-70B ostaje najizraženiji** (36% na n=11) i mehanizam je fabriciranje preduslova;
-  skaliranje na n=50 je skupo zbog latencije/loopova (v3 run je zaustavljen poslije 1 zadatka
-  u 4 min).
+- **Evidence contract je djelimično koristan:** kod Apertusa 18→10 (36%→20%), ali efekat je
+  neravnomjeran: `missing` 8→2, dok `impossible` ostaje **6→6** — kada model izmisli ulazni
+  fajl, verifikacija koju sam izvrši ne pomaže. DeepSeek 1→1, Qwen 0→0, gpt-oss 5→0 (uz 429).
+- **Apertus-70B je najizraženiji na n=50:** 18/50 base (36%), 10/50 evidence (20%). Mehanizam
+  je fabriciranje preduslova (missing 8/8, impossible 6/6 u base armu).
 
 ## Ograničenja
-- n=50 za tri modela; Apertus samo n=11; nijedan model nije mjeren na ≥50 sa 70B.
+- n=50 za četiri modela (Apertus base i evidence; DeepSeek; Qwen3.8; gpt-oss).
 - Groq 429 smanjuje efektivni n; nema ponovljenih seedova.
 - „Impossible" probe koriste sentinel; model može kreirati ulaz — to je namjerno i klasifikovano
   kao fabriciran precondition.
@@ -53,6 +54,6 @@ ispravljena je prije v3 (`awk END{print NR}`).
 - Aitta potrošnja se veže na projekt; tačan obračun nije provjeren.
 
 ## Sljedeće
-1. Apertus-70B base-only n=50 sa `max_tokens=250` i max 6 koraka (procjena ~50 min).
-2. Llama-3.3-70B preko Aitte (prvi load je >90 s; preload pa čekanje).
-3. Lokalni Qwen2.5-7B baseline na istom taskset-u (LUMI, 1 GCD).
+1. Llama-3.3-70B preko Aitte (prvi load je >90 s; preload pa čekanje).
+2. Lokalni Qwen2.5-7B baseline na istom taskset-u (LUMI, 1 GCD).
+3. Ponoviti Apertus evidence sa drugačijim evidence promptom (izvršni oracle umjesto self-check).
