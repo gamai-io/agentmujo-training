@@ -33,6 +33,7 @@ Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 |---|---|---|
 | Serial decoding is not bit-identical | 660/700 (TP=4), 669/700 (TP=1) | `docs/RESULTS_E2_2026-11-10.md` |
 | `VLLM_BATCH_INVARIANT=1` | within process **700/700** (TP=1 and TP=4); across independent restarts **700/700** in repeated tests (Qwen and Mistral, TP=1 and TP=4) (earlier 586/700 did not reproduce; see correction) | `docs/RESULTS_BATCHINVARIANT_2026-11-10.md` |
+| Qwen3-VL-30B-A3B on LUMI (bench v2) | **576/700 = 82.3%** (toolargs 200/200, honesty 47/100); E-F **0/50** false success; invoice supplier/invoice/total 20/20, date 14/20 | `docs/RESULTS_BIG_30B_2026-11-13.md` |
 | MI250X full atlas: run-to-run nondeterminism at B=1 | **3/16** prompts (TP1 and TP4); `BI=1` **0/16** | `docs/RESULTS_E_A_FULL_2026-11-11.md` |
 | MI250X full atlas: batch match vs B=1 | default 0.81-0.85; `BI=1` **1.0000** (B=2/8/32, TP1/TP4) | same |
 | MI250X full atlas: BI is not TP-invariant | TP1 vs TP4 **39/48 = 81.25%** | same |
