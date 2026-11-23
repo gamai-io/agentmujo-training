@@ -13,8 +13,9 @@ Zenodo DOI **[10.5281/zenodo.24178790](https://doi.org/10.5281/zenodo.24178790)*
 (concept `10.5281/zenodo.24118912`) · GitHub release v1.9.0.
 
 Contents: 700-item verifiable benchmark (dataset `sha256 49c2f8ac…`, regenerates
-bit-identically), scale runs (36,550 guard requests, 0 false successes), E6 invoice gate
-(100% recall, 0/391 FP), RiskGate (119/119 destructive calls blocked, 0/108 false blocks),
+bit-identically), scale runs (**30,798 fail-closed gate records, 0 false successes** — the reproducible figure;
+the earlier "36,550" is retracted in `crossnode-bench` as not reproducible from the archive), E6 invoice gate
+(recall 1,109/1,109, FP 0/391), RiskGate (119/119 destructive calls blocked, 0/108 false blocks),
 E3 adaptive injection (90.1%/2.5% in-sample, 85.7%/3.5% out-of-sample — below the 95%
 target), and two negative results: honesty drops under SFT (73% → 41%), and model output is
 **not** bit-identical even with strictly serial decoding (40/700 and 31/700 differ).
@@ -24,8 +25,8 @@ Numbers and sources: [`docs/SUMMARY_v1.5_2026-11-10.md`](docs/SUMMARY_v1.5_2026-
 
 Full table with artifacts: [`docs/RESULTS_INDEX_2026-11-11.md`](docs/RESULTS_INDEX_2026-11-11.md).
 
-- **False success at scale:** 36,550 guard requests, 0 false successes (E1/E5 LUMI scale runs, `docs/SUMMARY_v1.5_2026-11-10.md` §1, §5); the guard's failure mode is text-level generalization, not throughput.
-  *Scope note:* this is **not** the same run as `crossnode-bench` v1.6.2, which reports 30,798 fail-closed gate records (plus 70,342 unguarded records with 5,696 flags). Two different campaigns — do not add or compare the two totals directly.
+- **False success at scale:** **30,798** fail-closed gate records with **0 false successes** (E1–E6, `crossnode-bench` v1.6.2 — reproducible from the shipped archive); the guard's failure mode is text-level generalization, not throughput. The earlier 36,550 figure is retracted.
+  *Scope note:* this is the fail-closed subset of the LUMI campaign published in `crossnode-bench` v1.6.2, which also reports 70,342 unguarded records with 5,696 flags. Do not add or compare the two totals directly.
 - **Text guards do not generalize:** 90.1% detection in-sample → **46.8%** on an independently written attack set (German 0/36).
 - **Action gates do, if they are policies:** exact tool-name matching caught 52.6% of 1,000 attacks; a normalized, fail-closed gate caught **100%** with 0/500 false blocks — but encoded payloads bypass it at **19.6%** once the shell tool is allowlisted.
 - **Gates are only as good as their probes:** the same 500 invoices yield **0% → 100%** recall depending on probe depth.
@@ -48,7 +49,7 @@ koji znaju koristiti alate, raditi višekoračne zadatke i provjeravati
 rezultate — jezgra AgentMujo AI agenta.
 
 > Status: **v0.5 live (joint-23 Q8, gate 6W-2T nad v0.4).**
-> Dataseti: 2911 uzoraka (FC 1252 + AG 541 + BC 1118 + thinking 45).
+> Dataseti: **2956 uzoraka** (FC 1252 + AG 541 + BC 1118 + thinking 45 = 2956; ranije navedenih 2911 bila je greška u sabiranju).
 > Trening pauziran nakon 30 joint runova (eval 1.067→0.873);
 > Svi testovi zeleni (51/51); think-profil ostaje v0.4.
 
