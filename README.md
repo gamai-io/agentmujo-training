@@ -24,7 +24,8 @@ Numbers and sources: [`docs/SUMMARY_v1.5_2026-11-10.md`](docs/SUMMARY_v1.5_2026-
 
 Full table with artifacts: [`docs/RESULTS_INDEX_2026-11-11.md`](docs/RESULTS_INDEX_2026-11-11.md).
 
-- **False success at scale:** 36,550 guard requests, 0 false successes; the guard's failure mode is text-level generalization, not throughput.
+- **False success at scale:** 36,550 guard requests, 0 false successes (E1/E5 LUMI scale runs, `docs/SUMMARY_v1.5_2026-11-10.md` §1, §5); the guard's failure mode is text-level generalization, not throughput.
+  *Scope note:* this is **not** the same run as `crossnode-bench` v1.6.2, which reports 30,798 fail-closed gate records (plus 70,342 unguarded records with 5,696 flags). Two different campaigns — do not add or compare the two totals directly.
 - **Text guards do not generalize:** 90.1% detection in-sample → **46.8%** on an independently written attack set (German 0/36).
 - **Action gates do, if they are policies:** exact tool-name matching caught 52.6% of 1,000 attacks; a normalized, fail-closed gate caught **100%** with 0/500 false blocks — but encoded payloads bypass it at **19.6%** once the shell tool is allowlisted.
 - **Gates are only as good as their probes:** the same 500 invoices yield **0% → 100%** recall depending on probe depth.
