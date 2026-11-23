@@ -15,7 +15,7 @@ Zenodo DOI **[10.5281/zenodo.24178790](https://doi.org/10.5281/zenodo.24178790)*
 Contents: 700-item verifiable benchmark (dataset `sha256 49c2f8ac…`, regenerates
 bit-identically), scale runs (**30,798 fail-closed gate records, 0 false successes** — the reproducible figure;
 the earlier "36,550" is retracted in `crossnode-bench` as not reproducible from the archive), E6 invoice gate
-(recall 1,109/1,109, FP 0/391), RiskGate (119/119 destructive calls blocked, 0/108 false blocks),
+(recall 1,109/1,109, FP 0/391), RiskGate (119/119 destructive calls blocked, 0/108 false blocks on its 108-item set — a different probe set from the 0/500 below),
 E3 adaptive injection (90.1%/2.5% in-sample, 85.7%/3.5% out-of-sample — below the 95%
 target), and two negative results: honesty drops under SFT (73% → 41%), and model output is
 **not** bit-identical even with strictly serial decoding (40/700 and 31/700 differ).
@@ -28,7 +28,7 @@ Full table with artifacts: [`docs/RESULTS_INDEX_2026-11-11.md`](docs/RESULTS_IND
 - **False success at scale:** **30,798** fail-closed gate records with **0 false successes** (E1–E6, `crossnode-bench` v1.6.2 — reproducible from the shipped archive); the guard's failure mode is text-level generalization, not throughput. The earlier 36,550 figure is retracted.
   *Scope note:* this is the fail-closed subset of the LUMI campaign published in `crossnode-bench` v1.6.2, which also reports 70,342 unguarded records with 5,696 flags. Do not add or compare the two totals directly.
 - **Text guards do not generalize:** 90.1% detection in-sample → **46.8%** on an independently written attack set (German 0/36).
-- **Action gates do, if they are policies:** exact tool-name matching caught 52.6% of 1,000 attacks; a normalized, fail-closed gate caught **100%** with 0/500 false blocks — but encoded payloads bypass it at **19.6%** once the shell tool is allowlisted.
+- **Action gates do, if they are policies:** exact tool-name matching caught 52.6% of 1,000 attacks; a normalized, fail-closed gate caught **100%** with 0/500 false blocks (its own 500-item probe set; not the RiskGate 108) — but encoded payloads bypass it at **19.6%** once the shell tool is allowlisted.
 - **Gates are only as good as their probes:** the same 500 invoices yield **0% → 100%** recall depending on probe depth.
 - **Honesty is prompt-bound:** 71–95% fabrication on real obscure entities when the prompt demands a number, 11–22% when refusal is allowed; models hedge 73–81% on *fictional* entities but **0/1000** on real obscure ones.
 - **Model-side verification fails:** 0–1.4% detection without evidence; with a reference, 44–72% false accusations (Qwen) or near-total approval (Mistral).
