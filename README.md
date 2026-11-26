@@ -1,10 +1,15 @@
 # AgentMujo Training Framework
 
-> **Dataset Factory v0.4.0** (2026-10-31): 4.496 train rows, 10 datasets, 500 synthetic tool-use, retired public eval 50 (was published; see benchmarks/RETRACTION_v0.1.md), gaps 0.
+> **Dataset Factory v0.4.0** (2026-10-31): 4.496 rows in 10 release datasets (train splits 2.716 rows; the figure is the release, not the train set), 500 synthetic tool-use, retired public eval 50 (was published; see benchmarks/RETRACTION_v0.1.md), gaps 0.
 > HF: https://huggingface.co/datasets/renatoschust/agentmujo-dataset · Canonical repo: https://github.com/gamai-io/agentmujo-training
 
 [![CI](https://github.com/gamai-io/agentmujo-training/actions/workflows/ci.yml/badge.svg)](https://github.com/gamai-io/agentmujo-training/actions)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
+> **Licence po datasetu:** kod i generisani podaci su Apache-2.0; `agentmujo-bosnian-knowledge` i
+> `agentmujo-rag-memory` sadrže 300 redova izvedenih iz bs.wikipedia i nose **CC BY-SA 4.0**
+> (atribucija je u manifestu svakog dataseta). Ako te redove koristiš u izvedenom djelu, vrijedi
+> share-alike; ne tvrdi da je cijeli release Apache-2.0.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24178790.svg)](https://doi.org/10.5281/zenodo.24178790)
 
 ## Evidence release v1.9.0 (2026-11-12)
@@ -49,9 +54,9 @@ koji znaju koristiti alate, raditi višekoračne zadatke i provjeravati
 rezultate — jezgra AgentMujo AI agenta.
 
 > Status: **v0.5 live (joint-23 Q8, gate 6W-2T nad v0.4).**
-> Dataseti: **2956 uzoraka** (FC 1252 + AG 541 + BC 1118 + thinking 45 = 2956; ranije navedenih 2911 bila je greška u sabiranju).
+> Dataseti: **3.391 uzorak** (FC 1.389 + AG 749 + BC 1.178 + thinking 75 = 3.391; od toga train 2.716, valid 308, test 292). Ranije brojke 2.911 i 2.956 nisu odgovarale fajlovima i ovdje su ispravljene; broj se provjerava u CI-ju.
 > Trening pauziran nakon 30 joint runova (eval 1.067→0.873);
-> Svi testovi zeleni (51/51); think-profil ostaje v0.4.
+> Svi testovi zeleni (179/179); think-profil ostaje v0.4.
 
 ## Razumijevanje za 5 minuta
 
