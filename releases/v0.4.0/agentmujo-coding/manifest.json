@@ -5,7 +5,7 @@
   "created_at": "2026-10-31T18:25:58.151583+00:00",
   "source": "own",
   "license": "internal (Apache-2.0 za kod; podaci po evidenciji)",
-  "input": "/tmp/agentmujo-training/datasets/canonical/coding_repo_v0.2.jsonl",
+  "input": "datasets/canonical/coding_repo_v0.2.jsonl",
   "data": "releases/v0.4.0/agentmujo-coding/data.jsonl",
   "input_sha256": "246f158efabf0e8ebe79e8d5d53818c2870ad0bc7a7145011318f58c75935a59",
   "data_sha256": "2e1558803ec4b442e88a9fb346e9d53784decaf3a00fcdfef6ec93a6b693efaa",

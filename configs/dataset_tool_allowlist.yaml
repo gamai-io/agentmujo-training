@@ -1,0 +1,11 @@
+# DATASET_TOOL_ALLOWLIST_V1 — eksplicitni izuzetak od registry konformanse.
+#
+# Svaki alat koji se poziva u `datasets/canonical/**` ili `releases/**/data.jsonl`
+# MORA biti u `configs/tools.yaml`. Ovaj fajl postoji samo za slucaj da dataset
+# legitimno koristi alat koji namjerno nije u runtime registryju (npr. vanjski
+# MCP alat). Dodavanje imena ovdje je svjesna odluka: dataset zatim trenira poziv
+# koji `policy/engine.py` odbija, pa se ocekuje i odgovarajuci unos u registry ili
+# dokumentovan razlog zasto alat ostaje izvan runtime gatea.
+#
+# Default: PRAZNO. Konformansa mora prolaziti bez izuzetaka.
+allowed_tools: []

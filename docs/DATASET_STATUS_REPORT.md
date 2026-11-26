@@ -15,7 +15,8 @@
 
 ## Sintetički tool-use (v0.4)
 
-- 500 uzoraka, 6 fokusa: sql 100, tool-selection 180, argument-generation 80, multi-step 60, verification 40, data 40.
+- 500 uzoraka, 6 fokusa: diagnostics 100, tool-selection 200, argument-generation 60, multi-step 60, verification 40, data 40.
+- **Registry konformansa:** svaki poziv koristi jedan od 14 alata iz `configs/tools.yaml`; neregistrovani alati (`sql`, `fs_*`, `web_*`, `doc`/`pdf`/`sheet`/`mail`/`python`/`run`) su uklonjeni iz podataka jer ih `policy/engine.py` odbija (deny). Provjera: `amj dataset conformance`.
 - **Deterministički šabloni + schema validacija**, ne LLM halucinacija; `verification_status=schema-validated`, `license=Apache-2.0`.
 - Nije trenirano na benchmarku; benchmark ostaje held-out.
 

@@ -79,6 +79,43 @@ def cmd_tools_validate(args) -> int:
     return 0
 
 
+def cmd_dataset_verify(args) -> int:
+    """amj dataset verify --version 0.4.0 — svaki fajl iz RELEASE.json vs njegov sha256."""
+    sys.path.insert(0, str(REPO_ROOT / "src"))
+    from agentmujo_training.datasets.verify import verify_release
+    r = verify_release(REPO_ROOT, args.version)
+    print(json.dumps({k: v for k, v in r.items() if k != "checks"}, indent=2, ensure_ascii=False))
+    if r["ok"]:
+        print(f"RELEASE OK: {r['version']} — {r['files']} fajlova, {r['total_rows']} redova, svi sha256 se slazu")
+        return 0
+    print(f"RELEASE FAIL: {r['version']} — {len(r['mismatches'])} mismatch(ev)a")
+    return 1
+
+
+def cmd_dataset_conformance(args) -> int:
+    """amj dataset conformance — svaki tool poziv u datasetima mora biti u configs/tools.yaml."""
+    sys.path.insert(0, str(REPO_ROOT / "src"))
+    from pathlib import Path as _Path
+    from agentmujo_training.datasets.conformance import (ALLOWLIST_PATH, check_files,
+                                                         default_targets, load_allowlist)
+    from agentmujo_training.tools import ToolRegistry
+    reg = ToolRegistry.from_yaml(REPO_ROOT / "configs" / "tools.yaml")
+    allowlist_path = _Path(getattr(args, "allowlist", None) or REPO_ROOT / ALLOWLIST_PATH)
+    allowlist = load_allowlist(allowlist_path)
+    paths = [_Path(p) for p in (getattr(args, "paths", None) or default_targets(REPO_ROOT))]
+    r = check_files(paths, reg, allowlist)
+    print(json.dumps({k: v for k, v in r.items() if k != "violations"}, indent=2, ensure_ascii=False))
+    if r["ok"]:
+        print(f"CONFORMANCE OK: {r['calls']} tool poziva u {r['files']} fajlova, "
+              f"0 neregistrovanih (registry: {len(reg.names())} alata, allowlist: {len(allowlist)})")
+        return 0
+    print(f"CONFORMANCE FAIL: {r['violation_count']} prekrsaja "
+          f"({r['unknown_tool_calls']} neregistrovanih poziva)")
+    for v in r["violations"][:20]:
+        print(f"  - {v['file']}:{v['line']} {v.get('tool')}: {v['error']}")
+    return 1
+
+
 def cmd_dataset_validate(args) -> int:
     sys.path.insert(0, str(REPO_ROOT / "src"))
     import yaml
@@ -329,7 +366,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("model", help="model list").add_argument("action", choices=["list"])
     p_model = p.add_argument_group()
     # pojednostavljeno: `amj model list`
-    sub.add_parser("dataset", help="dataset validate|stats|split|sources|ingest|clean|dedup|build|export|release")
+    sub.add_parser("dataset", help="dataset validate|stats|split|sources|ingest|clean|dedup|build|export|release|verify|conformance")
     return p
 
 
@@ -337,7 +374,7 @@ def main(argv=None) -> int:
     # Namjerno jednostavan dispatcher (stabilan za v0.1; Typer/Click tek ako zatreba).
     args = sys.argv[1:] if argv is None else argv
     if not args:
-        print("upotreba: amj {doctor|model list|dataset validate|stats|split|sources|ingest|clean|dedup|build|export|release|tools validate|benchmark run|job create|job status|job validate|artifacts fetch|evaluate|registry build|policy check|train|experiment show|publish|model quantize}")
+        print("upotreba: amj {doctor|model list|dataset validate|stats|split|sources|ingest|clean|dedup|build|export|release|verify|conformance|tools validate|benchmark run|job create|job status|job validate|artifacts fetch|evaluate|registry build|policy check|train|experiment show|publish|model quantize}")
         return 2
     if args[0] == "doctor":
         return cmd_doctor(None)
@@ -372,6 +409,14 @@ def main(argv=None) -> int:
     if args[:2] == ["dataset", "release"]:
         d = dict(zip(args[2::2], args[3::2]))
         return cmd_dataset_release(argparse.Namespace(version=d.get("--version", "0.1.0"), out_dir=d.get("--out-dir", "")))
+    if args[:2] == ["dataset", "verify"]:
+        d = dict(zip(args[2::2], args[3::2]))
+        return cmd_dataset_verify(argparse.Namespace(version=d.get("--version", "0.4.0")))
+    if args[:2] == ["dataset", "conformance"]:
+        rest = [x for x in args[2:] if not x.startswith("--")]
+        d = dict(zip(args[2::2], args[3::2]))
+        return cmd_dataset_conformance(argparse.Namespace(
+            paths=rest or None, allowlist=d.get("--allowlist")))
     if args[:2] == ["dataset", "validate"]:
         allow_dup = "--allow-duplicates" in args
         rest = [x for x in args if x != "--allow-duplicates"]

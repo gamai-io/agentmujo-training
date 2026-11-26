@@ -1,4 +1,4 @@
-.PHONY: install install-train test lint validate-tools validate-datasets benchmark-help doctor
+.PHONY: install install-train test lint validate-tools validate-datasets verify-release tool-conformance benchmark-help doctor
 
 install:
 	pip install -e ".[dev]"
@@ -21,6 +21,12 @@ validate-tools:
 validate-datasets:
 	python -m agentmujo_training.cli.main dataset validate --input datasets/canonical/function_calling_v0.1.jsonl
 	python -m agentmujo_training.cli.main dataset validate --input datasets/canonical/agentic_terminal_v0.1.jsonl
+
+verify-release:
+	python -m agentmujo_training.cli.main dataset verify --version 0.4.0
+
+tool-conformance:
+	python -m agentmujo_training.cli.main dataset conformance
 
 benchmark-help:
 	python -m agentmujo_training.cli.main benchmark run --help

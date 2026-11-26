@@ -43,6 +43,16 @@ def _sha(path: str | Path) -> str:
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def repo_rel(path: str | Path) -> str:
+    """Repo-relativna putanja kad je fajl unutar repoa (portabilan manifest)."""
+    p = Path(path)
+    repo = Path(__file__).resolve().parents[3]
+    try:
+        return p.resolve().relative_to(repo).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def _valid(row: dict[str, Any]) -> tuple[bool, str]:
     for f in REQUIRED_SAMPLE:
         if f not in row or row.get(f) in (None, "", []):
@@ -141,11 +151,21 @@ def build_dataset(input_path: str | Path, out_dir: str | Path, name: str, versio
     data_path = out / "data.jsonl"
     write_jsonl(data_path, kept)
     sid, lic = _source_meta(source_id)
+    # REBUILD_STABLE_V1: rebuild postojece verzije ne mijenja created_at (idempotentnost).
+    created_at = datetime.now(timezone.utc).isoformat()
+    manifest_path = out / "manifest.json"
+    if manifest_path.exists():
+        try:
+            prev = json.loads(manifest_path.read_text(encoding="utf-8"))
+            if prev.get("name") == name and prev.get("version") == version and prev.get("created_at"):
+                created_at = prev["created_at"]
+        except Exception:
+            pass
     manifest = {
         "schema": SCHEMA_VERSION, "name": name, "version": version,
-        "created_at": datetime.now(timezone.utc).isoformat(),
+        "created_at": created_at,
         "source": sid, "license": lic,
-        "input": str(input_path), "data": str(data_path),
+        "input": repo_rel(input_path), "data": repo_rel(data_path),
         "input_sha256": _sha(input_path), "data_sha256": _sha(data_path),
         "counts": {"input": len(rows), "kept": len(kept), "rejected": len(rejected),
                    "duplicates": len(duplicates), "rows": len(kept)},

@@ -18,6 +18,10 @@ jobs:
         run: pip install -e ".[dev]"
       - name: Tests
         run: pytest -q
+      - name: Release integrity (RELEASE.json sha256)
+        run: python -m agentmujo_training.cli.main dataset verify --version 0.4.0
+      - name: Tool registry conformance
+        run: python -m agentmujo_training.cli.main dataset conformance
       - name: Tools registry check
         run: python -m agentmujo_training.cli.main tools validate
       - name: Dataset validation

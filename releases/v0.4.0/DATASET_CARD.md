@@ -19,7 +19,7 @@ pretty_name: AgentMujo Dataset v0.4.0
 | agentmujo-safety | safety | 60 | `91f98210d4583a9e` |
 | agentmujo-reasoning | reasoning | 75 | `9d8deb8bb11ddd47` |
 | agentmujo-function-calling | function-calling, tool-use-mcp | 1374 | `034da077ef1bc141` |
-| agentmujo-synthetic-tool-use | function-calling, tool-use-mcp | 500 | `44e42fd41253c63e` |
+| agentmujo-synthetic-tool-use | function-calling, tool-use-mcp | 500 | `0e5060baa1b0ee69` |
 | agentmujo-agentic-tasks | agentic-tasks, linux-terminal | 739 | `32c98769754dafdf` |
 | agentmujo-bosnian-knowledge | knowledge | 200 | `ef1b322940f5f650` |
 | agentmujo-coding | coding | 100 | `2e1558803ec4b442` |
@@ -29,13 +29,13 @@ pretty_name: AgentMujo Dataset v0.4.0
 ## Benchmark (evaluation, held-out)
 | Benchmark | Kategorija | Zadaci | SHA256 |
 |---|---|---:|---|
-| agentmujo-agentic-evaluation | agentic-evaluation | 50 | `71cb55367a79e723` |
+| agentmujo-agentic-evaluation | agentic-evaluation | 50 | `cee1c0bc73c9e573` |
 
 ## Benchmark results (tool-selection)
 | Fajl | SHA256 |
 |---|---|
-| `aitta_gpt_oss_120b_v0.1.json` | `31810bbfee3bfe19` |
-| `aitta_qwen3.6-35b-a3b_v0.1.json` | `13183fd8f50630a3` |
+| `aitta_gpt_oss_120b_v0.1.json` | `e06311ff2ac0fcb1` |
+| `aitta_qwen3.6-35b-a3b_v0.1.json` | `698c0cc85fcc72ce` |
 
 ## Licence
 - knowledge/RAG: CC BY-SA 4.0 (Wikipedia; attribution URL u metadata).

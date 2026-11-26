@@ -114,7 +114,7 @@
       ],
       "source": "own",
       "rows": 500,
-      "sha256": "44e42fd41253c63e621fe8f2bbeee4cae21f832904b663f731fcef0e07e61791",
+      "sha256": "0e5060baa1b0ee694ef45720c172dbb9b978143855f57a3b939c5e5c5aef7f8f",
       "manifest": "releases/v0.4.0/agentmujo-synthetic-tool-use/manifest.json",
       "counts": {
         "input": 500,
@@ -262,7 +262,7 @@
         "agentic-evaluation"
       ],
       "rows": 50,
-      "sha256": "71cb55367a79e7230eb757496555f0abcef23798a1e60d8a98ebdb7ae695f2a7",
+      "sha256": "cee1c0bc73c9e57399300e9aa5bbd149b5b0dd47925fc7737c4459b0b5d56101",
       "path": "releases/v0.4.0/benchmarks/agentic_eval_v0.1.jsonl",
       "held_out": true,
       "license": "Apache-2.0"
@@ -272,11 +272,11 @@
   "benchmark_results": [
     {
       "file": "aitta_gpt_oss_120b_v0.1.json",
-      "sha256": "31810bbfee3bfe19c97bee953358d40c92e9f77a4be3e18fafd6d8b32e4bb586"
+      "sha256": "e06311ff2ac0fcb1161d11b080f5ab8e27cf1c2a611e205b8b2b0948feea8b15"
     },
     {
       "file": "aitta_qwen3.6-35b-a3b_v0.1.json",
-      "sha256": "13183fd8f50630a362b28ee579874b7cd0e6061cc09ab80cd14df1ee5598490b"
+      "sha256": "698c0cc85fcc72cec09c9ec87712dfd79d72ca7bdc12aa3924022dc972d4cd16"
     }
   ],
   "covered_categories": [

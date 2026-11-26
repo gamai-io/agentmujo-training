@@ -5,10 +5,10 @@
   "created_at": "2026-10-31T18:25:58.088829+00:00",
   "source": "own",
   "license": "internal (Apache-2.0 za kod; podaci po evidenciji)",
-  "input": "/tmp/agentmujo-training/datasets/canonical/function_calling_synthetic_v0.4.jsonl",
+  "input": "datasets/canonical/function_calling_synthetic_v0.4.jsonl",
   "data": "releases/v0.4.0/agentmujo-synthetic-tool-use/data.jsonl",
-  "input_sha256": "041865135aed657e435445e95ff32a98ec77220a5e9e5cd80ac1254b468d1d01",
-  "data_sha256": "44e42fd41253c63e621fe8f2bbeee4cae21f832904b663f731fcef0e07e61791",
+  "input_sha256": "9aa533bff260f9498c627ad89cb5ed355ace0b854f9312d8e41ed8859a08dd60",
+  "data_sha256": "0e5060baa1b0ee694ef45720c172dbb9b978143855f57a3b939c5e5c5aef7f8f",
   "counts": {
     "input": 500,
     "kept": 500,

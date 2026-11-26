@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from .factory import build_dataset, read_jsonl, write_jsonl, distribution
+from .factory import build_dataset, read_jsonl, write_jsonl, distribution, repo_rel
 from .validator import sample_hash
 
 ALL_CATEGORIES = [
@@ -44,6 +44,15 @@ def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def release_dir(repo: str | Path, version: str) -> Path:
+    """Stvarni direktorij releasea: repo koristi `v<verzija>` imena (v0.4.0)."""
+    repo = Path(repo)
+    for cand in (repo / "releases" / f"v{version}", repo / "releases" / version):
+        if cand.is_dir():
+            return cand
+    return repo / "releases" / version
+
+
 def _row_hash(row: dict[str, Any]) -> str:
     if row.get("messages"):
         return sample_hash(row)
@@ -59,9 +68,18 @@ def _preference(repo: Path, spec: dict[str, Any], out: Path, version: str) -> di
     data = d / "data.jsonl"
     write_jsonl(data, rows)
     langs = distribution(rows, "language")
+    # REBUILD_STABLE_V1: rebuild iste verzije cuva created_at (idempotentnost).
+    created_at = datetime.now(timezone.utc).isoformat()
+    if (d / "manifest.json").exists():
+        try:
+            prev = json.loads((d / "manifest.json").read_text(encoding="utf-8"))
+            if prev.get("version") == version and prev.get("created_at"):
+                created_at = prev["created_at"]
+        except Exception:
+            pass
     man = {"schema": "agentmujo.preference.v0", "name": spec["name"], "version": version,
-           "created_at": datetime.now(timezone.utc).isoformat(), "source": "own",
-           "license": "internal", "data": str(data), "data_sha256": _sha(data),
+           "created_at": created_at, "source": "own",
+           "license": "internal", "data": repo_rel(data), "data_sha256": _sha(data),
            "counts": {"input": len(rows), "kept": len(rows), "rejected": 0,
                       "duplicates": 0, "rows": len(rows)},
            "languages": langs or {"?": len(rows)},
@@ -69,15 +87,27 @@ def _preference(repo: Path, spec: dict[str, Any], out: Path, version: str) -> di
            "format": "prompt/chosen/rejected"}
     (d / "manifest.json").write_text(json.dumps(man, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     return {"name": spec["name"], "categories": spec["categories"], "rows": len(rows),
-            "sha256": man["data_sha256"], "manifest": str(d / "manifest.json"),
+            "sha256": man["data_sha256"], "manifest": repo_rel(d / "manifest.json"),
             "counts": man["counts"], "languages": man["languages"], "tasks": man["tasks"],
             "format": "preference"}
 
 
 def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path | None = None) -> dict[str, Any]:
     repo = Path(repo)
-    out = Path(out_dir) if out_dir else repo / "releases" / version
+    out = Path(out_dir) if out_dir else release_dir(repo, version)
     out.mkdir(parents=True, exist_ok=True)
+    # REBUILD_STABLE_V1: pri rebuildu postojece verzije cuvamo created_at i rucno
+    # dodane top-level metapodatke (npr. benchmark_retraction), i kopiramo samo
+    # benchmark rezultate koji su vec u releaseu — rebuild ne smije tiho mijenjati
+    # sadrzaj objavljenog releasea izvan onoga sto se stvarno rebuildalo.
+    prev: dict[str, Any] = {}
+    if (out / "RELEASE.json").exists():
+        try:
+            prev = json.loads((out / "RELEASE.json").read_text(encoding="utf-8"))
+        except Exception:
+            prev = {}
+    pinned_results = ({str(r.get("file")) for r in prev.get("benchmark_results", [])}
+                      if prev.get("benchmark_results") else None)
     datasets: list[dict[str, Any]] = []
     covered: set[str] = set()
     errors: list[str] = []
@@ -93,7 +123,7 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
             datasets.append({"name": spec["name"], "categories": spec["categories"],
                              "source": str(spec.get("source") or "own"),
                              "rows": man["counts"]["rows"], "sha256": man["data_sha256"],
-                             "manifest": str(out / spec["name"] / "manifest.json"),
+                             "manifest": repo_rel(out / spec["name"] / "manifest.json"),
                              "counts": man["counts"], "languages": man.get("languages", {}),
                              "tasks": man.get("tasks", {})})
             covered.update(spec["categories"])
@@ -121,13 +151,15 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
         benchmark_rows = len(read_jsonl(bench_src))
         benchmarks.append({"name": "agentmujo-agentic-evaluation", "role": "evaluation",
                            "categories": ["agentic-evaluation"], "rows": benchmark_rows,
-                           "sha256": _sha(bdst), "path": str(bdst), "held_out": True,
+                           "sha256": _sha(bdst), "path": repo_rel(bdst), "held_out": True,
                            "license": "Apache-2.0"})
         results_src = repo / "benchmarks" / "results"
         if results_src.exists():
             rdir = bdir / "results"
             rdir.mkdir(parents=True, exist_ok=True)
             for rp in sorted(results_src.glob("*.json")):
+                if pinned_results is not None and rp.name not in pinned_results:
+                    continue
                 shutil.copy2(rp, rdir / rp.name)
                 benchmark_results.append({"file": rp.name, "sha256": _sha(rdir / rp.name)})
         covered.add("agentic-evaluation")
@@ -186,7 +218,9 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
     total = sum(int(d.get("rows") or 0) for d in datasets)
     release = {
         "schema": "agentmujo.release.v0", "name": "AgentMujo Dataset", "version": version,
-        "created_at": datetime.now(timezone.utc).isoformat(), "repository": "gamai-io/agentmujo-training",
+        "created_at": (prev.get("created_at") if prev.get("version") == version and prev.get("created_at")
+                       else datetime.now(timezone.utc).isoformat()),
+        "repository": "gamai-io/agentmujo-training",
         "datasets": datasets, "benchmarks": benchmarks, "benchmark_rows": benchmark_rows,
         "benchmark_results": benchmark_results,
         "covered_categories": sorted(covered), "gaps": gaps,
@@ -197,6 +231,8 @@ def build_release(repo: str | Path, version: str = "0.1.0", out_dir: str | Path 
                  "agentic-evaluation je held-out benchmark, ne trening.",
         "errors": errors,
     }
+    for key, value in prev.items():  # EXTRA_KEYS_CARRY_V1: ne brisi rucno dodane metapodatke
+        release.setdefault(key, value)
     (out / "RELEASE.json").write_text(json.dumps(release, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     lines = ["---", "language:", "  - bs", "license: other",
              "task_categories:", "  - text-generation", f"pretty_name: AgentMujo Dataset v{version}", "---", "",
