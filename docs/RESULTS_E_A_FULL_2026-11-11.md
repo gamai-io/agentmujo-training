@@ -6,6 +6,7 @@
 armovi: `default`, `VLLM_BATCH_INVARIANT=1` (BI), `TRITON_ATTN`, `BI+TRITON`.
 vLLM 0.26.0+lumi_aif_gfx90a, ROCm 7.2, LUMI-G MI250X. Trajanje 18 min, 4 GCD.
 **Dokaz:** `results/eA-full-2026-11-11/` (32 summary + 8 B=1 JSONL + SHA256SUMS).
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## 1. Varijacija kroz 3 ponavljanja (B=1, isti prompt)
 

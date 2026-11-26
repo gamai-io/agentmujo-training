@@ -5,6 +5,8 @@ Evidence pack v1.8.1: DOI `10.5281/zenodo.24161031` (concept `10.5281/zenodo.241
 One page, every number with its artifact. Machine: LUMI-G (AMD MI250X, project 465003647).
 Unless stated otherwise: `temperature=0`, `seed=42`, 4 GCDs per job.
 
+> **Arhivirano (2026-11-26):** sirovi run artefakti (`results/<run>/`, `benchmark/v2_results/`, stariji `results_lumi_*.jsonl`) više nisu u gitu — preuzmi `results-archive-2026-11-26.tar.gz` i `benchmark-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`). Reproduceri (`benchmark/*.py`, `*.sbatch`) i mali dokaz-JSON-ovi ostaju u gitu. Detalji: `ARCHIVE.md`.
+
 ## Claims and gates
 
 | Result | Number | Artifact |

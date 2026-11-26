@@ -98,6 +98,8 @@ pytest -q                     # 51 testova
   1118 bosnian-core + 45 thinking + DPO parovi; sirovi podaci na HF Hubu
 - `datasets/splits/` — zamrznuti train/valid/test + leakage_report.json
 - `benchmark/` — AgentMujo-Bench (16 kategorija, 48 slučajeva v0.5) + agent_eval.py + format-probe + bosanska proba
+- `archive/` — `ARCHIVE.md` + sha256 manifesti; sirovi run dumps (`results/`, stariji
+  `benchmark/` dumpovi) su release asset `archive-2026-11-26`, ne git
 - `quantization/` — GGUF Q8 pipeline (convert --no-mtp + block_count patch protokol)
 - `workers/kaggle/` — T4 worker (SFT + DPO + smoke), notebook generator, 40 jobova
 - `deployment/` — Ollama Modelfile profili (thinking/non-thinking, zajednički GGUF)

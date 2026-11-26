@@ -3,6 +3,7 @@
 **Ista pre-registracija** (`PREREG_E_A_2026-11-11.md`), isti prompt set i protokol;
 model **Mistral-7B-Instruct-v0.3** (`/scratch/project_465003647/models/mistral-7b-instruct-v0.3`).
 Trajanje 32 min, 4 GCD. **Dokaz:** `results/eA-mistral-2026-11-11/` + SHA256SUMS.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## 1. Varijacija kroz 3 ponavljanja (B=1)
 

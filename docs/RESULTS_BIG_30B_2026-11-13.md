@@ -2,6 +2,7 @@
 
 **Setup:** `Qwen/Qwen3-VL-30B-A3B-Instruct` (31B total, 3B active), LUMI-G 1 node (8 GCD, 512 GB HBM),
 vLLM TP=8, 16k context, greedy decoding (`temperature=0`). Artifacts in `results/big-30b-2026-11-13/`.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## 1. Ablation across training mixtures
 

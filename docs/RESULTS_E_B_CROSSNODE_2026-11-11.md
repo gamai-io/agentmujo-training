@@ -4,6 +4,7 @@
 (`nid007874`, `nid007890`), isti model i konfiguracija; čvor B poređen sa čvorom A.
 **Nije** TP=8 preko čvorova (to je odvojen, skuplji test).
 Trajanje 11 min, 2 čvora × 4 GCD. **Dokaz:** `results/eB-crossnode-2026-11-11/`.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 | Arm | B=1 (48 zahtjeva) | B=8 (48 zahtjeva) |
 |---|---|---|

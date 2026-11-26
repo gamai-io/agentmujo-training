@@ -3,6 +3,7 @@
 **Pre-registracija:** `PREREG_E_C_TP8_2026-11-11.md` + Amendman 1 (Qwen 28 glava → TP8
 nije djeljiv; prebačeno na Mistral-7B, 32 glave). Trajanje 12 min, **8 GCD (pun čvor)**.
 **Dokaz:** `results/eC-tp8-2026-11-11/` + SHA256SUMS.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## 1. Izvodljivost
 - Qwen2.5-7B: **TP=8 odbijen prije serviranja** —

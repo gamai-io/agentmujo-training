@@ -3,6 +3,7 @@
 **Pre-registracija:** `PREREG_E_E_INTERMITTENCY_2026-11-12.md`. Mistral-7B, TP=8, BI=1,
 B=1, 16 promptova × 1 rep (48 zahtjeva); run1 referenca + **5 restartova** po konfiguraciji.
 3 konfiguracije × 6 procesa = 18. Trajanje 31 min, 8 GCD. **Dokaz:** `results/eE-intermittency-2026-11-12/`.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## Rezultati
 

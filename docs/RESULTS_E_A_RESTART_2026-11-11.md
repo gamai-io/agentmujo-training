@@ -3,6 +3,7 @@
 **Postavka:** Qwen2.5-7B, greedy, 16 promptova × 3 reps, B=1; dva odvojena vLLM procesa
 (restart) po armu; drugi run poređen sa prvim. Trajanje 13 min, 4 GCD.
 **Dokaz:** `results/eA-restart-2026-11-11/` + SHA256SUMS.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 | Arm | Varijacija unutar runa | Poklapanje poslije restarta |
 |---|---|---|

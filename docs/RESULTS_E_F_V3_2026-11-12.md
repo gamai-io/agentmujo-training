@@ -5,6 +5,7 @@ partial 8, precision 6, stale 6) × 2 politike × 3 modela = 300 planiranih roll
 Isti harness kao E-F v2 (`benchmark/eF_agent_v2.py --tasks-file tasks_v3.json`), alati
 list/read/write/run s whitelistom, max 8 koraka; probe poslije rollouta.
 **Dokaz:** `results/eF-v3-2026-11-12/` (JSONL, tasks_v3.json, SHA256SUMS).
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## Rezultati (validni rollouti; 429 odvojeni)
 

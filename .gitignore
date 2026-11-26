@@ -61,3 +61,6 @@ tenants.json
 .git-credentials
 __pycache__/
 *.pyc
+
+# Release assets: archive tarballs se objavljuju kao GitHub release, ne u git
+archive/*.tar.gz

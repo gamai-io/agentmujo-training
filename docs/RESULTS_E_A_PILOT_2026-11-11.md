@@ -5,6 +5,7 @@
 16 fiksnih promptova × 3 ponavljanja; TP=1; vLLM 0.26.0+lumi_aif_gfx90a, ROCm 7.2;
 klijent B=1 (strogo sekvencijalno) i B=8; arm default vs `VLLM_BATCH_INVARIANT=1`.
 **Dokaz:** `results/eA-pilot-2026-11-11/` (JSONL + summary + server log + SHA256SUMS).
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## Rezultat 1 — default nije deterministički ni pri B=1
 

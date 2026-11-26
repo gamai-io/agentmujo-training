@@ -74,6 +74,8 @@ odgovorima modela i, gdje postoji, referencom) je **spreman** (posao 23651469). 
 Istih 200 stavki (`items_200_run.jsonl`) je pušteno kroz tri modela, `temperature=0`,
 `seed=42`, `conc=32`, `max_tokens=128` (poslovi 23651469 / 23654514 / 23654547):
 
+> **Arhivirano (2026-11-26):** `items_200_run.jsonl` (sirovi izlazi) nije više u gitu — preuzmi `benchmark-archive-2026-11-26.tar.gz`; izvedeni setovi (`items_annot_*.jsonl`) ostaju u gitu. Detalji: `ARCHIVE.md`.
+
 | fajl | model |
 |---|---|
 | `items_annot.jsonl` | Qwen2.5-7B (`qwen25-7b`) — **ova se koristi za ljudsku anotaciju** |
@@ -82,6 +84,7 @@ Istih 200 stavki (`items_200_run.jsonl`) je pušteno kroz tri modela, `temperatu
 
 Sva tri imaju 200/200 odgovora. Druga dva su artefakt za kasniju analizu (ne šalju se
 anotatorima — to bi bilo 600 sudova po osobi).
+
 
 ## 8. Šta se ne tvrdi
 

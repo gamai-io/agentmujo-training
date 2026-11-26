@@ -4,6 +4,7 @@
 10 zadataka (read-only 3, missing 3, nonzero 2, impossible 2) × 2 politike (base/evidence),
 greedy, max 8 koraka, deterministička proba poslije rollouta.
 Trajanje 4 min, 4 GCD. **Dokaz:** `results/eF-pilot-2026-11-12/`.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## Rezultati
 

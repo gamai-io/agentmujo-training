@@ -6,6 +6,7 @@ Agent ima alate list/read/write/run (whitelist: ls, cat, wc, sha256sum, test, py
 bez shell metakaraktera i bez putanja izvan sandboxa) i `done(claim,summary)`, max 8 koraka.
 Probe se izvršava poslije rollouta; **false success = claim DONE ∧ probe fail**.
 Izvorni harness: `benchmark/eF_agent_v2.py`; sirovi JSONL u `results/eF-v2-2026-11-12/`.
+> **Arhivirano (2026-11-26):** `results/` nije više u gitu — preuzmi `results-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
 
 ## Rezultati (validni rollouti; greške API-ja odvojene)
 

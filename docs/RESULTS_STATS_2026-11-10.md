@@ -78,3 +78,5 @@ python3 cluster_robust.py --items items_v2.jsonl --rescore \
 
 Napomena: lokalni `v2_results/v2_bal5_23603294.jsonl` je run **prije** `NO_THINK` popravke
 (b4=0, b5=0) i nije korišten; objavljeni bal5 (444/700) dolazi iz kasnijeg runa.
+
+> **Arhivirano (2026-11-26):** ovaj dump nije više u gitu — preuzmi `benchmark-archive-2026-11-26.tar.gz` (`gh release download archive-2026-11-26`); detalji u `ARCHIVE.md`.
