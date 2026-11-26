@@ -46,6 +46,10 @@ def main(argv: list[str]) -> int:
     stale = 0
     for manifest_path in sorted(MANIFESTS.glob("*.json")):
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if not manifest.get("file"):
+            # provenance manifests (e.g. wikipedia_sources) describe a source, not a dataset file
+            print(f"{manifest_path.name}: not a dataset manifest, skipped")
+            continue
         target = ROOT / manifest.get("file", "")
         if not target.is_file():
             print(f"{manifest_path.name}: file {manifest.get('file')!r} missing")

@@ -21,6 +21,8 @@ class Manifests(unittest.TestCase):
         import json
         for path in (ROOT / "datasets" / "manifests").glob("*.json"):
             manifest = json.loads(path.read_text(encoding="utf-8"))
+            if not manifest.get("file"):
+                continue        # provenance manifest, checked by test_wikipedia_sources
             self.assertRegex(manifest.get("sha256", ""), r"^[0-9a-f]{64}$", path.name)
 
 

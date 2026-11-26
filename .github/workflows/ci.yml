@@ -18,6 +18,8 @@ jobs:
         run: pip install -e ".[dev]"
       - name: Tests
         run: pytest -q
+      - name: Wikipedia sources are pinned
+        run: python3 scripts/pin_wikipedia_sources.py --check
       - name: Dataset manifests match their files
         run: python3 tools/refresh_manifests.py --check
       - name: No personal data or credentials

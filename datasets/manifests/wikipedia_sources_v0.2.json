@@ -1,0 +1,2811 @@
+{
+ "version": "0.2",
+ "api": "https://bs.wikipedia.org/w/api.php",
+ "note": "Revision current at retrieved_at; rev_sha1 is MediaWiki's own content hash, so the source can be re-checked without trusting us.",
+ "files": {
+  "knowledge": [
+   {
+    "id": "amj-kn-0001",
+    "title": "Dalaj Lama",
+    "retrieved_at": "2026-10-31",
+    "revid": 3832341,
+    "rev_timestamp": "2026-04-21T12:17:21Z",
+    "rev_sha1": "a3fb8651432839997f85b21421148a264497ded0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0002",
+    "title": "9. vijek p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3872585,
+    "rev_timestamp": "2026-05-28T18:34:14Z",
+    "rev_sha1": "e539108487383aa73190e953df80518119372dc3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0003",
+    "title": "IC 931",
+    "retrieved_at": "2026-10-31",
+    "revid": 3720967,
+    "rev_timestamp": "2025-06-22T00:16:43Z",
+    "rev_sha1": "9b61445e14bdedbf23b733bee0eb54f55fc4443e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0004",
+    "title": "Razboj Ljevčanski",
+    "retrieved_at": "2026-10-31",
+    "revid": 3502845,
+    "rev_timestamp": "2023-04-15T12:26:39Z",
+    "rev_sha1": "de37fbfea669b9bcf687fb586388117a5019c4a3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0005",
+    "title": "Ćukovac",
+    "retrieved_at": "2026-10-31",
+    "revid": 3739133,
+    "rev_timestamp": "2025-07-17T06:01:23Z",
+    "rev_sha1": "2a5445a235d9a6c3548a2c6cbed8dec1b926340e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0006",
+    "title": "Zagrad",
+    "retrieved_at": "2026-10-31",
+    "revid": 3736891,
+    "rev_timestamp": "2025-07-17T05:23:38Z",
+    "rev_sha1": "15f3207f4d1a41435ed223e6ac2511f2b887c7f9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0007",
+    "title": "Spisak finala UEFA Kupa pobjednika kupova",
+    "retrieved_at": "2026-10-31",
+    "revid": 3502337,
+    "rev_timestamp": "2023-04-15T12:09:45Z",
+    "rev_sha1": "945e02ac0c18224f54253d04e662a4752e47f034",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0008",
+    "title": "Svjetsko prvenstvo u atletici 2017 – 10.000 m (muškarci)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3499854,
+    "rev_timestamp": "2023-04-14T14:40:14Z",
+    "rev_sha1": "8bfeb2e83d5b2f8c2f8312c93a8954d2912514e1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0009",
+    "title": "TECR",
+    "retrieved_at": "2026-10-31",
+    "revid": 3931282,
+    "rev_timestamp": "2026-09-25T20:27:33Z",
+    "rev_sha1": "c9f0f14b6886259a1973abe4dc910d8dadab4e12",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0010",
+    "title": "Šićki brod (jezero)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3916719,
+    "rev_timestamp": "2026-08-06T11:52:46Z",
+    "rev_sha1": "369f5e3b9b0da42a34df9d6b980cb095e0e3e949",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0011",
+    "title": "Thierry Henry",
+    "retrieved_at": "2026-10-31",
+    "revid": 3904215,
+    "rev_timestamp": "2026-07-10T17:00:44Z",
+    "rev_sha1": "3751abfacb7a0c44865db2e709af4b2a03740816",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0012",
+    "title": "Islamsko osiguranje",
+    "retrieved_at": "2026-10-31",
+    "revid": 3927140,
+    "rev_timestamp": "2026-09-22T20:49:27Z",
+    "rev_sha1": "aabac390e9240dc9192ba4a784cced9210d9284f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0013",
+    "title": "Hasanaginica (opera)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3855151,
+    "rev_timestamp": "2026-05-27T11:05:00Z",
+    "rev_sha1": "6a5e13417344d6b47e0d579bc65f021fae1f2929",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0014",
+    "title": "Forma kose",
+    "retrieved_at": "2026-10-31",
+    "revid": 3888265,
+    "rev_timestamp": "2026-05-30T11:26:56Z",
+    "rev_sha1": "4d5b5765146382150791647d9d1bacadba583225",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0015",
+    "title": "Istraživačka biblioteka",
+    "retrieved_at": "2026-10-31",
+    "revid": 3749216,
+    "rev_timestamp": "2025-08-10T22:33:49Z",
+    "rev_sha1": "07cc8938df9ebe102ccb42d170b82b4ae1a144b4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0016",
+    "title": "Spisak diferencijacijskih identiteta",
+    "retrieved_at": "2026-10-31",
+    "revid": 3483188,
+    "rev_timestamp": "2023-02-03T15:07:18Z",
+    "rev_sha1": "e7a7bcde7d48b481aab99f52f3e7989c5209f5c1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0017",
+    "title": "Ymir (satelit)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3903478,
+    "rev_timestamp": "2026-07-09T04:13:31Z",
+    "rev_sha1": "96b1d0717a9b289eff6c686ed59300caa401db79",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0018",
+    "title": "IC 781",
+    "retrieved_at": "2026-10-31",
+    "revid": 3720810,
+    "rev_timestamp": "2025-06-22T00:13:15Z",
+    "rev_sha1": "3bf7bb11c95f215160e048623e9e3ca3612ad247",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0019",
+    "title": "AC Milan Primavera",
+    "retrieved_at": "2026-10-31",
+    "revid": 3859439,
+    "rev_timestamp": "2026-05-27T15:59:02Z",
+    "rev_sha1": "3210274bb339ce0c3cd7bce00849bff05cc663cf",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0020",
+    "title": "Konavle (područje)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3883224,
+    "rev_timestamp": "2026-05-29T13:13:18Z",
+    "rev_sha1": "8e6020071545ab676988823f9a8ce80bdc0ad6e9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0021",
+    "title": "Trioda",
+    "retrieved_at": "2026-10-31",
+    "revid": 3162671,
+    "rev_timestamp": "2020-03-12T22:32:20Z",
+    "rev_sha1": "0d124b521099b9bf684dd8c4ae7a4a3f412c80f4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0022",
+    "title": "Historija Maroka",
+    "retrieved_at": "2026-10-31",
+    "revid": 3902763,
+    "rev_timestamp": "2026-07-08T13:30:06Z",
+    "rev_sha1": "d1ece3a3f9f1f40be057b586057c0faeadc9c7ac",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0023",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Zlatar–Bistrica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3854514,
+    "rev_timestamp": "2026-05-27T10:32:49Z",
+    "rev_sha1": "81cafbc35ef26446c7a6edd060da82d9cc6844d1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0024",
+    "title": "74. dodjela \"Zlatnog globusa\"",
+    "retrieved_at": "2026-10-31",
+    "revid": 3936824,
+    "rev_timestamp": "2026-10-23T22:49:47Z",
+    "rev_sha1": "94bd76efe4438a11c2b78b64873b6432fbd3d6bb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0025",
+    "title": "Oblast Sofija-grad",
+    "retrieved_at": "2026-10-31",
+    "revid": 3871028,
+    "rev_timestamp": "2026-05-28T16:34:41Z",
+    "rev_sha1": "2de8253729810cb1eb83896c442f3c98f659fd47",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0026",
+    "title": "Beta-heliks",
+    "retrieved_at": "2026-10-31",
+    "revid": 3919492,
+    "rev_timestamp": "2026-08-18T06:24:15Z",
+    "rev_sha1": "445b67e24cff118695b0370598a8847ad9ffdf2d",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0027",
+    "title": "Adem Kastrati",
+    "retrieved_at": "2026-10-31",
+    "revid": 3823244,
+    "rev_timestamp": "2026-04-02T14:37:31Z",
+    "rev_sha1": "76f1d61bbee70362c9f5e8b3ffee6749006b508f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0028",
+    "title": "Svjetionik u Aleksandriji",
+    "retrieved_at": "2026-10-31",
+    "revid": 3902812,
+    "rev_timestamp": "2026-07-08T13:33:04Z",
+    "rev_sha1": "8598c5dabc17e84092c7b9faf533ecde885831e9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0029",
+    "title": "Asimilacija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3875374,
+    "rev_timestamp": "2026-05-28T20:59:04Z",
+    "rev_sha1": "ccd7796ef20269f2fa6f0d9037a6c6e2b39d5ee1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0030",
+    "title": "Kalinjingradsko vrijeme",
+    "retrieved_at": "2026-10-31",
+    "revid": 3864381,
+    "rev_timestamp": "2026-05-27T20:18:18Z",
+    "rev_sha1": "b6ac5516afd02972d81c253d72ede6c947e60cf9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0031",
+    "title": "Neolitski Orkney",
+    "retrieved_at": "2026-10-31",
+    "revid": 3622887,
+    "rev_timestamp": "2024-06-04T18:54:49Z",
+    "rev_sha1": "dcd412e4b9bb341bc066f5d4d907acc580dbe841",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0032",
+    "title": "Spermatocitogeneza",
+    "retrieved_at": "2026-10-31",
+    "revid": 3884810,
+    "rev_timestamp": "2026-05-29T14:24:08Z",
+    "rev_sha1": "250a1e303270ac1f31ad303a42ff0e7420f2c70b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0033",
+    "title": "Borussia-Park",
+    "retrieved_at": "2026-10-31",
+    "revid": 3100332,
+    "rev_timestamp": "2020-01-18T19:57:37Z",
+    "rev_sha1": "9ff8ba42fa2801792344ebb9c0231286c8cf67b2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0034",
+    "title": "NGC 7400",
+    "retrieved_at": "2026-10-31",
+    "revid": 3728577,
+    "rev_timestamp": "2025-06-22T18:41:35Z",
+    "rev_sha1": "ff06906aaa35e403cb97e4f1fd2be31594655a9a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0035",
+    "title": "IC 271",
+    "retrieved_at": "2026-10-31",
+    "revid": 3717659,
+    "rev_timestamp": "2025-06-21T22:50:03Z",
+    "rev_sha1": "f7bc6f2b7983d81fbc8c690681a6151713bbf2f3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0036",
+    "title": "Elbit Hermes 450",
+    "retrieved_at": "2026-10-31",
+    "revid": 3762761,
+    "rev_timestamp": "2025-09-25T14:32:48Z",
+    "rev_sha1": "da23f346e1fa8c71c3e56384ecd136a7bb130565",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0037",
+    "title": "Planinarsko sklonište \"Armin Gazić\"",
+    "retrieved_at": "2026-10-31",
+    "revid": 3546397,
+    "rev_timestamp": "2023-10-19T09:51:03Z",
+    "rev_sha1": "88db10c7e5ac7529d9497bf76e5cb22901cf9fc9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0038",
+    "title": "Lagala si, lagala",
+    "retrieved_at": "2026-10-31",
+    "revid": 3675458,
+    "rev_timestamp": "2024-12-26T23:38:22Z",
+    "rev_sha1": "4bc5e59c68e2a23954689961c4cb585ae4cebace",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0039",
+    "title": "Garlands (Cocteau Twins)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3644877,
+    "rev_timestamp": "2024-08-28T09:35:05Z",
+    "rev_sha1": "94de40e26ea22552ca382c2b1c6fe15157f6a6d8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0040",
+    "title": "Makedonski jezik",
+    "retrieved_at": "2026-10-31",
+    "revid": 3797904,
+    "rev_timestamp": "2026-01-04T08:08:55Z",
+    "rev_sha1": "e4aeafa6a91e3c6917ad8e40ba9dac564056c76c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0041",
+    "title": "Egzorcist",
+    "retrieved_at": "2026-10-31",
+    "revid": 3833167,
+    "rev_timestamp": "2026-04-21T15:37:06Z",
+    "rev_sha1": "663ef25b150db3b40e633841fa8c43c88e84c3bd",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0042",
+    "title": "NGC 1164",
+    "retrieved_at": "2026-10-31",
+    "revid": 3721503,
+    "rev_timestamp": "2025-06-22T14:21:35Z",
+    "rev_sha1": "4c0089d5bc25012798e77aaf96b7418960581685",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0043",
+    "title": "Oficirski paviljoni",
+    "retrieved_at": "2026-10-31",
+    "revid": 3635023,
+    "rev_timestamp": "2024-07-29T01:06:36Z",
+    "rev_sha1": "99442dd26a82baac8b29c3c99ba043ab47a33d53",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0044",
+    "title": "Prahova (okrug)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3871417,
+    "rev_timestamp": "2026-05-28T16:54:27Z",
+    "rev_sha1": "ea28a07bec9732078bc0c0940155421121c435d5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0045",
+    "title": "Maltretiranje",
+    "retrieved_at": "2026-10-31",
+    "revid": 3591765,
+    "rev_timestamp": "2024-04-13T14:11:42Z",
+    "rev_sha1": "1a09d1b97aa33b2c4ba60e86b39da0c51906b01e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0046",
+    "title": "Akapski zaliv",
+    "retrieved_at": "2026-10-31",
+    "revid": 3565695,
+    "rev_timestamp": "2024-01-15T17:45:50Z",
+    "rev_sha1": "f5e527e54b2399294c0c7caed78c66aaa3046ffb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0047",
+    "title": "Matterhorn",
+    "retrieved_at": "2026-10-31",
+    "revid": 3832445,
+    "rev_timestamp": "2026-04-21T12:41:12Z",
+    "rev_sha1": "fcaa41610760b347c6e0d1e87c83cf4e24d39fcb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0048",
+    "title": "NGC 6136",
+    "retrieved_at": "2026-10-31",
+    "revid": 3727174,
+    "rev_timestamp": "2025-06-22T17:50:39Z",
+    "rev_sha1": "29eb2b9f0954c37dee454f7e03b828cd5831aac0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0049",
+    "title": "Lokalni izbori u Bosni i Hercegovini 2016 (Donji Vakuf)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3640770,
+    "rev_timestamp": "2024-08-11T11:35:43Z",
+    "rev_sha1": "3dc56af1e2ef39234543a4e13048cf38de73e196",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0050",
+    "title": "Svetište Voda svetog Jakova u Kreševu",
+    "retrieved_at": "2026-10-31",
+    "revid": 3804242,
+    "rev_timestamp": "2026-01-29T11:43:48Z",
+    "rev_sha1": "a09634098ceee927163f8a6926490016b61d9b0e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0051",
+    "title": "Električni orgazam (album)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3937730,
+    "rev_timestamp": "2026-10-29T11:31:07Z",
+    "rev_sha1": "b1fc2eb1e358e70f30525e7887f7acac625811b8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0052",
+    "title": "Franjo II, car Svetog Rimskog Carstva",
+    "retrieved_at": "2026-10-31",
+    "revid": 3896763,
+    "rev_timestamp": "2026-06-06T20:44:19Z",
+    "rev_sha1": "d916f1604f8b1e5c22fe279c322bf2991a17bf87",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0053",
+    "title": "Yucatan (višeznačnica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3826616,
+    "rev_timestamp": "2026-04-07T12:20:53Z",
+    "rev_sha1": "bfb1b8a3abbcf52921e0580e80a9e2e343c2561a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0054",
+    "title": "A. J. Cook (glumica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3932207,
+    "rev_timestamp": "2026-09-30T01:54:18Z",
+    "rev_sha1": "92a06299d2991787b8f2abf50eb11754aecc6a4a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0055",
+    "title": "IC 2942",
+    "retrieved_at": "2026-10-31",
+    "revid": 3717926,
+    "rev_timestamp": "2025-06-21T22:57:39Z",
+    "rev_sha1": "703becbe4a3492e4fcd671dea59a7c2978ea6916",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0056",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Klis)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3855045,
+    "rev_timestamp": "2026-05-27T10:59:39Z",
+    "rev_sha1": "5efab4087946ece58440ba3d2559db122e26a8ca",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0057",
+    "title": "La Liga 1972/1973.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3857130,
+    "rev_timestamp": "2026-05-27T13:56:04Z",
+    "rev_sha1": "057dc65d15cfda344755a216701117a8138ea6dc",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0058",
+    "title": "Berlinski zid",
+    "retrieved_at": "2026-10-31",
+    "revid": 3394274,
+    "rev_timestamp": "2022-01-28T23:08:25Z",
+    "rev_sha1": "683894aa53406774a69adf7b7ff4e0cf4d52a8f3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0059",
+    "title": "NGC 5961",
+    "retrieved_at": "2026-10-31",
+    "revid": 3726965,
+    "rev_timestamp": "2025-06-22T17:43:13Z",
+    "rev_sha1": "6f4abf0f32adef6c5c3653c0a93becbce89604bf",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0060",
+    "title": "Farmakogenetika",
+    "retrieved_at": "2026-10-31",
+    "revid": 3858801,
+    "rev_timestamp": "2026-05-27T15:33:39Z",
+    "rev_sha1": "3217de621b658f18cbb2916711e7d5301f4141b9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0061",
+    "title": "Gastrointestinalno krvarenje",
+    "retrieved_at": "2026-10-31",
+    "revid": 3929474,
+    "rev_timestamp": "2026-09-24T10:38:00Z",
+    "rev_sha1": "e818d2eb294a18828ed9a5611edf05e9d9dcfa84",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0062",
+    "title": "Adolf Hitler",
+    "retrieved_at": "2026-10-31",
+    "revid": 3903601,
+    "rev_timestamp": "2026-07-09T06:21:00Z",
+    "rev_sha1": "ac351cbade3b7b2fafbecfe24164ed4b9c0c6565",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0063",
+    "title": "William Ockham",
+    "retrieved_at": "2026-10-31",
+    "revid": 3798017,
+    "rev_timestamp": "2026-01-04T08:11:47Z",
+    "rev_sha1": "622c53421ae4a9b970f37b7d7725fb8420c979a4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0064",
+    "title": "Telur",
+    "retrieved_at": "2026-10-31",
+    "revid": 3831656,
+    "rev_timestamp": "2026-04-21T10:43:48Z",
+    "rev_sha1": "f10c774ea58eeb6de81a887010321d02e6c335fc",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0065",
+    "title": "Novi zavjet",
+    "retrieved_at": "2026-10-31",
+    "revid": 3672681,
+    "rev_timestamp": "2024-12-12T03:25:46Z",
+    "rev_sha1": "da987107c8bb5d4e0bb398c3d4ed2499acf37a3c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0066",
+    "title": "Hladni odušak",
+    "retrieved_at": "2026-10-31",
+    "revid": 3896975,
+    "rev_timestamp": "2026-06-06T21:04:11Z",
+    "rev_sha1": "a64b14e5851e41f59d26d8ebf9aff2afc81c500c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0067",
+    "title": "Madagaskar",
+    "retrieved_at": "2026-10-31",
+    "revid": 3902660,
+    "rev_timestamp": "2026-07-08T13:22:15Z",
+    "rev_sha1": "a46f4fb1ce4af4e8f6a5d01208195d89a8f25ea8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0068",
+    "title": "Beleriand",
+    "retrieved_at": "2026-10-31",
+    "revid": 3926123,
+    "rev_timestamp": "2026-09-21T19:40:59Z",
+    "rev_sha1": "5427cd8b529f9ab6c8422a08a383e9bfbc836b99",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0069",
+    "title": "70. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920638,
+    "rev_timestamp": "2026-08-18T16:17:35Z",
+    "rev_sha1": "36dbc9b77a4866ae267904d8d89dd748a94fa1ed",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0070",
+    "title": "Rog (instrument)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3917260,
+    "rev_timestamp": "2026-08-09T10:57:28Z",
+    "rev_sha1": "2e70288b7429ed5dfff081b302fffb41f880446e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0071",
+    "title": "Lauraceae",
+    "retrieved_at": "2026-10-31",
+    "revid": 3883847,
+    "rev_timestamp": "2026-05-29T13:40:53Z",
+    "rev_sha1": "0617f78d771fa7fde5632d26c2c77eeb2fb94af7",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0072",
+    "title": "Japansko-korejski sporazum 1905.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3554184,
+    "rev_timestamp": "2023-11-23T11:19:19Z",
+    "rev_sha1": "dc01cf3d0facefa04739ac8b1bc64696ddda4914",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0073",
+    "title": "Marija od Engleske (francuska kraljica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3851724,
+    "rev_timestamp": "2026-05-26T18:57:59Z",
+    "rev_sha1": "9d7b73fc321beae62eab76e775310399faa45907",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0074",
+    "title": "Kapelan",
+    "retrieved_at": "2026-10-31",
+    "revid": 3926388,
+    "rev_timestamp": "2026-09-21T21:02:08Z",
+    "rev_sha1": "0c4ab8cb7db438c40df00a2e18b53789dce07cb4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0075",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Sveti Đurđ)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3854536,
+    "rev_timestamp": "2026-05-27T10:33:54Z",
+    "rev_sha1": "5fb4e1af341031214d958f5bc0d7d6421a311d18",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0076",
+    "title": "Nogomet u Londonu",
+    "retrieved_at": "2026-10-31",
+    "revid": 3857552,
+    "rev_timestamp": "2026-05-27T14:15:10Z",
+    "rev_sha1": "3a3e2c4d22159e9d965f28ea98dbaee90973a6db",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0077",
+    "title": "Jeff Bezos",
+    "retrieved_at": "2026-10-31",
+    "revid": 3791314,
+    "rev_timestamp": "2025-12-21T12:36:13Z",
+    "rev_sha1": "5a9b6f6f110a9981532e28c60f8a946cd9c9ad28",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0078",
+    "title": "Ankirinsko ponavljanje",
+    "retrieved_at": "2026-10-31",
+    "revid": 3931803,
+    "rev_timestamp": "2026-09-26T13:00:43Z",
+    "rev_sha1": "4b81d907f911bee34c1694265784280751e6c288",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0079",
+    "title": "Ken Parker",
+    "retrieved_at": "2026-10-31",
+    "revid": 3758957,
+    "rev_timestamp": "2025-09-12T10:19:17Z",
+    "rev_sha1": "90b6a0494227ba7caefbaa15f630dae53bee455b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0080",
+    "title": "37. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920316,
+    "rev_timestamp": "2026-08-18T16:05:32Z",
+    "rev_sha1": "d1b6cd1190b6a1e4a247cf442412f827de18a0cd",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0081",
+    "title": "NGC 6035",
+    "retrieved_at": "2026-10-31",
+    "revid": 3727055,
+    "rev_timestamp": "2025-06-22T17:46:27Z",
+    "rev_sha1": "fa92d615a6df025af0156451d19347209745449a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0082",
+    "title": "Rude (višeznačnica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3826164,
+    "rev_timestamp": "2026-04-07T11:19:42Z",
+    "rev_sha1": "fa21342310cf5ad76197bbef1b6b18382b1da4d5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0083",
+    "title": "Goveđa spužvasta encefalopatija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3906627,
+    "rev_timestamp": "2026-07-14T17:02:23Z",
+    "rev_sha1": "9536fbea12ad65710b156a001c1b7e2fb994c934",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0084",
+    "title": "Zoofilija (botanika)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3883934,
+    "rev_timestamp": "2026-05-29T13:44:33Z",
+    "rev_sha1": "6f2ac306e52c4a2377ba5dbc7d294847b9a21461",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0085",
+    "title": "Bipolarni poremećaj",
+    "retrieved_at": "2026-10-31",
+    "revid": 3874745,
+    "rev_timestamp": "2026-05-28T20:06:03Z",
+    "rev_sha1": "0d6d91f112a5ff29f7f26c470d826c6af6684dd9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0086",
+    "title": "Igor Stravinski",
+    "retrieved_at": "2026-10-31",
+    "revid": 3872717,
+    "rev_timestamp": "2026-05-28T18:40:24Z",
+    "rev_sha1": "1b9bd80c60831b459eca84af89564c50570164e8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0087",
+    "title": "Bengalski jezik",
+    "retrieved_at": "2026-10-31",
+    "revid": 3835236,
+    "rev_timestamp": "2026-04-22T03:23:50Z",
+    "rev_sha1": "2f8a3b6570b58b08c0699f69c79f6299b52552e1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0088",
+    "title": "IC 2384",
+    "retrieved_at": "2026-10-31",
+    "revid": 3773752,
+    "rev_timestamp": "2025-10-20T19:20:57Z",
+    "rev_sha1": "1003459eef7c72dc6c36b1053f479912fb0d81a5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0089",
+    "title": "Kršćanstvo",
+    "retrieved_at": "2026-10-31",
+    "revid": 3877473,
+    "rev_timestamp": "2026-05-29T08:07:23Z",
+    "rev_sha1": "6fa54bb46aefa6373c2db23e831990daa152b929",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0090",
+    "title": "Spisak trenera osvajača Kupa evropskih šampiona i UEFA Lige prvaka",
+    "retrieved_at": "2026-10-31",
+    "revid": 3931125,
+    "rev_timestamp": "2026-09-25T15:57:36Z",
+    "rev_sha1": "e8aed9cb58e5b8f83bdb122446da624c1a216fee",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0091",
+    "title": "Bakar(I)-fosfid",
+    "retrieved_at": "2026-10-31",
+    "revid": 3932227,
+    "rev_timestamp": "2026-09-30T07:20:25Z",
+    "rev_sha1": "b461051faf96a7440cb46e78be7709ef84119f53",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0092",
+    "title": "Poor Knights",
+    "retrieved_at": "2026-10-31",
+    "revid": 3884567,
+    "rev_timestamp": "2026-05-29T14:12:27Z",
+    "rev_sha1": "737f7ddcbf10ac0b7111f87597e4935aa5d50169",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0093",
+    "title": "Spisak grana psihologije",
+    "retrieved_at": "2026-10-31",
+    "revid": 3848799,
+    "rev_timestamp": "2026-05-23T15:11:39Z",
+    "rev_sha1": "9c1152bcad6ca627296512985e076341ee9c864c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0094",
+    "title": "Sistem linearnih jednačina",
+    "retrieved_at": "2026-10-31",
+    "revid": 3773408,
+    "rev_timestamp": "2025-10-20T06:08:43Z",
+    "rev_sha1": "d241c67539002ccd245c5f4315d1862a8aa64051",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0095",
+    "title": "NGC 6515",
+    "retrieved_at": "2026-10-31",
+    "revid": 3727585,
+    "rev_timestamp": "2025-06-22T18:05:19Z",
+    "rev_sha1": "bf3b2a600b00fcfc5dd194d6dae5dab562f2b788",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0096",
+    "title": "NGC 1568",
+    "retrieved_at": "2026-10-31",
+    "revid": 3736448,
+    "rev_timestamp": "2025-07-17T05:15:46Z",
+    "rev_sha1": "7a222897639bd5643ee7d6b12af9aa337758c1c9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0097",
+    "title": "Brionski plenum",
+    "retrieved_at": "2026-10-31",
+    "revid": 3904624,
+    "rev_timestamp": "2026-07-12T14:56:27Z",
+    "rev_sha1": "a6dae8521e081c5d37b6bd4ccba1ffa1aedcae5e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0098",
+    "title": "Akreditiv",
+    "retrieved_at": "2026-10-31",
+    "revid": 3626585,
+    "rev_timestamp": "2024-06-17T16:50:39Z",
+    "rev_sha1": "7b5921a1500d76bf0c48a81bb8273f4c1face114",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0099",
+    "title": "307. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3935160,
+    "rev_timestamp": "2026-10-14T21:26:19Z",
+    "rev_sha1": "8caca44d886d09086fd2a62becd68d17a48e6552",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0100",
+    "title": "Formula 1 – sezona 2001.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3683237,
+    "rev_timestamp": "2025-02-12T13:17:55Z",
+    "rev_sha1": "1a6943fd0b0bc7c47fc3c64e663803cf9a132a0b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0101",
+    "title": "Kingstown",
+    "retrieved_at": "2026-10-31",
+    "revid": 3926408,
+    "rev_timestamp": "2026-09-21T21:04:42Z",
+    "rev_sha1": "134e18237f58a63d0b36f74ce71dcd243741e460",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0102",
+    "title": "Lokalni izbori u Bosni i Hercegovini 2016 (Hadžići)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3640782,
+    "rev_timestamp": "2024-08-11T11:37:14Z",
+    "rev_sha1": "a997a7c0a59eb7f7e70ce96e72fef9731507c112",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0103",
+    "title": "Geharkunik",
+    "retrieved_at": "2026-10-31",
+    "revid": 3870573,
+    "rev_timestamp": "2026-05-28T16:11:56Z",
+    "rev_sha1": "9302d98cfb2459b9755c2586b6fd4f5f60aac9ab",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0104",
+    "title": "1722.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3792528,
+    "rev_timestamp": "2025-12-24T23:57:08Z",
+    "rev_sha1": "8c59aeb805f612f40ac844523703034b28ad7f07",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0105",
+    "title": "Dratini",
+    "retrieved_at": "2026-10-31",
+    "revid": 3199077,
+    "rev_timestamp": "2020-06-06T21:18:12Z",
+    "rev_sha1": "b2f8bc486df7c59e6a8d1322afebe8fe8f5668e0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0106",
+    "title": "Neobična galaksija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3807276,
+    "rev_timestamp": "2026-02-07T09:29:34Z",
+    "rev_sha1": "f2f3fef21d3b712903a5311973fbf5f32f00bc53",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0107",
+    "title": "Bliha (vodopad)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3854198,
+    "rev_timestamp": "2026-05-26T22:02:17Z",
+    "rev_sha1": "690571969657e314d1f61aa1798d52d287d0fb7b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0108",
+    "title": "Brzina glomerulske filtracije",
+    "retrieved_at": "2026-10-31",
+    "revid": 3936878,
+    "rev_timestamp": "2026-10-24T11:17:45Z",
+    "rev_sha1": "47089632e3bc6a3599289d804ff53c4c74461064",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0109",
+    "title": "Stereoizomerizam",
+    "retrieved_at": "2026-10-31",
+    "revid": 3887747,
+    "rev_timestamp": "2026-05-30T10:32:04Z",
+    "rev_sha1": "cfc60e669ee4762d74324037a24a58e254196be3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0110",
+    "title": "Hrvatsko kulturno vijeće",
+    "retrieved_at": "2026-10-31",
+    "revid": 3874175,
+    "rev_timestamp": "2026-05-28T19:41:06Z",
+    "rev_sha1": "2b43bd3c3bb2964ee147b554bc8465ed82535d73",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0111",
+    "title": "Merlin (grupa)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3832221,
+    "rev_timestamp": "2026-04-21T12:03:50Z",
+    "rev_sha1": "84a840e9d1067a750551409716b9b4e851643940",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0112",
+    "title": "West Island (Kokosova ostrva)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3832100,
+    "rev_timestamp": "2026-04-21T11:49:43Z",
+    "rev_sha1": "57538769efb629bfb58db3499617a01a29236ad0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0113",
+    "title": "NGC 6954",
+    "retrieved_at": "2026-10-31",
+    "revid": 3728070,
+    "rev_timestamp": "2025-06-22T18:22:53Z",
+    "rev_sha1": "1132b0225978dbd5ad73193506a84824ddd8c5ff",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0114",
+    "title": "5 cm Pak 38",
+    "retrieved_at": "2026-10-31",
+    "revid": 3855553,
+    "rev_timestamp": "2026-05-27T11:25:04Z",
+    "rev_sha1": "b748829cfd3349d2f4012b1b6f943e3ab843be2c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0115",
+    "title": "Rihard Jakopič",
+    "retrieved_at": "2026-10-31",
+    "revid": 3629222,
+    "rev_timestamp": "2024-06-27T14:37:18Z",
+    "rev_sha1": "8e5d52a44374475223f593113a643302a3b622a4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0116",
+    "title": "IC 4712",
+    "retrieved_at": "2026-10-31",
+    "revid": 3779328,
+    "rev_timestamp": "2025-11-05T15:01:13Z",
+    "rev_sha1": "8ca8d53292e4ef858e6c5a70ef4a8706b9c953fc",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0117",
+    "title": "R Monocerotis",
+    "retrieved_at": "2026-10-31",
+    "revid": 3856574,
+    "rev_timestamp": "2026-05-27T12:16:10Z",
+    "rev_sha1": "e2edf60b69cdb43aa3a12d766a30aed9a07d2a10",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0118",
+    "title": "Južnoameričko prvenstvo u nogometu 1963.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3857345,
+    "rev_timestamp": "2026-05-27T14:05:20Z",
+    "rev_sha1": "7f68eef7904a4003af8fc58cd7453fc0e0f475c2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0119",
+    "title": "Okruzi Estonije",
+    "retrieved_at": "2026-10-31",
+    "revid": 3862312,
+    "rev_timestamp": "2026-05-27T18:36:25Z",
+    "rev_sha1": "8825607c9b55b3cad8d3a7f97bd378bdb9694dfd",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0120",
+    "title": "25. divizija Kopnene vojske",
+    "retrieved_at": "2026-10-31",
+    "revid": 3870842,
+    "rev_timestamp": "2026-05-28T16:25:25Z",
+    "rev_sha1": "ff87ca7e578d5ddb7bf3d2c307b59c2dc3b2b894",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0121",
+    "title": "102. brdska brigada",
+    "retrieved_at": "2026-10-31",
+    "revid": 2989555,
+    "rev_timestamp": "2019-03-23T16:14:03Z",
+    "rev_sha1": "a8dad2db0ac752acc5ba7fe0251264c69a7e7f50",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0122",
+    "title": "Dehiscencija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3884148,
+    "rev_timestamp": "2026-05-29T13:54:01Z",
+    "rev_sha1": "12e9c2c173cf13b348f90f9e654b36e07540f662",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0123",
+    "title": "Johannes Gutenberg",
+    "retrieved_at": "2026-10-31",
+    "revid": 3797963,
+    "rev_timestamp": "2026-01-04T08:10:28Z",
+    "rev_sha1": "c3465eb83ac871de600ee6da4a732f074389fdc5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0124",
+    "title": "Časopis",
+    "retrieved_at": "2026-10-31",
+    "revid": 3608712,
+    "rev_timestamp": "2024-05-21T11:31:32Z",
+    "rev_sha1": "8c20f264b5b42841876c685e4cd76264e80531f4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0125",
+    "title": "Nogometne utakmice Bosna i Hercegovina – Turska",
+    "retrieved_at": "2026-10-31",
+    "revid": 3840990,
+    "rev_timestamp": "2026-05-06T10:10:23Z",
+    "rev_sha1": "9530f8029a64f97bb941dd4ca5f3ce2fd930499f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0126",
+    "title": "NGC 3040",
+    "retrieved_at": "2026-10-31",
+    "revid": 3736466,
+    "rev_timestamp": "2025-07-17T05:16:06Z",
+    "rev_sha1": "38913beca2edb88dee9cfecba354cbd59fb37198",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0127",
+    "title": "Malajski jezik",
+    "retrieved_at": "2026-10-31",
+    "revid": 3850596,
+    "rev_timestamp": "2026-05-26T17:45:43Z",
+    "rev_sha1": "93005a7696c9d87724430851ac2a022c6acccf07",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0128",
+    "title": "N.W.A.",
+    "retrieved_at": "2026-10-31",
+    "revid": 2826401,
+    "rev_timestamp": "2017-06-01T11:27:36Z",
+    "rev_sha1": "d573bd44ef5307d05b5b1ab78ea9d1f6f29643e1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0129",
+    "title": "Sinan Sakić",
+    "retrieved_at": "2026-10-31",
+    "revid": 3832398,
+    "rev_timestamp": "2026-04-21T12:25:12Z",
+    "rev_sha1": "024b33020e80a81e0aefe7bdb634388c9b76cf48",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0130",
+    "title": "Pećina Lascaux",
+    "retrieved_at": "2026-10-31",
+    "revid": 3632396,
+    "rev_timestamp": "2024-07-16T16:03:38Z",
+    "rev_sha1": "df0670c8473ce47629a7b8ecdddec7df7f2adeb3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0131",
+    "title": "Humiriaceae",
+    "retrieved_at": "2026-10-31",
+    "revid": 3506114,
+    "rev_timestamp": "2023-04-15T14:15:54Z",
+    "rev_sha1": "49ef95960422bbb3514afadddd9e6ab27f4c3f95",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0132",
+    "title": "Vaginski iscjedak",
+    "retrieved_at": "2026-10-31",
+    "revid": 3936974,
+    "rev_timestamp": "2026-10-24T20:18:37Z",
+    "rev_sha1": "fbcc6f1df77788af0e5d92214b9d0d37d4138c8d",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0133",
+    "title": "Historija medicine",
+    "retrieved_at": "2026-10-31",
+    "revid": 3929673,
+    "rev_timestamp": "2026-09-24T16:22:23Z",
+    "rev_sha1": "5fde38707d36eb39f088f1d4aa28be58ce873d57",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0134",
+    "title": "345.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920268,
+    "rev_timestamp": "2026-08-18T16:04:26Z",
+    "rev_sha1": "aa829bb0d02e58eb3967c133bdfcaa59a0c1a617",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0135",
+    "title": "Unutrašnja Mongolija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3886988,
+    "rev_timestamp": "2026-05-30T09:51:35Z",
+    "rev_sha1": "87ad991ceb6d7c8d362d30f07eb66d7a5a91e9c1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0136",
+    "title": "Korzika",
+    "retrieved_at": "2026-10-31",
+    "revid": 3851857,
+    "rev_timestamp": "2026-05-26T19:06:26Z",
+    "rev_sha1": "e40788a436bef6ffba855c0ce784b58e15994738",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0137",
+    "title": "Ferdinand Este-Austrijski",
+    "retrieved_at": "2026-10-31",
+    "revid": 3313498,
+    "rev_timestamp": "2021-05-11T18:38:06Z",
+    "rev_sha1": "d3ac5694fbbea7b2055840d79fd425b70461f985",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0138",
+    "title": "Svjetsko prvenstvo u nogometu 2002 - grupa E",
+    "retrieved_at": "2026-10-31",
+    "revid": 3427768,
+    "rev_timestamp": "2022-08-12T22:18:43Z",
+    "rev_sha1": "eba70e5e0b9392990a813679d89473ac353a4414",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0139",
+    "title": "Šesti kongres KPJ",
+    "retrieved_at": "2026-10-31",
+    "revid": 3904542,
+    "rev_timestamp": "2026-07-12T12:22:32Z",
+    "rev_sha1": "a9bee6afbb87f87444ff23439d0d67ce8f4bca05",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0140",
+    "title": "Perzejeva ruka",
+    "retrieved_at": "2026-10-31",
+    "revid": 3709107,
+    "rev_timestamp": "2025-05-20T18:45:13Z",
+    "rev_sha1": "ca6c17181901d537dcca2a4cdc9e4f64a30dbd92",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0141",
+    "title": "Helmut Kohl",
+    "retrieved_at": "2026-10-31",
+    "revid": 3896930,
+    "rev_timestamp": "2026-06-06T20:59:21Z",
+    "rev_sha1": "9979c00f4bb254a9a8023aebbe99cc4631671d19",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0142",
+    "title": "Kašmir",
+    "retrieved_at": "2026-10-31",
+    "revid": 3706484,
+    "rev_timestamp": "2025-05-08T03:21:51Z",
+    "rev_sha1": "764351a8d77963e8805be2556d59d98dc6f6a8a0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0143",
+    "title": "Monk",
+    "retrieved_at": "2026-10-31",
+    "revid": 3932010,
+    "rev_timestamp": "2026-09-28T09:27:05Z",
+    "rev_sha1": "cecb6d7a39947a032c6fa6defe38b818ebe78937",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0144",
+    "title": "Višegradska kapi-kula",
+    "retrieved_at": "2026-10-31",
+    "revid": 3917382,
+    "rev_timestamp": "2026-08-10T07:26:17Z",
+    "rev_sha1": "2ed45079820e044970280e355a59bdf0136be169",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0145",
+    "title": "NGC 1505",
+    "retrieved_at": "2026-10-31",
+    "revid": 3721885,
+    "rev_timestamp": "2025-06-22T14:35:54Z",
+    "rev_sha1": "59b44e0bc42483dfb067ab959b29f6219942ad34",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0146",
+    "title": "NGC 2709",
+    "retrieved_at": "2026-10-31",
+    "revid": 3723228,
+    "rev_timestamp": "2025-06-22T15:26:03Z",
+    "rev_sha1": "2a99569477e4cd07c6a2fbbd0b55a79223d1447f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0147",
+    "title": "Svjetsko prvenstvo u atletici 2017 – bacanje diska (muškarci)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3499440,
+    "rev_timestamp": "2023-04-14T14:26:24Z",
+    "rev_sha1": "18c42dadd9ded26e55a9f175793263cbcd9b6a1f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0148",
+    "title": "Zastava Nepala",
+    "retrieved_at": "2026-10-31",
+    "revid": 3872805,
+    "rev_timestamp": "2026-05-28T18:44:14Z",
+    "rev_sha1": "f5778dcf188a7da40fc3d6d54e2c9a43a99d0766",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0149",
+    "title": "Ultras Zrinjski",
+    "retrieved_at": "2026-10-31",
+    "revid": 3757791,
+    "rev_timestamp": "2025-09-06T23:13:58Z",
+    "rev_sha1": "c2b8a91a90fed4d1f1c3ab711c55292868f8f534",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0150",
+    "title": "Caroline Wozniacki",
+    "retrieved_at": "2026-10-31",
+    "revid": 3836399,
+    "rev_timestamp": "2026-04-22T18:58:55Z",
+    "rev_sha1": "fbc94d9f7e05b8830f78444de1a6a2bd90ca0443",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0151",
+    "title": "NGC 3076",
+    "retrieved_at": "2026-10-31",
+    "revid": 3723663,
+    "rev_timestamp": "2025-06-22T15:42:00Z",
+    "rev_sha1": "049f1a0359307846fdd8e489351d2381063f8116",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0152",
+    "title": "NGC 5068",
+    "retrieved_at": "2026-10-31",
+    "revid": 3796372,
+    "rev_timestamp": "2026-01-03T22:47:37Z",
+    "rev_sha1": "a92ec3c5d24b156331b517b473af597864d1ced8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0153",
+    "title": "IC 3284",
+    "retrieved_at": "2026-10-31",
+    "revid": 3718284,
+    "rev_timestamp": "2025-06-21T23:06:28Z",
+    "rev_sha1": "38d9b50068b6d1c9339c7ea5b8d0cf540b3f3a29",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0154",
+    "title": "Baš bi bilo dobro / Ne traži me",
+    "retrieved_at": "2026-10-31",
+    "revid": 3551132,
+    "rev_timestamp": "2023-11-05T19:05:43Z",
+    "rev_sha1": "0c89719d2eb3dbdb94ae2d5bae66406a1a3732c6",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0155",
+    "title": "Brnjica",
+    "retrieved_at": "2026-10-31",
+    "revid": 3790281,
+    "rev_timestamp": "2025-12-17T22:12:52Z",
+    "rev_sha1": "2eac02588a05d23d23bccb8b6a527a9b93438f42",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0156",
+    "title": "Konzervativizam",
+    "retrieved_at": "2026-10-31",
+    "revid": 3903325,
+    "rev_timestamp": "2026-07-09T01:53:42Z",
+    "rev_sha1": "5932c5fd7e9fd53d7448f86d3ccc8877afab5980",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0157",
+    "title": "IC 1322",
+    "retrieved_at": "2026-10-31",
+    "revid": 3716208,
+    "rev_timestamp": "2025-06-21T22:15:40Z",
+    "rev_sha1": "18a641fa8e0b7da80c2c0aa9d516dda11923b0a2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0158",
+    "title": "Somerset (Pennsylvania)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3219009,
+    "rev_timestamp": "2020-08-22T16:29:40Z",
+    "rev_sha1": "144170d305b35a994de0cb4d2af7f3041b37b68d",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0159",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Viškovci)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3854891,
+    "rev_timestamp": "2026-05-27T10:51:46Z",
+    "rev_sha1": "373c128fedf501a71e05134a46815b6127dae11e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0160",
+    "title": "Dioskorid",
+    "retrieved_at": "2026-10-31",
+    "revid": 3884718,
+    "rev_timestamp": "2026-05-29T14:19:28Z",
+    "rev_sha1": "1c351f9e9d4ce5a0ac84d07621ae9b42cdd7daa1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0161",
+    "title": "Fildžan",
+    "retrieved_at": "2026-10-31",
+    "revid": 3925732,
+    "rev_timestamp": "2026-09-21T16:24:52Z",
+    "rev_sha1": "e16489223761da7cd7712c0d4627b6900df40dbe",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0162",
+    "title": "Marija Bačvanski",
+    "retrieved_at": "2026-10-31",
+    "revid": 2982355,
+    "rev_timestamp": "2019-02-17T14:07:21Z",
+    "rev_sha1": "2e9a46d54abbbe49de135233217ce2e014015b2f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0163",
+    "title": "Tobias Furneaux",
+    "retrieved_at": "2026-10-31",
+    "revid": 3855217,
+    "rev_timestamp": "2026-05-27T11:08:26Z",
+    "rev_sha1": "0331620aedff29f26571d33a83c57b6a00e96944",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0164",
+    "title": "Babin Potok",
+    "retrieved_at": "2026-10-31",
+    "revid": 3826785,
+    "rev_timestamp": "2026-04-07T12:58:45Z",
+    "rev_sha1": "bd082ca506c806436d5a30d2f60924de9aa8ae7f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0165",
+    "title": "Zelena knjiga (film)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3833869,
+    "rev_timestamp": "2026-04-21T18:30:34Z",
+    "rev_sha1": "2aa3896cc0751128b76663f5e8222a3b65cb6604",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0166",
+    "title": "Svemirske agencije javnog sektora",
+    "retrieved_at": "2026-10-31",
+    "revid": 3821852,
+    "rev_timestamp": "2026-03-31T15:43:28Z",
+    "rev_sha1": "558e46c7990a9f9366e8d0e25a62ffb41e14b8d7",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0167",
+    "title": "Timothyjev sindrom",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920830,
+    "rev_timestamp": "2026-08-18T20:33:11Z",
+    "rev_sha1": "7064f3511111f5dbc0cdb4125ede68a799bcde9e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0168",
+    "title": "Popis stanovništva u Srbiji 2011 (Doljevac)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3856064,
+    "rev_timestamp": "2026-05-27T11:50:46Z",
+    "rev_sha1": "e3015f60da5d5b7958f556614e154af66079008d",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0169",
+    "title": "Veliko Ljahovsko ostrvo",
+    "retrieved_at": "2026-10-31",
+    "revid": 3873927,
+    "rev_timestamp": "2026-05-28T19:30:53Z",
+    "rev_sha1": "a33854fbacf2b43c49ba5fcd4561cbe14b4a556c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0170",
+    "title": "Ivan Čerešnješ",
+    "retrieved_at": "2026-10-31",
+    "revid": 3917647,
+    "rev_timestamp": "2026-08-12T01:10:10Z",
+    "rev_sha1": "214347f4d15b14194ca53926adf5cf9495c368a2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0171",
+    "title": "175 (broj)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3791080,
+    "rev_timestamp": "2025-12-19T17:53:56Z",
+    "rev_sha1": "b2f1d7ff56ff0dd6347eec9fbb6d909599458cc6",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0172",
+    "title": "Marija Šerifović",
+    "retrieved_at": "2026-10-31",
+    "revid": 3686162,
+    "rev_timestamp": "2025-03-01T06:05:26Z",
+    "rev_sha1": "434e062ce61ef4593f0abebefd685884da1207f2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0173",
+    "title": "Hipernatrijemija",
+    "retrieved_at": "2026-10-31",
+    "revid": 3750094,
+    "rev_timestamp": "2025-08-16T10:13:11Z",
+    "rev_sha1": "5da68d0bfc60330a116d5b4a8358e0b811b93e75",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0174",
+    "title": "Maltezer",
+    "retrieved_at": "2026-10-31",
+    "revid": 3873541,
+    "rev_timestamp": "2026-05-28T19:15:28Z",
+    "rev_sha1": "06628cbb29cc219acb577645bc034bad8ba4832f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0175",
+    "title": "Brod (višeznačnica)",
+    "retrieved_at": "2026-10-31",
+    "revid": 3824697,
+    "rev_timestamp": "2026-04-07T07:27:00Z",
+    "rev_sha1": "137b242d5bbcad8a5edfcde6240bc75b100350d5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0176",
+    "title": "Kepler-22b",
+    "retrieved_at": "2026-10-31",
+    "revid": 3853728,
+    "rev_timestamp": "2026-05-26T21:31:37Z",
+    "rev_sha1": "7eeada26e9a0dca734500262f9cc40b0447938c9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0177",
+    "title": "Jedrenski mir",
+    "retrieved_at": "2026-10-31",
+    "revid": 3740091,
+    "rev_timestamp": "2025-07-17T06:17:50Z",
+    "rev_sha1": "3a84fe14c849d0afd815b9e7d072feb92928281e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0178",
+    "title": "Škrapa",
+    "retrieved_at": "2026-10-31",
+    "revid": 3843213,
+    "rev_timestamp": "2026-05-10T12:29:57Z",
+    "rev_sha1": "0cd5b7d6ec7c14c7a94ca18d5396a6b69a1d29cf",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0179",
+    "title": "Dorski red",
+    "retrieved_at": "2026-10-31",
+    "revid": 3807682,
+    "rev_timestamp": "2026-02-07T09:50:17Z",
+    "rev_sha1": "1efc190e38ddda6746747af04c5b729e3ebc7f8a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0180",
+    "title": "Papa Siksto V",
+    "retrieved_at": "2026-10-31",
+    "revid": 3851799,
+    "rev_timestamp": "2026-05-26T19:02:53Z",
+    "rev_sha1": "d043fa68c8322e3e42423f7fa49272877851fe63",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0181",
+    "title": "Mladen Deželić",
+    "retrieved_at": "2026-10-31",
+    "revid": 3671232,
+    "rev_timestamp": "2024-12-05T15:01:40Z",
+    "rev_sha1": "bbcc0c4851e89b5a3afca948216573477fab424b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0182",
+    "title": "Tamiš",
+    "retrieved_at": "2026-10-31",
+    "revid": 3844906,
+    "rev_timestamp": "2026-05-13T11:53:51Z",
+    "rev_sha1": "93cb57d52a060b97c6ff228f611aca11b1a8455c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0183",
+    "title": "Morena",
+    "retrieved_at": "2026-10-31",
+    "revid": 3754018,
+    "rev_timestamp": "2025-08-27T18:29:23Z",
+    "rev_sha1": "7ec5ffae692c51c8218b23eb5df928f681045073",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0184",
+    "title": "Mijelodisplazijski sindrom",
+    "retrieved_at": "2026-10-31",
+    "revid": 3889178,
+    "rev_timestamp": "2026-05-30T12:13:21Z",
+    "rev_sha1": "6f8b31fb6476678d17a559369b26f8dcd07d0818",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0185",
+    "title": "Sotosov sindrom",
+    "retrieved_at": "2026-10-31",
+    "revid": 3889182,
+    "rev_timestamp": "2026-05-30T12:13:30Z",
+    "rev_sha1": "bd2840ceed9edef2cbba24bc84ae6bc58cd8be87",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0186",
+    "title": "251.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920087,
+    "rev_timestamp": "2026-08-18T15:54:55Z",
+    "rev_sha1": "4ef7fd5d4ca5b49e25307a340dfc8ad2b848a96a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0187",
+    "title": "282.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3920159,
+    "rev_timestamp": "2026-08-18T15:57:01Z",
+    "rev_sha1": "1d11c6bd28a62f06de652292bda671fc1337130e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0188",
+    "title": "Ongstrem",
+    "retrieved_at": "2026-10-31",
+    "revid": 3531237,
+    "rev_timestamp": "2023-07-10T05:46:45Z",
+    "rev_sha1": "88c8e8d3810368efa0d5789a1d28a782fd0723ce",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0189",
+    "title": "Mistral",
+    "retrieved_at": "2026-10-31",
+    "revid": 3162118,
+    "rev_timestamp": "2020-03-11T21:35:55Z",
+    "rev_sha1": "f0453017ece57e378da82cbdb8e22ec31cdcd446",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0190",
+    "title": "IC 5201",
+    "retrieved_at": "2026-10-31",
+    "revid": 3720356,
+    "rev_timestamp": "2025-06-22T00:00:37Z",
+    "rev_sha1": "889e43b483473a495406a7ffc71a8e2c605a6db7",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0191",
+    "title": "Turnir kandidata 2016.",
+    "retrieved_at": "2026-10-31",
+    "revid": 3753556,
+    "rev_timestamp": "2025-08-27T15:56:29Z",
+    "rev_sha1": "8cd5e82c19f1482c1ce9f91b556afc1a768c4e37",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0192",
+    "title": "Centralne sile",
+    "retrieved_at": "2026-10-31",
+    "revid": 3841749,
+    "rev_timestamp": "2026-05-08T09:09:06Z",
+    "rev_sha1": "697ed4a1759834aa90192a6185955aed4ae4c671",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0193",
+    "title": "Transmisijski kontrolni protokol",
+    "retrieved_at": "2026-10-31",
+    "revid": 3622093,
+    "rev_timestamp": "2024-06-01T22:07:45Z",
+    "rev_sha1": "5b001cdcd2dbe6fd9c6011fb34363f80d349e726",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0194",
+    "title": "Kelvin",
+    "retrieved_at": "2026-10-31",
+    "revid": 3804303,
+    "rev_timestamp": "2026-01-29T13:57:07Z",
+    "rev_sha1": "3f067bee850f6d3be93cc96dc0a5500f7d759bac",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0195",
+    "title": "NGC 643B",
+    "retrieved_at": "2026-10-31",
+    "revid": 3727505,
+    "rev_timestamp": "2025-06-22T18:02:31Z",
+    "rev_sha1": "ba5eed8417c5ca866368b53c1787f421d8cf938f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0196",
+    "title": "Milan Prebanda",
+    "retrieved_at": "2026-10-31",
+    "revid": 3874828,
+    "rev_timestamp": "2026-05-28T20:09:49Z",
+    "rev_sha1": "5b2c69a3b069bf3517b3ff761883f01c1d138ee4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0197",
+    "title": "Sulejman-Hamza Puzić",
+    "retrieved_at": "2026-10-31",
+    "revid": 3790284,
+    "rev_timestamp": "2025-12-17T22:17:22Z",
+    "rev_sha1": "a010f7f62f8cd5196303843257df67e9c7f0f37a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0198",
+    "title": "Admiral flote",
+    "retrieved_at": "2026-10-31",
+    "revid": 3926034,
+    "rev_timestamp": "2026-09-21T19:24:26Z",
+    "rev_sha1": "ace5900da30d30765fd53f0b09fe7ef064763bb0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0199",
+    "title": "IC 2775",
+    "retrieved_at": "2026-10-31",
+    "revid": 3717733,
+    "rev_timestamp": "2025-06-21T22:51:47Z",
+    "rev_sha1": "5fcf2e4c9419153dd077b607daed0ce08d842a47",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-kn-0200",
+    "title": "Očna vodica",
+    "retrieved_at": "2026-10-31",
+    "revid": 3750416,
+    "rev_timestamp": "2025-08-17T18:36:57Z",
+    "rev_sha1": "6df26b0b3991d2ea456e33212c9177197939c06e",
+    "status": "pinned"
+   }
+  ],
+  "rag": [
+   {
+    "id": "amj-rg-0001",
+    "title": "Dalaj Lama",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0001",
+    "revid": 3832341,
+    "rev_timestamp": "2026-04-21T12:17:21Z",
+    "rev_sha1": "a3fb8651432839997f85b21421148a264497ded0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0002",
+    "title": "9. vijek p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0002",
+    "revid": 3872585,
+    "rev_timestamp": "2026-05-28T18:34:14Z",
+    "rev_sha1": "e539108487383aa73190e953df80518119372dc3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0003",
+    "title": "IC 931",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0003",
+    "revid": 3720967,
+    "rev_timestamp": "2025-06-22T00:16:43Z",
+    "rev_sha1": "9b61445e14bdedbf23b733bee0eb54f55fc4443e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0004",
+    "title": "Razboj Ljevčanski",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0004",
+    "revid": 3502845,
+    "rev_timestamp": "2023-04-15T12:26:39Z",
+    "rev_sha1": "de37fbfea669b9bcf687fb586388117a5019c4a3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0005",
+    "title": "Ćukovac",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0005",
+    "revid": 3739133,
+    "rev_timestamp": "2025-07-17T06:01:23Z",
+    "rev_sha1": "2a5445a235d9a6c3548a2c6cbed8dec1b926340e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0006",
+    "title": "Zagrad",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0006",
+    "revid": 3736891,
+    "rev_timestamp": "2025-07-17T05:23:38Z",
+    "rev_sha1": "15f3207f4d1a41435ed223e6ac2511f2b887c7f9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0007",
+    "title": "Spisak finala UEFA Kupa pobjednika kupova",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0007",
+    "revid": 3502337,
+    "rev_timestamp": "2023-04-15T12:09:45Z",
+    "rev_sha1": "945e02ac0c18224f54253d04e662a4752e47f034",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0008",
+    "title": "Svjetsko prvenstvo u atletici 2017 – 10.000 m (muškarci)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0008",
+    "revid": 3499854,
+    "rev_timestamp": "2023-04-14T14:40:14Z",
+    "rev_sha1": "8bfeb2e83d5b2f8c2f8312c93a8954d2912514e1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0009",
+    "title": "TECR",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0009",
+    "revid": 3931282,
+    "rev_timestamp": "2026-09-25T20:27:33Z",
+    "rev_sha1": "c9f0f14b6886259a1973abe4dc910d8dadab4e12",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0010",
+    "title": "Šićki brod (jezero)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0010",
+    "revid": 3916719,
+    "rev_timestamp": "2026-08-06T11:52:46Z",
+    "rev_sha1": "369f5e3b9b0da42a34df9d6b980cb095e0e3e949",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0011",
+    "title": "Thierry Henry",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0011",
+    "revid": 3904215,
+    "rev_timestamp": "2026-07-10T17:00:44Z",
+    "rev_sha1": "3751abfacb7a0c44865db2e709af4b2a03740816",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0012",
+    "title": "Islamsko osiguranje",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0012",
+    "revid": 3927140,
+    "rev_timestamp": "2026-09-22T20:49:27Z",
+    "rev_sha1": "aabac390e9240dc9192ba4a784cced9210d9284f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0013",
+    "title": "Hasanaginica (opera)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0013",
+    "revid": 3855151,
+    "rev_timestamp": "2026-05-27T11:05:00Z",
+    "rev_sha1": "6a5e13417344d6b47e0d579bc65f021fae1f2929",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0014",
+    "title": "Forma kose",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0014",
+    "revid": 3888265,
+    "rev_timestamp": "2026-05-30T11:26:56Z",
+    "rev_sha1": "4d5b5765146382150791647d9d1bacadba583225",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0015",
+    "title": "Istraživačka biblioteka",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0015",
+    "revid": 3749216,
+    "rev_timestamp": "2025-08-10T22:33:49Z",
+    "rev_sha1": "07cc8938df9ebe102ccb42d170b82b4ae1a144b4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0016",
+    "title": "Spisak diferencijacijskih identiteta",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0016",
+    "revid": 3483188,
+    "rev_timestamp": "2023-02-03T15:07:18Z",
+    "rev_sha1": "e7a7bcde7d48b481aab99f52f3e7989c5209f5c1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0017",
+    "title": "Ymir (satelit)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0017",
+    "revid": 3903478,
+    "rev_timestamp": "2026-07-09T04:13:31Z",
+    "rev_sha1": "96b1d0717a9b289eff6c686ed59300caa401db79",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0018",
+    "title": "IC 781",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0018",
+    "revid": 3720810,
+    "rev_timestamp": "2025-06-22T00:13:15Z",
+    "rev_sha1": "3bf7bb11c95f215160e048623e9e3ca3612ad247",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0019",
+    "title": "AC Milan Primavera",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0019",
+    "revid": 3859439,
+    "rev_timestamp": "2026-05-27T15:59:02Z",
+    "rev_sha1": "3210274bb339ce0c3cd7bce00849bff05cc663cf",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0020",
+    "title": "Konavle (područje)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0020",
+    "revid": 3883224,
+    "rev_timestamp": "2026-05-29T13:13:18Z",
+    "rev_sha1": "8e6020071545ab676988823f9a8ce80bdc0ad6e9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0021",
+    "title": "Trioda",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0021",
+    "revid": 3162671,
+    "rev_timestamp": "2020-03-12T22:32:20Z",
+    "rev_sha1": "0d124b521099b9bf684dd8c4ae7a4a3f412c80f4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0022",
+    "title": "Historija Maroka",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0022",
+    "revid": 3902763,
+    "rev_timestamp": "2026-07-08T13:30:06Z",
+    "rev_sha1": "d1ece3a3f9f1f40be057b586057c0faeadc9c7ac",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0023",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Zlatar–Bistrica)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0023",
+    "revid": 3854514,
+    "rev_timestamp": "2026-05-27T10:32:49Z",
+    "rev_sha1": "81cafbc35ef26446c7a6edd060da82d9cc6844d1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0024",
+    "title": "74. dodjela \"Zlatnog globusa\"",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0024",
+    "revid": 3936824,
+    "rev_timestamp": "2026-10-23T22:49:47Z",
+    "rev_sha1": "94bd76efe4438a11c2b78b64873b6432fbd3d6bb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0025",
+    "title": "Oblast Sofija-grad",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0025",
+    "revid": 3871028,
+    "rev_timestamp": "2026-05-28T16:34:41Z",
+    "rev_sha1": "2de8253729810cb1eb83896c442f3c98f659fd47",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0026",
+    "title": "Beta-heliks",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0026",
+    "revid": 3919492,
+    "rev_timestamp": "2026-08-18T06:24:15Z",
+    "rev_sha1": "445b67e24cff118695b0370598a8847ad9ffdf2d",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0027",
+    "title": "Adem Kastrati",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0027",
+    "revid": 3823244,
+    "rev_timestamp": "2026-04-02T14:37:31Z",
+    "rev_sha1": "76f1d61bbee70362c9f5e8b3ffee6749006b508f",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0028",
+    "title": "Svjetionik u Aleksandriji",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0028",
+    "revid": 3902812,
+    "rev_timestamp": "2026-07-08T13:33:04Z",
+    "rev_sha1": "8598c5dabc17e84092c7b9faf533ecde885831e9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0029",
+    "title": "Asimilacija",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0029",
+    "revid": 3875374,
+    "rev_timestamp": "2026-05-28T20:59:04Z",
+    "rev_sha1": "ccd7796ef20269f2fa6f0d9037a6c6e2b39d5ee1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0030",
+    "title": "Kalinjingradsko vrijeme",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0030",
+    "revid": 3864381,
+    "rev_timestamp": "2026-05-27T20:18:18Z",
+    "rev_sha1": "b6ac5516afd02972d81c253d72ede6c947e60cf9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0031",
+    "title": "Neolitski Orkney",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0031",
+    "revid": 3622887,
+    "rev_timestamp": "2024-06-04T18:54:49Z",
+    "rev_sha1": "dcd412e4b9bb341bc066f5d4d907acc580dbe841",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0032",
+    "title": "Spermatocitogeneza",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0032",
+    "revid": 3884810,
+    "rev_timestamp": "2026-05-29T14:24:08Z",
+    "rev_sha1": "250a1e303270ac1f31ad303a42ff0e7420f2c70b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0033",
+    "title": "Borussia-Park",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0033",
+    "revid": 3100332,
+    "rev_timestamp": "2020-01-18T19:57:37Z",
+    "rev_sha1": "9ff8ba42fa2801792344ebb9c0231286c8cf67b2",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0034",
+    "title": "NGC 7400",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0034",
+    "revid": 3728577,
+    "rev_timestamp": "2025-06-22T18:41:35Z",
+    "rev_sha1": "ff06906aaa35e403cb97e4f1fd2be31594655a9a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0035",
+    "title": "IC 271",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0035",
+    "revid": 3717659,
+    "rev_timestamp": "2025-06-21T22:50:03Z",
+    "rev_sha1": "f7bc6f2b7983d81fbc8c690681a6151713bbf2f3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0036",
+    "title": "Elbit Hermes 450",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0036",
+    "revid": 3762761,
+    "rev_timestamp": "2025-09-25T14:32:48Z",
+    "rev_sha1": "da23f346e1fa8c71c3e56384ecd136a7bb130565",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0037",
+    "title": "Planinarsko sklonište \"Armin Gazić\"",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0037",
+    "revid": 3546397,
+    "rev_timestamp": "2023-10-19T09:51:03Z",
+    "rev_sha1": "88db10c7e5ac7529d9497bf76e5cb22901cf9fc9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0038",
+    "title": "Lagala si, lagala",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0038",
+    "revid": 3675458,
+    "rev_timestamp": "2024-12-26T23:38:22Z",
+    "rev_sha1": "4bc5e59c68e2a23954689961c4cb585ae4cebace",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0039",
+    "title": "Garlands (Cocteau Twins)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0039",
+    "revid": 3644877,
+    "rev_timestamp": "2024-08-28T09:35:05Z",
+    "rev_sha1": "94de40e26ea22552ca382c2b1c6fe15157f6a6d8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0040",
+    "title": "Makedonski jezik",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0040",
+    "revid": 3797904,
+    "rev_timestamp": "2026-01-04T08:08:55Z",
+    "rev_sha1": "e4aeafa6a91e3c6917ad8e40ba9dac564056c76c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0041",
+    "title": "Egzorcist",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0041",
+    "revid": 3833167,
+    "rev_timestamp": "2026-04-21T15:37:06Z",
+    "rev_sha1": "663ef25b150db3b40e633841fa8c43c88e84c3bd",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0042",
+    "title": "NGC 1164",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0042",
+    "revid": 3721503,
+    "rev_timestamp": "2025-06-22T14:21:35Z",
+    "rev_sha1": "4c0089d5bc25012798e77aaf96b7418960581685",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0043",
+    "title": "Oficirski paviljoni",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0043",
+    "revid": 3635023,
+    "rev_timestamp": "2024-07-29T01:06:36Z",
+    "rev_sha1": "99442dd26a82baac8b29c3c99ba043ab47a33d53",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0044",
+    "title": "Prahova (okrug)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0044",
+    "revid": 3871417,
+    "rev_timestamp": "2026-05-28T16:54:27Z",
+    "rev_sha1": "ea28a07bec9732078bc0c0940155421121c435d5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0045",
+    "title": "Maltretiranje",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0045",
+    "revid": 3591765,
+    "rev_timestamp": "2024-04-13T14:11:42Z",
+    "rev_sha1": "1a09d1b97aa33b2c4ba60e86b39da0c51906b01e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0046",
+    "title": "Akapski zaliv",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0046",
+    "revid": 3565695,
+    "rev_timestamp": "2024-01-15T17:45:50Z",
+    "rev_sha1": "f5e527e54b2399294c0c7caed78c66aaa3046ffb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0047",
+    "title": "Matterhorn",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0047",
+    "revid": 3832445,
+    "rev_timestamp": "2026-04-21T12:41:12Z",
+    "rev_sha1": "fcaa41610760b347c6e0d1e87c83cf4e24d39fcb",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0048",
+    "title": "NGC 6136",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0048",
+    "revid": 3727174,
+    "rev_timestamp": "2025-06-22T17:50:39Z",
+    "rev_sha1": "29eb2b9f0954c37dee454f7e03b828cd5831aac0",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0049",
+    "title": "Lokalni izbori u Bosni i Hercegovini 2016 (Donji Vakuf)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0049",
+    "revid": 3640770,
+    "rev_timestamp": "2024-08-11T11:35:43Z",
+    "rev_sha1": "3dc56af1e2ef39234543a4e13048cf38de73e196",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0050",
+    "title": "Svetište Voda svetog Jakova u Kreševu",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0050",
+    "revid": 3804242,
+    "rev_timestamp": "2026-01-29T11:43:48Z",
+    "rev_sha1": "a09634098ceee927163f8a6926490016b61d9b0e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0051",
+    "title": "Električni orgazam (album)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0051",
+    "revid": 3937730,
+    "rev_timestamp": "2026-10-29T11:31:07Z",
+    "rev_sha1": "b1fc2eb1e358e70f30525e7887f7acac625811b8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0052",
+    "title": "Franjo II, car Svetog Rimskog Carstva",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0052",
+    "revid": 3896763,
+    "rev_timestamp": "2026-06-06T20:44:19Z",
+    "rev_sha1": "d916f1604f8b1e5c22fe279c322bf2991a17bf87",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0053",
+    "title": "Yucatan (višeznačnica)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0053",
+    "revid": 3826616,
+    "rev_timestamp": "2026-04-07T12:20:53Z",
+    "rev_sha1": "bfb1b8a3abbcf52921e0580e80a9e2e343c2561a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0054",
+    "title": "A. J. Cook (glumica)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0054",
+    "revid": 3932207,
+    "rev_timestamp": "2026-09-30T01:54:18Z",
+    "rev_sha1": "92a06299d2991787b8f2abf50eb11754aecc6a4a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0055",
+    "title": "IC 2942",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0055",
+    "revid": 3717926,
+    "rev_timestamp": "2025-06-21T22:57:39Z",
+    "rev_sha1": "703becbe4a3492e4fcd671dea59a7c2978ea6916",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0056",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Klis)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0056",
+    "revid": 3855045,
+    "rev_timestamp": "2026-05-27T10:59:39Z",
+    "rev_sha1": "5efab4087946ece58440ba3d2559db122e26a8ca",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0057",
+    "title": "La Liga 1972/1973.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0057",
+    "revid": 3857130,
+    "rev_timestamp": "2026-05-27T13:56:04Z",
+    "rev_sha1": "057dc65d15cfda344755a216701117a8138ea6dc",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0058",
+    "title": "Berlinski zid",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0058",
+    "revid": 3394274,
+    "rev_timestamp": "2022-01-28T23:08:25Z",
+    "rev_sha1": "683894aa53406774a69adf7b7ff4e0cf4d52a8f3",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0059",
+    "title": "NGC 5961",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0059",
+    "revid": 3726965,
+    "rev_timestamp": "2025-06-22T17:43:13Z",
+    "rev_sha1": "6f4abf0f32adef6c5c3653c0a93becbce89604bf",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0060",
+    "title": "Farmakogenetika",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0060",
+    "revid": 3858801,
+    "rev_timestamp": "2026-05-27T15:33:39Z",
+    "rev_sha1": "3217de621b658f18cbb2916711e7d5301f4141b9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0061",
+    "title": "Gastrointestinalno krvarenje",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0061",
+    "revid": 3929474,
+    "rev_timestamp": "2026-09-24T10:38:00Z",
+    "rev_sha1": "e818d2eb294a18828ed9a5611edf05e9d9dcfa84",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0062",
+    "title": "Adolf Hitler",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0062",
+    "revid": 3903601,
+    "rev_timestamp": "2026-07-09T06:21:00Z",
+    "rev_sha1": "ac351cbade3b7b2fafbecfe24164ed4b9c0c6565",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0063",
+    "title": "William Ockham",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0063",
+    "revid": 3798017,
+    "rev_timestamp": "2026-01-04T08:11:47Z",
+    "rev_sha1": "622c53421ae4a9b970f37b7d7725fb8420c979a4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0064",
+    "title": "Telur",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0064",
+    "revid": 3831656,
+    "rev_timestamp": "2026-04-21T10:43:48Z",
+    "rev_sha1": "f10c774ea58eeb6de81a887010321d02e6c335fc",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0065",
+    "title": "Novi zavjet",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0065",
+    "revid": 3672681,
+    "rev_timestamp": "2024-12-12T03:25:46Z",
+    "rev_sha1": "da987107c8bb5d4e0bb398c3d4ed2499acf37a3c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0066",
+    "title": "Hladni odušak",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0066",
+    "revid": 3896975,
+    "rev_timestamp": "2026-06-06T21:04:11Z",
+    "rev_sha1": "a64b14e5851e41f59d26d8ebf9aff2afc81c500c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0067",
+    "title": "Madagaskar",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0067",
+    "revid": 3902660,
+    "rev_timestamp": "2026-07-08T13:22:15Z",
+    "rev_sha1": "a46f4fb1ce4af4e8f6a5d01208195d89a8f25ea8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0068",
+    "title": "Beleriand",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0068",
+    "revid": 3926123,
+    "rev_timestamp": "2026-09-21T19:40:59Z",
+    "rev_sha1": "5427cd8b529f9ab6c8422a08a383e9bfbc836b99",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0069",
+    "title": "70. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0069",
+    "revid": 3920638,
+    "rev_timestamp": "2026-08-18T16:17:35Z",
+    "rev_sha1": "36dbc9b77a4866ae267904d8d89dd748a94fa1ed",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0070",
+    "title": "Rog (instrument)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0070",
+    "revid": 3917260,
+    "rev_timestamp": "2026-08-09T10:57:28Z",
+    "rev_sha1": "2e70288b7429ed5dfff081b302fffb41f880446e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0071",
+    "title": "Lauraceae",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0071",
+    "revid": 3883847,
+    "rev_timestamp": "2026-05-29T13:40:53Z",
+    "rev_sha1": "0617f78d771fa7fde5632d26c2c77eeb2fb94af7",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0072",
+    "title": "Japansko-korejski sporazum 1905.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0072",
+    "revid": 3554184,
+    "rev_timestamp": "2023-11-23T11:19:19Z",
+    "rev_sha1": "dc01cf3d0facefa04739ac8b1bc64696ddda4914",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0073",
+    "title": "Marija od Engleske (francuska kraljica)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0073",
+    "revid": 3851724,
+    "rev_timestamp": "2026-05-26T18:57:59Z",
+    "rev_sha1": "9d7b73fc321beae62eab76e775310399faa45907",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0074",
+    "title": "Kapelan",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0074",
+    "revid": 3926388,
+    "rev_timestamp": "2026-09-21T21:02:08Z",
+    "rev_sha1": "0c4ab8cb7db438c40df00a2e18b53789dce07cb4",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0075",
+    "title": "Popis stanovništva u Hrvatskoj 2011 (Sveti Đurđ)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0075",
+    "revid": 3854536,
+    "rev_timestamp": "2026-05-27T10:33:54Z",
+    "rev_sha1": "5fb4e1af341031214d958f5bc0d7d6421a311d18",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0076",
+    "title": "Nogomet u Londonu",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0076",
+    "revid": 3857552,
+    "rev_timestamp": "2026-05-27T14:15:10Z",
+    "rev_sha1": "3a3e2c4d22159e9d965f28ea98dbaee90973a6db",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0077",
+    "title": "Jeff Bezos",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0077",
+    "revid": 3791314,
+    "rev_timestamp": "2025-12-21T12:36:13Z",
+    "rev_sha1": "5a9b6f6f110a9981532e28c60f8a946cd9c9ad28",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0078",
+    "title": "Ankirinsko ponavljanje",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0078",
+    "revid": 3931803,
+    "rev_timestamp": "2026-09-26T13:00:43Z",
+    "rev_sha1": "4b81d907f911bee34c1694265784280751e6c288",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0079",
+    "title": "Ken Parker",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0079",
+    "revid": 3758957,
+    "rev_timestamp": "2025-09-12T10:19:17Z",
+    "rev_sha1": "90b6a0494227ba7caefbaa15f630dae53bee455b",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0080",
+    "title": "37. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0080",
+    "revid": 3920316,
+    "rev_timestamp": "2026-08-18T16:05:32Z",
+    "rev_sha1": "d1b6cd1190b6a1e4a247cf442412f827de18a0cd",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0081",
+    "title": "NGC 6035",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0081",
+    "revid": 3727055,
+    "rev_timestamp": "2025-06-22T17:46:27Z",
+    "rev_sha1": "fa92d615a6df025af0156451d19347209745449a",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0082",
+    "title": "Rude (višeznačnica)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0082",
+    "revid": 3826164,
+    "rev_timestamp": "2026-04-07T11:19:42Z",
+    "rev_sha1": "fa21342310cf5ad76197bbef1b6b18382b1da4d5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0083",
+    "title": "Goveđa spužvasta encefalopatija",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0083",
+    "revid": 3906627,
+    "rev_timestamp": "2026-07-14T17:02:23Z",
+    "rev_sha1": "9536fbea12ad65710b156a001c1b7e2fb994c934",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0084",
+    "title": "Zoofilija (botanika)",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0084",
+    "revid": 3883934,
+    "rev_timestamp": "2026-05-29T13:44:33Z",
+    "rev_sha1": "6f2ac306e52c4a2377ba5dbc7d294847b9a21461",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0085",
+    "title": "Bipolarni poremećaj",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0085",
+    "revid": 3874745,
+    "rev_timestamp": "2026-05-28T20:06:03Z",
+    "rev_sha1": "0d6d91f112a5ff29f7f26c470d826c6af6684dd9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0086",
+    "title": "Igor Stravinski",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0086",
+    "revid": 3872717,
+    "rev_timestamp": "2026-05-28T18:40:24Z",
+    "rev_sha1": "1b9bd80c60831b459eca84af89564c50570164e8",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0087",
+    "title": "Bengalski jezik",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0087",
+    "revid": 3835236,
+    "rev_timestamp": "2026-04-22T03:23:50Z",
+    "rev_sha1": "2f8a3b6570b58b08c0699f69c79f6299b52552e1",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0088",
+    "title": "IC 2384",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0088",
+    "revid": 3773752,
+    "rev_timestamp": "2025-10-20T19:20:57Z",
+    "rev_sha1": "1003459eef7c72dc6c36b1053f479912fb0d81a5",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0089",
+    "title": "Kršćanstvo",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0089",
+    "revid": 3877473,
+    "rev_timestamp": "2026-05-29T08:07:23Z",
+    "rev_sha1": "6fa54bb46aefa6373c2db23e831990daa152b929",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0090",
+    "title": "Spisak trenera osvajača Kupa evropskih šampiona i UEFA Lige prvaka",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0090",
+    "revid": 3931125,
+    "rev_timestamp": "2026-09-25T15:57:36Z",
+    "rev_sha1": "e8aed9cb58e5b8f83bdb122446da624c1a216fee",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0091",
+    "title": "Bakar(I)-fosfid",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0091",
+    "revid": 3932227,
+    "rev_timestamp": "2026-09-30T07:20:25Z",
+    "rev_sha1": "b461051faf96a7440cb46e78be7709ef84119f53",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0092",
+    "title": "Poor Knights",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0092",
+    "revid": 3884567,
+    "rev_timestamp": "2026-05-29T14:12:27Z",
+    "rev_sha1": "737f7ddcbf10ac0b7111f87597e4935aa5d50169",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0093",
+    "title": "Spisak grana psihologije",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0093",
+    "revid": 3848799,
+    "rev_timestamp": "2026-05-23T15:11:39Z",
+    "rev_sha1": "9c1152bcad6ca627296512985e076341ee9c864c",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0094",
+    "title": "Sistem linearnih jednačina",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0094",
+    "revid": 3773408,
+    "rev_timestamp": "2025-10-20T06:08:43Z",
+    "rev_sha1": "d241c67539002ccd245c5f4315d1862a8aa64051",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0095",
+    "title": "NGC 6515",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0095",
+    "revid": 3727585,
+    "rev_timestamp": "2025-06-22T18:05:19Z",
+    "rev_sha1": "bf3b2a600b00fcfc5dd194d6dae5dab562f2b788",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0096",
+    "title": "NGC 1568",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0096",
+    "revid": 3736448,
+    "rev_timestamp": "2025-07-17T05:15:46Z",
+    "rev_sha1": "7a222897639bd5643ee7d6b12af9aa337758c1c9",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0097",
+    "title": "Brionski plenum",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0097",
+    "revid": 3904624,
+    "rev_timestamp": "2026-07-12T14:56:27Z",
+    "rev_sha1": "a6dae8521e081c5d37b6bd4ccba1ffa1aedcae5e",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0098",
+    "title": "Akreditiv",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0098",
+    "revid": 3626585,
+    "rev_timestamp": "2024-06-17T16:50:39Z",
+    "rev_sha1": "7b5921a1500d76bf0c48a81bb8273f4c1face114",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0099",
+    "title": "307. p. n. e.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0099",
+    "revid": 3935160,
+    "rev_timestamp": "2026-10-14T21:26:19Z",
+    "rev_sha1": "8caca44d886d09086fd2a62becd68d17a48e6552",
+    "status": "pinned"
+   },
+   {
+    "id": "amj-rg-0100",
+    "title": "Formula 1 – sezona 2001.",
+    "retrieved_at": "2026-10-31",
+    "derived_from": "amj-kn-0100",
+    "revid": 3683237,
+    "rev_timestamp": "2025-02-12T13:17:55Z",
+    "rev_sha1": "1a6943fd0b0bc7c47fc3c64e663803cf9a132a0b",
+    "status": "pinned"
+   }
+  ]
+ }
+}
