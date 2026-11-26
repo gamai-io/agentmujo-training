@@ -1,1 +1,17 @@
-{"counts":{"agentic-terminal":88,"bosnian-core":90,"function-calling":117,"total":295},"dataset":"agentmujo-joint-01","file":"datasets/splits/joint_train_v0.1.jsonl","language":"bs-ijekavica","method":"train splitovi + shuffle seed 11","note":"Joint mix protiv forgettinga (samo train; test/valid cisti).","version":"0.1.0"}
+{
+  "counts": {
+    "total": 295,
+    "by_task": {
+      "agentic-terminal": 88,
+      "bosnian-core": 90,
+      "function-calling": 117
+    }
+  },
+  "dataset": "agentmujo-joint-01",
+  "file": "datasets/splits/joint_train_v0.1.jsonl",
+  "language": "bs-ijekavica",
+  "method": "train splitovi + shuffle seed 11",
+  "note": "Joint mix protiv forgettinga (samo train; test/valid cisti).",
+  "version": "0.1.0",
+  "sha256": "22c0e1aeb415a5a7bd5ff484ee9a6e521a16aaa177043429f1f19946cf2ad827"
+}

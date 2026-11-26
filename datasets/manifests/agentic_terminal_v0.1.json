@@ -1,9 +1,9 @@
 {
   "counts": {
+    "total": 749,
     "by_task": {
-      "agentic-terminal": 381
-    },
-    "total": 381
+      "agentic-terminal": 749
+    }
   },
   "dataset": "agentmujo-agentic-terminal",
   "file": "datasets/canonical/agentic_terminal_v0.1.jsonl",
@@ -14,5 +14,6 @@
     "valid": 28,
     "test": 36
   },
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "sha256": "987ded817009bcdcd02f3add7bbfb1fa2bc6858065e67639031c977dce783606"
 }

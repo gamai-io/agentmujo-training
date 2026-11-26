@@ -1,9 +1,10 @@
 {
   "counts": {
+    "total": 1178,
     "by_task": {
-      "bosnian-core": 670
-    },
-    "total": 670
+      "bosnian-core": 1118,
+      "bosnian-knowledge": 60
+    }
   },
   "dataset": "agentmujo-bosnian-core",
   "file": "datasets/canonical/bosnian_core_v0.1.jsonl",
@@ -14,5 +15,6 @@
     "train": 525,
     "valid": 81,
     "test": 64
-  }
+  },
+  "sha256": "596143811151b11b10091045b4a4872c074392b4adfe5ce82af01d5c2ba2400c"
 }

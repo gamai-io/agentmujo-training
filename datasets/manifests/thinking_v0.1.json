@@ -1,1 +1,15 @@
-{"counts":{"by_task":{"agentic-terminal":10,"function-calling":15},"total":25},"dataset":"agentmujo-thinking","file":"datasets/canonical/thinking_v0.1.jsonl","language":"bs-ijekavica","note":"Serija 8: eksplicitni <think> tragovi (safety/refusal/dijagnoza/verifikacija). Ciljani alignment run.","version":"0.1.0"}
+{
+  "counts": {
+    "total": 75,
+    "by_task": {
+      "agentic-terminal": 40,
+      "function-calling": 35
+    }
+  },
+  "dataset": "agentmujo-thinking",
+  "file": "datasets/canonical/thinking_v0.1.jsonl",
+  "language": "bs-ijekavica",
+  "note": "Serija 8: eksplicitni <think> tragovi (safety/refusal/dijagnoza/verifikacija). Ciljani alignment run.",
+  "version": "0.1.0",
+  "sha256": "3e1c1b3b59388b71418be2058b6bcd8ddf1295e7d48678e84588b785d4deae74"
+}

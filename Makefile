@@ -25,6 +25,9 @@ validate-datasets:
 pii-scan:
 	python3 tools/pii_scan.py
 
+manifests:
+	python3 tools/refresh_manifests.py --check
+
 verify-release:
 	python -m agentmujo_training.cli.main dataset verify --version 0.4.0
 

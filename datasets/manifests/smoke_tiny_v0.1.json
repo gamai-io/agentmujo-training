@@ -1,1 +1,16 @@
-{"dataset":"agentmujo-smoke-tiny","file":"datasets/canonical/smoke_tiny_v0.1.jsonl","language":"bs-ijekavica","note":"PIPELINE-ONLY: 24 uzorka (16 FC + 8 AG) za smoke test. NIJE trening korpus — ne koristiti za SFT.","total":24,"version":"0.1.0"}
+{
+  "dataset": "agentmujo-smoke-tiny",
+  "file": "datasets/canonical/smoke_tiny_v0.1.jsonl",
+  "language": "bs-ijekavica",
+  "note": "PIPELINE-ONLY: 24 uzorka (16 FC + 8 AG) za smoke test. NIJE trening korpus — ne koristiti za SFT.",
+  "total": 24,
+  "version": "0.1.0",
+  "counts": {
+    "total": 24,
+    "by_task": {
+      "agentic-terminal": 8,
+      "function-calling": 16
+    }
+  },
+  "sha256": "8638d627d158ca1ddd1cc458db11a366d30af1e0943c5c61c3e77f9198bc13e4"
+}

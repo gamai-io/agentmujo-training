@@ -1,1 +1,17 @@
-{"counts":{"agentic-terminal":120,"bosnian-core":90,"function-calling":159,"total":369,"upsampled_views":37},"dataset":"agentmujo-joint-01","file":"datasets/splits/joint_train_v0.2.jsonl","language":"bs-ijekavica","method":"train splitovi + namjerni 2x upsampling thinking/confirmation pogleda (37, seed 12)","note":"Joint-02: puni mix sa thinking+confirmation signalom.","version":"0.1.0"}
+{
+  "counts": {
+    "total": 369,
+    "by_task": {
+      "agentic-terminal": 120,
+      "bosnian-core": 90,
+      "function-calling": 159
+    }
+  },
+  "dataset": "agentmujo-joint-01",
+  "file": "datasets/splits/joint_train_v0.2.jsonl",
+  "language": "bs-ijekavica",
+  "method": "train splitovi + namjerni 2x upsampling thinking/confirmation pogleda (37, seed 12)",
+  "note": "Joint-02: puni mix sa thinking+confirmation signalom.",
+  "version": "0.1.0",
+  "sha256": "5edd30fc4a37064cc9b120c3a475886ea082f1ec4d402d205b9940917c693248"
+}

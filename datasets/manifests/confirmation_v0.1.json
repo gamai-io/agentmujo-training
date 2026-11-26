@@ -1,1 +1,15 @@
-{"counts":{"by_task":{"agentic-terminal":10,"function-calling":10},"total":20},"dataset":"agentmujo-confirmation","file":"datasets/canonical/confirmation_v0.1.jsonl","language":"bs-ijekavica","note":"Serija 9: pitaj-prije-rizicnog obrasci za alignment run.","version":"0.1.0"}
+{
+  "counts": {
+    "total": 20,
+    "by_task": {
+      "agentic-terminal": 10,
+      "function-calling": 10
+    }
+  },
+  "dataset": "agentmujo-confirmation",
+  "file": "datasets/canonical/confirmation_v0.1.jsonl",
+  "language": "bs-ijekavica",
+  "note": "Serija 9: pitaj-prije-rizicnog obrasci za alignment run.",
+  "version": "0.1.0",
+  "sha256": "f2b4158f7e9d328059f88ac49d31e854f7975d50f6ed44683220ec308fc764e1"
+}

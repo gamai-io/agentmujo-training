@@ -1,9 +1,9 @@
 {
   "counts": {
+    "total": 1389,
     "by_task": {
-      "function-calling": 672
-    },
-    "total": 672
+      "function-calling": 1389
+    }
   },
   "dataset": "agentmujo-function-calling",
   "file": "datasets/canonical/function_calling_v0.1.jsonl",
@@ -15,5 +15,6 @@
     "test": 73
   },
   "tier_target": "GOLD/SILVER",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "sha256": "1183ff9a2e7a1c029a86fd1e6fc75e5e2bd23a02e3fbbed7e32208a76a3bf682"
 }
